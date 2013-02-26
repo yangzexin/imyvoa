@@ -17,12 +17,13 @@
 		3E59B65916D74EC000DF05A7 /* DictionaryFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E59B65816D74EC000DF05A7 /* DictionaryFactory.m */; };
 		3E69E30C16C53A3E00DC3BFD /* DictDotCNDictionary.lua in Resources */ = {isa = PBXBuildFile; fileRef = 3E69E30B16C53A3E00DC3BFD /* DictDotCNDictionary.lua */; };
 		3E88B0CC16BE8BDE0054B6AE /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E88B0CB16BE8BDE0054B6AE /* Default-568h@2x.png */; };
-		3E88B28C16BE8EA00054B6AE /* libQueriesLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E88B28A16BE8D910054B6AE /* libQueriesLib.a */; };
 		3E88B28E16BE91920054B6AE /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E88B28D16BE91910054B6AE /* CFNetwork.framework */; };
 		3E88B29016BE91A00054B6AE /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E88B28F16BE91A00054B6AE /* CoreLocation.framework */; };
 		3E88B29216BE91AF0054B6AE /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E88B29116BE91AF0054B6AE /* MapKit.framework */; };
 		3E88B29416BE91BF0054B6AE /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E88B29316BE91BF0054B6AE /* libz.dylib */; };
 		3E88B29616BE91D00054B6AE /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E88B29516BE91D00054B6AE /* MobileCoreServices.framework */; };
+		3E8FB79516DCEAB500313566 /* BaseScripts.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3E8FB79416DCEAB500313566 /* BaseScripts.bundle */; };
+		3E8FB79616DCEAE300313566 /* libSavanna.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E8FB79316DCEA9100313566 /* libSavanna.a */; };
 		3E926525161596E900CF7ACE /* WordSoundListReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E926524161596E900CF7ACE /* WordSoundListReader.m */; };
 		3E926529161597E100CF7ACE /* WordSoundListCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E926528161597E100CF7ACE /* WordSoundListCache.m */; };
 		3E9265331615A5F200CF7ACE /* WordReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E9265321615A5F200CF7ACE /* WordReader.m */; };
@@ -33,7 +34,6 @@
 		3EB87B5116C8F82B00C94FF9 /* ContentProviderFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EB87B5016C8F82B00C94FF9 /* ContentProviderFactory.m */; };
 		3EE9432016BF89D900DD4C1C /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EE9431F16BF89D900DD4C1C /* SettingViewController.m */; };
 		3EE9432316BF8A2600DD4C1C /* BaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EE9432216BF8A2600DD4C1C /* BaseTableViewController.m */; };
-		3EE9432916BF913000DD4C1C /* BaseScripts.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3EE9432816BF913000DD4C1C /* BaseScripts.bundle */; };
 		67200CFB156E4FE10083032E /* DictonaryWord.m in Sources */ = {isa = PBXBuildFile; fileRef = 67200CFA156E4FE10083032E /* DictonaryWord.m */; };
 		67200CFF156E51EC0083032E /* DBDictionaryCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 67200CFE156E51EC0083032E /* DBDictionaryCache.m */; };
 		67200D01156E52F30083032E /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 67200D00156E52F30083032E /* libsqlite3.dylib */; };
@@ -98,19 +98,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		3E88B28716BE8D910054B6AE /* PBXContainerItemProxy */ = {
+		3E8FB79216DCEA9100313566 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 3E88B28216BE8D900054B6AE /* Queries.xcodeproj */;
+			containerPortal = 3E8FB78E16DCEA9100313566 /* Savanna.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = 3E633957162D8C3900B63328;
-			remoteInfo = Queries;
-		};
-		3E88B28916BE8D910054B6AE /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 3E88B28216BE8D900054B6AE /* Queries.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 3E5BBCCC16A6ABA400C0E3C1;
-			remoteInfo = QueriesLib;
+			remoteGlobalIDString = 3E653EDF16DCDB4C00368931;
+			remoteInfo = Savanna;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -130,12 +123,13 @@
 		3E59B65816D74EC000DF05A7 /* DictionaryFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DictionaryFactory.m; sourceTree = "<group>"; };
 		3E69E30B16C53A3E00DC3BFD /* DictDotCNDictionary.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = DictDotCNDictionary.lua; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.lua; };
 		3E88B0CB16BE8BDE0054B6AE /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		3E88B28216BE8D900054B6AE /* Queries.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Queries.xcodeproj; path = ../Queries/Queries.xcodeproj; sourceTree = "<group>"; };
 		3E88B28D16BE91910054B6AE /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		3E88B28F16BE91A00054B6AE /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		3E88B29116BE91AF0054B6AE /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		3E88B29316BE91BF0054B6AE /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		3E88B29516BE91D00054B6AE /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		3E8FB78E16DCEA9100313566 /* Savanna.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Savanna.xcodeproj; path = ../Savanna/Savanna.xcodeproj; sourceTree = "<group>"; };
+		3E8FB79416DCEAB500313566 /* BaseScripts.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = BaseScripts.bundle; path = ../../Savanna/Resources/BaseScripts.bundle; sourceTree = "<group>"; };
 		3E926523161596E900CF7ACE /* WordSoundListReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WordSoundListReader.h; sourceTree = "<group>"; };
 		3E926524161596E900CF7ACE /* WordSoundListReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WordSoundListReader.m; sourceTree = "<group>"; };
 		3E926527161597E100CF7ACE /* WordSoundListCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WordSoundListCache.h; sourceTree = "<group>"; };
@@ -156,7 +150,6 @@
 		3EE9431F16BF89D900DD4C1C /* SettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingViewController.m; sourceTree = "<group>"; };
 		3EE9432116BF8A2600DD4C1C /* BaseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseTableViewController.h; sourceTree = "<group>"; };
 		3EE9432216BF8A2600DD4C1C /* BaseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseTableViewController.m; sourceTree = "<group>"; };
-		3EE9432816BF913000DD4C1C /* BaseScripts.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = BaseScripts.bundle; path = ../Queries/Resources/BaseScripts.bundle; sourceTree = "<group>"; };
 		67200CF7156E4ED90083032E /* DictionaryCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DictionaryCache.h; sourceTree = "<group>"; };
 		67200CF9156E4FE10083032E /* DictonaryWord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DictonaryWord.h; sourceTree = "<group>"; };
 		67200CFA156E4FE10083032E /* DictonaryWord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DictonaryWord.m; sourceTree = "<group>"; };
@@ -274,13 +267,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3E8FB79616DCEAE300313566 /* libSavanna.a in Frameworks */,
 				3E08CB4F16DB40780099A91A /* ImageIO.framework in Frameworks */,
 				3E88B29616BE91D00054B6AE /* MobileCoreServices.framework in Frameworks */,
 				3E88B29416BE91BF0054B6AE /* libz.dylib in Frameworks */,
 				3E88B29216BE91AF0054B6AE /* MapKit.framework in Frameworks */,
 				3E88B29016BE91A00054B6AE /* CoreLocation.framework in Frameworks */,
 				3E88B28E16BE91920054B6AE /* CFNetwork.framework in Frameworks */,
-				3E88B28C16BE8EA00054B6AE /* libQueriesLib.a in Frameworks */,
 				CF32395315B5402E0009D646 /* AudioToolbox.framework in Frameworks */,
 				CF6243FA157DD4CC0005D794 /* AVFoundation.framework in Frameworks */,
 				67200D01156E52F30083032E /* libsqlite3.dylib in Frameworks */,
@@ -331,16 +324,15 @@
 		3E88B28116BE8D860054B6AE /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
-				3E88B28216BE8D900054B6AE /* Queries.xcodeproj */,
+				3E8FB78E16DCEA9100313566 /* Savanna.xcodeproj */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
 		};
-		3E88B28316BE8D900054B6AE /* Products */ = {
+		3E8FB78F16DCEA9100313566 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				3E88B28816BE8D910054B6AE /* Queries.app */,
-				3E88B28A16BE8D910054B6AE /* libQueriesLib.a */,
+				3E8FB79316DCEA9100313566 /* libSavanna.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -564,7 +556,6 @@
 			isa = PBXGroup;
 			children = (
 				CF7C5A90155B6D7700429671 /* imyvoa */,
-				3EE9432816BF913000DD4C1C /* BaseScripts.bundle */,
 				3E88B0CB16BE8BDE0054B6AE /* Default-568h@2x.png */,
 				3E88B28116BE8D860054B6AE /* Libraries */,
 				3E755F0416129D02007DCD7A /* AddInFrameworks */,
@@ -615,6 +606,7 @@
 		CF7C5A91155B6D7700429671 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				3E8FB79416DCEAB500313566 /* BaseScripts.bundle */,
 				3E542AAD1615DE610072BBF0 /* blank.mp3 */,
 				67D5A6391586207D00EB5959 /* images */,
 				CF7C5A92155B6D7700429671 /* imyvoa-Info.plist */,
@@ -782,8 +774,8 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 3E88B28316BE8D900054B6AE /* Products */;
-					ProjectRef = 3E88B28216BE8D900054B6AE /* Queries.xcodeproj */;
+					ProductGroup = 3E8FB78F16DCEA9100313566 /* Products */;
+					ProjectRef = 3E8FB78E16DCEA9100313566 /* Savanna.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -794,18 +786,11 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		3E88B28816BE8D910054B6AE /* Queries.app */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.application;
-			path = Queries.app;
-			remoteRef = 3E88B28716BE8D910054B6AE /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		3E88B28A16BE8D910054B6AE /* libQueriesLib.a */ = {
+		3E8FB79316DCEA9100313566 /* libSavanna.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
-			path = libQueriesLib.a;
-			remoteRef = 3E88B28916BE8D910054B6AE /* PBXContainerItemProxy */;
+			path = libSavanna.a;
+			remoteRef = 3E8FB79216DCEA9100313566 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -815,7 +800,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3EE9432916BF913000DD4C1C /* BaseScripts.bundle in Resources */,
 				CF8F1133156CAF6C000EA556 /* common.lua in Resources */,
 				CF7C5A95155B6D7700429671 /* InfoPlist.strings in Resources */,
 				679DC499155E78420008D8B5 /* Localizable.strings in Resources */,
@@ -837,6 +821,7 @@
 				3E88B0CC16BE8BDE0054B6AE /* Default-568h@2x.png in Resources */,
 				3E69E30C16C53A3E00DC3BFD /* DictDotCNDictionary.lua in Resources */,
 				3E08CB4D16DB3EB10099A91A /* WebBrowser.pkg in Resources */,
+				3E8FB79516DCEAB500313566 /* BaseScripts.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -984,7 +969,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "imyvoa/imyvoa-Prefix.pch";
-				HEADER_SEARCH_PATHS = "../Queries/**";
+				HEADER_SEARCH_PATHS = "../Savanna/**";
 				INFOPLIST_FILE = "imyvoa/imyvoa-Info.plist";
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -993,7 +978,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
-				USER_HEADER_SEARCH_PATHS = "../Queries/**";
+				USER_HEADER_SEARCH_PATHS = "../Savanna/**";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1003,14 +988,14 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "imyvoa/imyvoa-Prefix.pch";
-				HEADER_SEARCH_PATHS = "../Queries/**";
+				HEADER_SEARCH_PATHS = "../Savanna/**";
 				INFOPLIST_FILE = "imyvoa/imyvoa-Info.plist";
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-all_load",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				USER_HEADER_SEARCH_PATHS = "../Queries/**";
+				USER_HEADER_SEARCH_PATHS = "../Savanna/**";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
