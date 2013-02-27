@@ -7,11 +7,11 @@
 //
 
 #import "SplashViewController.h"
-#import "TaskQueue.h"
+#import "SVTaskQueue.h"
 
-@interface SplashViewController () <TaskQueueDelegate>
+@interface SplashViewController () <SVTaskQueueDelegate>
 
-@property(nonatomic, retain)TaskQueue *taskQueue;
+@property(nonatomic, retain)SVTaskQueue *taskQueue;
 
 @end
 
@@ -49,7 +49,7 @@
 {
     [super viewDidLoad];
     
-    self.taskQueue = [TaskQueue newTaskQueue];
+    self.taskQueue = [SVTaskQueue newTaskQueue];
     self.taskQueue.delegate = self;
     
     [self.taskQueue start];
@@ -63,17 +63,17 @@
 #pragma mark - private methods
 
 #pragma mark - TaskQueueDelegate
-- (void)taskQueueDidStarted:(TaskQueue *)taskQueue
+- (void)taskQueueDidStarted:(SVTaskQueue *)taskQueue
 {
     [self setWaiting:YES];
 }
 
-- (void)taskQueueDidInterrupted:(TaskQueue *)taskQueue
+- (void)taskQueueDidInterrupted:(SVTaskQueue *)taskQueue
 {
     [self alert:@"加载失败"];
 }
 
-- (void)taskQueueDidFinished:(TaskQueue *)taskQueue
+- (void)taskQueueDidFinished:(SVTaskQueue *)taskQueue
 {
     [self setWaiting:NO];
     if([self.delegate respondsToSelector:@selector(splashViewControllerDidFinished:)]){
@@ -81,7 +81,7 @@
     }
 }
 
-- (void)taskQueue:(TaskQueue *)taskQueue willStartTask:(id<TaskExecutable>)task
+- (void)taskQueue:(SVTaskQueue *)taskQueue willStartTask:(id<SVTaskExecutable>)task
 {
 }
 

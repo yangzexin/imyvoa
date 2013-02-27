@@ -7,7 +7,7 @@
 //
 
 #import "Utils.h"
-#import "CommonUtils.h"
+#import "SVCommonUtils.h"
 
 @implementation Utils
 
@@ -35,8 +35,8 @@
             NSString *day = [comps objectAtIndex:2];
             if(year.length == 4){
                 return [NSString stringWithFormat:@"%@-%@-%@", year, 
-                        [CommonUtils formatNumber:[month intValue]], 
-                        [CommonUtils formatNumber:[day intValue]]];
+                        [SVCommonUtils formatNumber:[month intValue]], 
+                        [SVCommonUtils formatNumber:[day intValue]]];
             }
         }
     }

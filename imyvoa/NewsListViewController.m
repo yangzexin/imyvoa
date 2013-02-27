@@ -8,9 +8,9 @@
 
 #import "NewsListViewController.h"
 #import "NewsItem.h"
-#import "HTTPDownloader.h"
-#import "CommonUtils.h"
-#import "CodeUtils.h"
+#import "SVHTTPDownloader.h"
+#import "SVCommonUtils.h"
+#import "SVCodeUtils.h"
 #import "SoundCache.h"
 #import "SharedResource.h"
 #import "Player.h"
@@ -19,12 +19,12 @@
 #import "Utils.h"
 #import "NewsItemCell.h"
 #import <QuartzCore/QuartzCore.h>
-#import "UITools.h"
+#import "SVUITools.h"
 #import "DictionaryViewController.h"
 #import "AllGlossaryManager.h"
 #import "UIViewBlocked.h"
 #import "ContentProviderFactory.h"
-#import "GridViewWrapper.h"
+#import "SVGridViewWrapper.h"
 
 #define BTN_BG_COLOR [UIColor clearColor]
 
@@ -43,7 +43,7 @@ GridViewWrapperDelegate
 @property(nonatomic, retain)id<VoaNewsListProvider> voaNewsListProvider;
 @property(nonatomic, retain)id<VoaNewsDetailProvider> voaNewsDetailProvider;
 
-@property(nonatomic, retain)HTTPDownloader *httpDownloader;
+@property(nonatomic, retain)SVHTTPDownloader *httpDownloader;
 
 @property(nonatomic, retain)NSArray *newsItemList;
 
@@ -54,7 +54,7 @@ GridViewWrapperDelegate
 @property(nonatomic, retain)PopOutTableView *popOutTableView;
 @property(nonatomic, retain)UITableView *tableView;
 @property(nonatomic, retain)UISearchBar *searchBar;
-@property(nonatomic, retain)GridViewWrapper *gridViewWrapper;
+@property(nonatomic, retain)SVGridViewWrapper *gridViewWrapper;
 
 - (void)requestNewsList;
 - (void)downloadSoundFromURLString:(NSString *)soundURL;
@@ -111,7 +111,7 @@ GridViewWrapperDelegate
 {
     [super viewDidLoad];
     
-    UIImage *reloadImg = [UITools createPureColorImageWithColor:BTN_BG_COLOR 
+    UIImage *reloadImg = [SVUITools createPureColorImageWithColor:BTN_BG_COLOR 
                                                            size:CGSizeMake(60, 30)];
     UIButton *reloadBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     reloadBtn.frame = CGRectMake(0, 0, reloadImg.size.width, reloadImg.size.height);
@@ -144,14 +144,14 @@ GridViewWrapperDelegate
     if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad){
         numOfColumns = 4;
     }
-    self.gridViewWrapper = [[[GridViewWrapper alloc] initWithNumberOfColumns:numOfColumns] autorelease];
+    self.gridViewWrapper = [[[SVGridViewWrapper alloc] initWithNumberOfColumns:numOfColumns] autorelease];
     self.gridViewWrapper.delegate = self;
     self.tableView.dataSource = self.gridViewWrapper;
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.tableView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     [self.view addSubview:self.tableView];
     
-    UIImage *playingImg = [UITools createPureColorImageWithColor:[UIColor darkGrayColor] 
+    UIImage *playingImg = [SVUITools createPureColorImageWithColor:[UIColor darkGrayColor]
                                                             size:CGSizeMake(80, 30)];
     UIButton *tmpBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     [tmpBtn setBackgroundImage:playingImg forState:UIControlStateNormal];
@@ -382,7 +382,7 @@ GridViewWrapperDelegate
 {
     [self setDownloading:YES];
     
-    self.httpDownloader = [[[HTTPDownloader alloc] initWithURLString:soundURL 
+    self.httpDownloader = [[[SVHTTPDownloader alloc] initWithURLString:soundURL 
                                                           saveToPath:[SharedResource sharedInstance].soundTempFilePath] autorelease];
     self.httpDownloader.delegate = self;
     [self.httpDownloader startDownload];
@@ -573,9 +573,9 @@ GridViewWrapperDelegate
 }
 
 #pragma mark - HTTPDownloaderDelegate
-- (void)HTTPDownloaderDidStarted:(HTTPDownloader *)downloader
+- (void)HTTPDownloaderDidStarted:(SVHTTPDownloader *)downloader
 {
-    UIImage *cancelImg = [UITools createPureColorImageWithColor:[UIColor redColor] 
+    UIImage *cancelImg = [SVUITools createPureColorImageWithColor:[UIColor redColor]
                                                            size:CGSizeMake(60, 30)];
     UIButton *tmpBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     [tmpBtn setBackgroundImage:cancelImg forState:UIControlStateNormal];
@@ -592,7 +592,7 @@ GridViewWrapperDelegate
     [self updateRightBarButtonItemStatus];
 }
 
-- (void)HTTPDownloaderDidFinished:(HTTPDownloader *)downloader
+- (void)HTTPDownloaderDidFinished:(SVHTTPDownloader *)downloader
 {
     [self setDownloading:NO];
     [self updateRightBarButtonItemStatus];
@@ -600,7 +600,7 @@ GridViewWrapperDelegate
     // rename sound file
     NewsItem *selectedItem = [self.newsItemList objectAtIndex:self.popOutTableView.selectedCellIndex];
     NSString *newPath = [[SoundCache soundCachePath] stringByAppendingPathComponent:
-                         [CodeUtils md5ForString:selectedItem.title]];
+                         [SVCodeUtils md5ForString:selectedItem.title]];
     [[NSFileManager defaultManager] moveItemAtPath:[SharedResource sharedInstance].soundTempFilePath 
                                             toPath:newPath 
                                              error:nil];
@@ -611,13 +611,13 @@ GridViewWrapperDelegate
     [self showToastWithString:NSLocalizedString(@"msg_download_did_finish", nil) hideAfterInterval:2.0f];
 }
 
-- (void)HTTPDownloader:(HTTPDownloader *)downloader didErrored:(NSError *)error
+- (void)HTTPDownloader:(SVHTTPDownloader *)downloader didErrored:(NSError *)error
 {
     [self setDownloading:NO];
     [self showToastWithString:NSLocalizedString(@"msg_download_did_fail", nil) hideAfterInterval:2.0f];
 }
 
-- (void)HTTPDownloaderDownloading:(HTTPDownloader *)downloader downloaded:(long long)downloaded total:(long long)total
+- (void)HTTPDownloaderDownloading:(SVHTTPDownloader *)downloader downloaded:(long long)downloaded total:(long long)total
 {
     [self setDownloadingPercent:(double)downloaded / total];
 }
@@ -655,12 +655,12 @@ GridViewWrapperDelegate
 }
 
 #pragma mark - GridViewWrapperDelegate
-- (NSInteger)numberOfItemsInGridViewWrapper:(GridViewWrapper *)gridViewWrapper
+- (NSInteger)numberOfItemsInGridViewWrapper:(SVGridViewWrapper *)gridViewWrapper
 {
     return self.newsItemList.count;
 }
 
-- (void)gridViewWrapper:(GridViewWrapper *)gridViewWrapper configureView:(UIView *)view atIndex:(NSInteger)index
+- (void)gridViewWrapper:(SVGridViewWrapper *)gridViewWrapper configureView:(UIView *)view atIndex:(NSInteger)index
 {
     UIView *containerView = [view viewWithTag:101];
     UILabel *titleLabel = nil;
@@ -707,7 +707,7 @@ GridViewWrapperDelegate
     contentLabel.text = cachedItem.content.length == 0 ? @"" : [Utils stripHTMLTags:cachedItem.content];
 }
 
-- (void)gridViewWrapper:(GridViewWrapper *)gridViewWrapper viewItemTappedAtIndex:(NSInteger)index
+- (void)gridViewWrapper:(SVGridViewWrapper *)gridViewWrapper viewItemTappedAtIndex:(NSInteger)index
 {
     [self viewNewsItem:[self.newsItemList objectAtIndex:index]];
 }

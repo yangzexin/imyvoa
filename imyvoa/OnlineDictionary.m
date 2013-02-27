@@ -7,13 +7,13 @@
 //
 
 #import "OnlineDictionary.h"
-#import "CodeUtils.h"
+#import "SVCodeUtils.h"
 #import "LuaHelper.h"
 #import "DBDictionaryCache.h"
 #import "DictonaryWord.h"
-#import "LuaApp.h"
-#import "LuaAppManager.h"
-#import "ApplicationScriptBundle.h"
+#import "SVApp.h"
+#import "SVAppManager.h"
+#import "SVApplicationScriptBundle.h"
 
 @interface OnlineDictionary () <HTTPRequesterDelegate>
 
@@ -56,7 +56,7 @@
 
 - (NSString *)name
 {
-    return [CodeUtils stringDecodedWithString:[[LuaHelper sharedInstance] invokeProperty:@"dictionaryName"]];
+    return [SVCodeUtils stringDecodedWithString:[[LuaHelper sharedInstance] invokeProperty:@"dictionaryName"]];
 }
 
 - (void)query:(NSString *)str delegate:(id<DictionaryDelegate>)delegate
@@ -114,9 +114,9 @@
 
 - (NSString *)analyzeContent:(NSString *)content
 {
-    id<ScriptBundle> bundle = [[[ApplicationScriptBundle alloc] initWithMainScriptName:@"DictDotCNDictionary"] autorelease];
-    LuaApp *app = [[[LuaApp alloc] initWithScriptBundle:bundle baseWindow:nil] autorelease];
-    NSString *result = [LuaAppManager runApp:app params:content];
+    id<SVScriptBundle> bundle = [[[SVApplicationScriptBundle alloc] initWithMainScriptName:@"DictDotCNDictionary"] autorelease];
+    SVApp *app = [[[SVApp alloc] initWithScriptBundle:bundle baseWindow:nil] autorelease];
+    NSString *result = [SVAppManager runApp:app params:content];
     return result;
 }
 

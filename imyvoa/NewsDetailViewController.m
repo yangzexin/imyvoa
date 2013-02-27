@@ -9,18 +9,18 @@
 #import "NewsDetailViewController.h"
 #import "NewsItem.h"
 #import "UIWebViewAdditions.h"
-#import "CommonUtils.h"
-#import "HTTPDownloader.h"
+#import "SVCommonUtils.h"
+#import "SVHTTPDownloader.h"
 #import "SharedResource.h"
-#import "CodeUtils.h"
+#import "SVCodeUtils.h"
 #import "SoundCache.h"
 #import "Player.h"
-#import "Timer.h"
+#import "SVTimer.h"
 #import "DictionaryViewController.h"
 #import "DBGlossaryManager.h"
 #import "GlossaryLibraryViewController.h"
 #import <QuartzCore/QuartzCore.h>
-#import "DataBaseKeyValueManager.h"
+#import "SVDataBaseKeyValueManager.h"
 #import "ContentProviderFactory.h"
 #import "DictionaryFactory.h"
 
@@ -32,7 +32,7 @@ typedef enum{
 
 @interface NewsDetailViewController () <UIWebViewDelegate, 
 HTTPDownloaderDelegate, 
-TimerDelegate, 
+SVTimerDelegate, 
 DictionaryViewControllerDelegate, 
 UIAlertViewDelegate, 
 UIScrollViewDelegate
@@ -58,9 +58,9 @@ UIScrollViewDelegate
 
 @property(nonatomic, copy)NSString *dictionaryName;
 
-@property(nonatomic, retain)HTTPDownloader *httpDownloader;
+@property(nonatomic, retain)SVHTTPDownloader *httpDownloader;
 
-@property(nonatomic, retain)Timer *timer;
+@property(nonatomic, retain)SVTimer *timer;
 
 @property(nonatomic, assign)BOOL positionSilderTouching;
 
@@ -68,7 +68,7 @@ UIScrollViewDelegate
 
 @property(nonatomic)float scrollPercent;
 
-@property(nonatomic, retain)id<KeyValueManager> scrollPositionDict;
+@property(nonatomic, retain)id<SVKeyValueManager> scrollPositionDict;
 
 - (void)loadContent:(NSString *)content;
 - (void)downloadSoundFromURLString:(NSString *)soundURL;
@@ -164,7 +164,7 @@ UIScrollViewDelegate
     self.voaNewsDetailProvider = [ContentProviderFactory newsDetailProvider];
     self.dictionaryName = [[DictionaryFactory defaultDictionary] name];
     self.glossaryManager = [[DBGlossaryManager alloc] initWithIdentifier:self.newsItem.title];
-    self.scrollPositionDict = [[[DataBaseKeyValueManager alloc] initWithDBName:@"position_dict" atFolder:[[SharedResource sharedInstance] cachePath]] autorelease];
+    self.scrollPositionDict = [[[SVDataBaseKeyValueManager alloc] initWithDBName:@"position_dict" atFolder:[[SharedResource sharedInstance] cachePath]] autorelease];
     
     self.scrollPercent = 0.0f;
     
@@ -379,7 +379,7 @@ UIScrollViewDelegate
     [super viewWillDisappear:animated];
     UIScrollView *scrollView = [self.webView getScrollView];
     [self.scrollPositionDict setValue:[NSString stringWithFormat:@"%f", scrollView.contentOffset.y] 
-                               forKey:[CodeUtils encodeWithString:self.newsItem.title]];
+                               forKey:[SVCodeUtils encodeWithString:self.newsItem.title]];
 }
 
 #pragma mark - events
@@ -388,7 +388,7 @@ UIScrollViewDelegate
     if(self.dictionaryName && action == @selector(onDictMenuItemTapped)){
         NSString *selectedText = [self.webView getSelectedText];
         if([selectedText length] != 0){
-            return ![CommonUtils stringContainsChinese:selectedText];
+            return ![SVCommonUtils stringContainsChinese:selectedText];
         }
     }
     return [super canPerformAction:action withSender:sender];
@@ -549,14 +549,14 @@ UIScrollViewDelegate
     NSTimeInterval currentTime = self.positionSilder.value;
     NSInteger minute = currentTime / 60;
     NSInteger second = (NSInteger)currentTime % 60;
-    self.currentTimeLabel.text = [NSString stringWithFormat:@"%@:%@", [CommonUtils formatNumber:minute], 
-                                  [CommonUtils formatNumber:second]];
+    self.currentTimeLabel.text = [NSString stringWithFormat:@"%@:%@", [SVCommonUtils formatNumber:minute], 
+                                  [SVCommonUtils formatNumber:second]];
     
     NSTimeInterval totalTime = [Player sharedInstance].duration;
     minute = totalTime / 60;
     second = (NSInteger)totalTime % 60;
-    self.totalTimeLabel.text = [NSString stringWithFormat:@"%@:%@", [CommonUtils formatNumber:minute], 
-                                [CommonUtils formatNumber:second]];
+    self.totalTimeLabel.text = [NSString stringWithFormat:@"%@:%@", [SVCommonUtils formatNumber:minute], 
+                                [SVCommonUtils formatNumber:second]];
 }
 
 - (void)onPlayerDidPlayFinishNotification:(NSNotification *)n
@@ -575,7 +575,7 @@ UIScrollViewDelegate
 {
     [self setDownloading:YES];
     
-    self.httpDownloader = [[[HTTPDownloader alloc] initWithURLString:soundURL 
+    self.httpDownloader = [[[SVHTTPDownloader alloc] initWithURLString:soundURL 
                                                           saveToPath:[SharedResource sharedInstance].soundTempFilePath] autorelease];
     self.httpDownloader.delegate = self;
     [self.httpDownloader startDownload];
@@ -651,14 +651,14 @@ UIScrollViewDelegate
     NSTimeInterval currentTime = [Player sharedInstance].currentTime;
     NSInteger minute = currentTime / 60;
     NSInteger second = (NSInteger)currentTime % 60;
-    self.currentTimeLabel.text = [NSString stringWithFormat:@"%@:%@", [CommonUtils formatNumber:minute], 
-                                  [CommonUtils formatNumber:second]];
+    self.currentTimeLabel.text = [NSString stringWithFormat:@"%@:%@", [SVCommonUtils formatNumber:minute], 
+                                  [SVCommonUtils formatNumber:second]];
     
     NSTimeInterval totalTime = [Player sharedInstance].duration;
     minute = totalTime / 60;
     second = (NSInteger)totalTime % 60;
-    self.totalTimeLabel.text = [NSString stringWithFormat:@"%@:%@", [CommonUtils formatNumber:minute], 
-                                [CommonUtils formatNumber:second]];
+    self.totalTimeLabel.text = [NSString stringWithFormat:@"%@:%@", [SVCommonUtils formatNumber:minute], 
+                                [SVCommonUtils formatNumber:second]];
     
     self.positionSilder.minimumValue = 0.0f;
     self.positionSilder.maximumValue = [Player sharedInstance].duration;
@@ -684,7 +684,7 @@ UIScrollViewDelegate
         [self.timer cancel];
         self.timer = nil;
     }
-    self.timer = [[[Timer alloc] init] autorelease];
+    self.timer = [[[SVTimer alloc] init] autorelease];
     self.timer.delegate = self;
     [self.timer startWithTimeInterval:0.50f];
 }
@@ -741,18 +741,18 @@ UIScrollViewDelegate
 }
 
 #pragma mark - TimerDelegate
-- (void)timer:(Timer *)timer timerRunningWithInterval:(CGFloat)interval
+- (void)timer:(SVTimer *)timer timerRunningWithInterval:(CGFloat)interval
 {
     if(!self.positionSilderTouching){
         [self updatePositionStatus];
     }
 }
 
-- (void)timerDidStart:(Timer *)timer
+- (void)timerDidStart:(SVTimer *)timer
 {
 }
 
-- (void)timerDidStop:(Timer *)timer{
+- (void)timerDidStop:(SVTimer *)timer{
 }
 
 #pragma mark - UIScrollViewDelegate
@@ -768,7 +768,7 @@ UIScrollViewDelegate
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
 {
     [self.scrollPositionDict setValue:[NSString stringWithFormat:@"%f", scrollView.contentOffset.y] 
-                               forKey:[CodeUtils encodeWithString:self.newsItem.title]];
+                               forKey:[SVCodeUtils encodeWithString:self.newsItem.title]];
 }
 
 #pragma mark - UIAlertViewDelegate
@@ -797,7 +797,7 @@ UIScrollViewDelegate
     
     [self updateWebViewPadding];
     
-    NSString *positionValue = [self.scrollPositionDict valueForKey:[CodeUtils encodeWithString:self.newsItem.title]];
+    NSString *positionValue = [self.scrollPositionDict valueForKey:[SVCodeUtils encodeWithString:self.newsItem.title]];
     CGPoint position = [webView getScrollView].contentOffset;
     position.y = [positionValue floatValue];
     [webView getScrollView].contentOffset = position;
@@ -835,7 +835,7 @@ UIScrollViewDelegate
 }
 
 #pragma mark - HTTPDownloaderDelegate
-- (void)HTTPDownloaderDidStarted:(HTTPDownloader *)downloader
+- (void)HTTPDownloaderDidStarted:(SVHTTPDownloader *)downloader
 {
     UIBarButtonItem *cancelDownloadBtn = [[[UIBarButtonItem alloc] init] autorelease];
     cancelDownloadBtn.target = self;
@@ -844,14 +844,14 @@ UIScrollViewDelegate
     cancelDownloadBtn.style = UIBarButtonItemStyleDone;
     self.navigationItem.rightBarButtonItem = cancelDownloadBtn;
 }
-- (void)HTTPDownloaderDidFinished:(HTTPDownloader *)downloader
+- (void)HTTPDownloaderDidFinished:(SVHTTPDownloader *)downloader
 {
     [self setDownloading:NO];
     self.navigationItem.rightBarButtonItem = self.viewGlossaryBtn;
     
     // rename sound file
     NSString *newPath = [[SoundCache soundCachePath] stringByAppendingPathComponent:
-                         [CodeUtils md5ForString:self.newsItem.title]];
+                         [SVCodeUtils md5ForString:self.newsItem.title]];
     [[NSFileManager defaultManager] moveItemAtPath:[SharedResource sharedInstance].soundTempFilePath 
                                             toPath:newPath 
                                              error:nil];
@@ -865,7 +865,7 @@ UIScrollViewDelegate
         [self updatePlayerStatus];
 //    }
 }
-- (void)HTTPDownloader:(HTTPDownloader *)downloader didErrored:(NSError *)error
+- (void)HTTPDownloader:(SVHTTPDownloader *)downloader didErrored:(NSError *)error
 {
     [self setDownloading:NO];
     [self updatePlayerStatus];
@@ -873,7 +873,7 @@ UIScrollViewDelegate
     
     [self showToastWithString:NSLocalizedString(@"msg_download_did_fail", nil) hideAfterInterval:2.0f];
 }
-- (void)HTTPDownloaderDownloading:(HTTPDownloader *)downloader downloaded:(long long)downloaded total:(long long)total
+- (void)HTTPDownloaderDownloading:(SVHTTPDownloader *)downloader downloaded:(long long)downloaded total:(long long)total
 {
     [self setDownloadingPercent:(double)downloaded / total];
 }

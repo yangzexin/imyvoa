@@ -7,14 +7,14 @@
 //
 
 #import "DBDictionaryCache.h"
-#import "CommonUtils.h"
-#import "CodeUtils.h"
+#import "SVCommonUtils.h"
+#import "SVCodeUtils.h"
 #import "DictonaryWord.h"
-#import "DataBaseKeyValueManager.h"
+#import "SVDataBaseKeyValueManager.h"
 
 @interface DBDictionaryCache ()
 
-@property(nonatomic, retain)id<KeyValueManager> keyValueCache;
+@property(nonatomic, retain)id<SVKeyValueManager> keyValueCache;
 
 @end
 
@@ -43,7 +43,7 @@
 {
     self = [super init];
     
-    self.keyValueCache = [[[DataBaseKeyValueManager alloc] initWithDBName:@"dictionary cache" atFolder:[[SharedResource sharedInstance] cachePath]] autorelease];
+    self.keyValueCache = [[[SVDataBaseKeyValueManager alloc] initWithDBName:@"dictionary cache" atFolder:[[SharedResource sharedInstance] cachePath]] autorelease];
     
     return self;
 }

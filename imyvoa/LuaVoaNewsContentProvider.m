@@ -9,15 +9,15 @@
 #import "LuaVoaNewsContentProvider.h"
 #import "HTTPRequester.h"
 #import "LuaHelper.h"
-#import "DataBaseKeyValueManager.h"
-#import "CodeUtils.h"
+#import "SVDataBaseKeyValueManager.h"
+#import "SVCodeUtils.h"
 
 @interface LuaVoaNewsContentProvider () <HTTPRequesterDelegate>
 
 @property(nonatomic, retain)NewsItem *newsItem;
 @property(nonatomic, retain)HTTPRequester *httpRequester;
 
-@property(nonatomic, retain)id<KeyValueManager> keyValueCache;
+@property(nonatomic, retain)id<SVKeyValueManager> keyValueCache;
 
 @end
 
@@ -43,7 +43,7 @@
 {
     self = [super init];
     
-    self.keyValueCache = [[[DataBaseKeyValueManager alloc] initWithDBName:@"voa_news_content_cache" atFolder:[[SharedResource sharedInstance] cachePath]] autorelease];
+    self.keyValueCache = [[[SVDataBaseKeyValueManager alloc] initWithDBName:@"voa_news_content_cache" atFolder:[[SharedResource sharedInstance] cachePath]] autorelease];
     
     return self;
 }
@@ -54,10 +54,10 @@
     
     self.newsItem = item;
     
-    NSString *cacheDataHexString = [self.keyValueCache valueForKey:[CodeUtils encodeWithString:item.title]];
+    NSString *cacheDataHexString = [self.keyValueCache valueForKey:[SVCodeUtils encodeWithString:item.title]];
     if(!ignoreCache && cacheDataHexString){
         // from cache
-        NSData *cacheData = [CodeUtils dataDecodedWithString:cacheDataHexString];
+        NSData *cacheData = [SVCodeUtils dataDecodedWithString:cacheDataHexString];
         NewsItem *item = [NSKeyedUnarchiver unarchiveObjectWithData:cacheData];
         NSLog(@"from cache:%@", item.title);
         if([self.delegate respondsToSelector:@selector(voaNewsContentProvider:didRecieveResult:)]){
@@ -73,9 +73,9 @@
 
 - (NewsItem *)newsItemFromLocalCache:(NewsItem *)item
 {
-    NSString *cacheDataHexString = [self.keyValueCache valueForKey:[CodeUtils encodeWithString:item.title]];
+    NSString *cacheDataHexString = [self.keyValueCache valueForKey:[SVCodeUtils encodeWithString:item.title]];
     if(cacheDataHexString){
-        NSData *cacheData = [CodeUtils dataDecodedWithString:cacheDataHexString];
+        NSData *cacheData = [SVCodeUtils dataDecodedWithString:cacheDataHexString];
         NewsItem *targetItem = [NSKeyedUnarchiver unarchiveObjectWithData:cacheData];
         return targetItem;
     }
@@ -89,7 +89,7 @@
     if(keyList.count != 0){
         newsItemList = [NSMutableArray array];
         for(NSString *key in keyList){
-            NSData *cacheData = [CodeUtils dataDecodedWithString:[self.keyValueCache valueForKey:key]];
+            NSData *cacheData = [SVCodeUtils dataDecodedWithString:[self.keyValueCache valueForKey:key]];
             NewsItem *newsItem = [NSKeyedUnarchiver unarchiveObjectWithData:cacheData];
             [newsItemList addObject:newsItem];
         }
@@ -100,7 +100,7 @@
 
 - (void)removeCacheWithNewsItem:(NewsItem *)item
 {
-    [self.keyValueCache removeValueForKey:[CodeUtils encodeWithString:item.title]];
+    [self.keyValueCache removeValueForKey:[SVCodeUtils encodeWithString:item.title]];
 }
 
 - (void)clearCaches
@@ -130,8 +130,8 @@
     
     // add to cache
     NSData *archivedData = [NSKeyedArchiver archivedDataWithRootObject:item];
-    NSString *encodedString = [CodeUtils encodeWithData:archivedData];
-    NSString *itemName = [CodeUtils encodeWithString:item.title];
+    NSString *encodedString = [SVCodeUtils encodeWithData:archivedData];
+    NSString *itemName = [SVCodeUtils encodeWithString:item.title];
     [self.keyValueCache setValue:encodedString forKey:itemName];
     
     if([self.delegate respondsToSelector:@selector(voaNewsContentProvider:didRecieveResult:)]){

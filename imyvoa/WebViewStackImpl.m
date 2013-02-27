@@ -7,14 +7,14 @@
 //
 
 #import "WebViewStackImpl.h"
-#import "DataBaseKeyValueManager.h"
+#import "SVDataBaseKeyValueManager.h"
 
 @interface WebViewStackImpl ()
 
 @property(nonatomic, retain)NSMutableArray *keyList;
 @property(nonatomic)NSInteger pointerIndex;
 
-@property(nonatomic, retain)id<KeyValueManager> keyValueCache;
+@property(nonatomic, retain)id<SVKeyValueManager> keyValueCache;
 
 @end
 
@@ -40,7 +40,7 @@
     self.keyList = [NSMutableArray array];
     self.pointerIndex = -1;
     
-    self.keyValueCache = [[[DataBaseKeyValueManager alloc] initWithDBName:@"web view stack" atFolder:[[SharedResource sharedInstance] cachePath]] autorelease];
+    self.keyValueCache = [[[SVDataBaseKeyValueManager alloc] initWithDBName:@"web view stack" atFolder:[[SharedResource sharedInstance] cachePath]] autorelease];
     [self.keyValueCache clear];
     
     return self;

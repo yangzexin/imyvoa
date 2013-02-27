@@ -8,13 +8,13 @@
 
 #import <Foundation/Foundation.h>
 #import "WebViewStack.h"
-#import "KeyValueManager.h"
+#import "SVKeyValueManager.h"
 
 @interface WebViewStackImpl : NSObject <WebViewStack> {
     NSMutableArray *_keyList;
     NSInteger _pointerIndex;
     
-    id<KeyValueManager> _keyValueCache;
+    id<SVKeyValueManager> _keyValueCache;
 }
 
 @end

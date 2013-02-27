@@ -8,13 +8,13 @@
 
 #import "BaseViewController.h"
 #import <QuartzCore/QuartzCore.h>
-#import "ProviderPool.h"
+#import "SVProviderPool.h"
 
 @interface BaseViewController ()
 
 @property(nonatomic, retain)UILabel *titleLabel;
 @property(nonatomic, copy)NSString *customTitle;
-@property(nonatomic, retain)ProviderPool *providerPool;
+@property(nonatomic, retain)SVProviderPool *providerPool;
 
 @end
 
@@ -40,7 +40,7 @@
     self.title = NSLocalizedString(@"back", nil);
     _customTitle = @"";
     
-    _providerPool = [[ProviderPool alloc] init];
+    _providerPool = [[SVProviderPool alloc] init];
     
     return self;
 }

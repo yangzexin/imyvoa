@@ -8,17 +8,17 @@
 
 #import "SoundDownloader.h"
 #import "SoundURLMaker.h"
-#import "HTTPDownloader.h"
-#import "KeyValueManager.h"
-#import "DataBaseKeyValueManager.h"
-#import "CodeUtils.h"
+#import "SVHTTPDownloader.h"
+#import "SVKeyValueManager.h"
+#import "SVDataBaseKeyValueManager.h"
+#import "SVCodeUtils.h"
 
 @interface SoundDownloader () <HTTPDownloaderDelegate>
 
 @property(nonatomic, copy)NSString *word;
 @property(nonatomic, retain)id<SoundURLMaker> soundURLMaker;
-@property(nonatomic, retain)HTTPDownloader *downloader;
-@property(nonatomic, retain)id<KeyValueManager> wordSoundCache;
+@property(nonatomic, retain)SVHTTPDownloader *downloader;
+@property(nonatomic, retain)id<SVKeyValueManager> wordSoundCache;
 
 @end
 
@@ -50,7 +50,7 @@
     self = [super init];
     
     self.soundURLMaker = [[[SoundURLMaker alloc] init] autorelease];
-    self.wordSoundCache = [[[DataBaseKeyValueManager alloc] initWithDBName:@"word_sound" atFolder:[[SharedResource sharedInstance] cachePath]] autorelease];
+    self.wordSoundCache = [[[SVDataBaseKeyValueManager alloc] initWithDBName:@"word_sound" atFolder:[[SharedResource sharedInstance] cachePath]] autorelease];
     
     return self;
 }
@@ -63,15 +63,15 @@
 - (void)downloadWithWord:(NSString *)word_
 {
     self.word = word_;
-    NSString *encodeWord = [CodeUtils encodeWithString:word];
+    NSString *encodeWord = [SVCodeUtils encodeWithString:word];
     NSString *cache = [self.wordSoundCache valueForKey:encodeWord];
     if(cache){
-        NSData *data = [CodeUtils dataDecodedWithString:cache];
+        NSData *data = [SVCodeUtils dataDecodedWithString:cache];
         [self notifySuccessWithData:data];
     }else{
         NSString *soundURL = [self.soundURLMaker makeURLStringForWord:word];
         [self.downloader cancel];
-        self.downloader = [[[HTTPDownloader alloc] initWithURLString:soundURL saveToPath:[self tmpSoundPath]] autorelease];
+        self.downloader = [[[SVHTTPDownloader alloc] initWithURLString:soundURL saveToPath:[self tmpSoundPath]] autorelease];
         self.downloader.delegate = self;
         [self.downloader startDownload];
     }
@@ -91,19 +91,19 @@
 }
 
 #pragma mark - HTTPDownloaderDelegate
-- (void)HTTPDownloader:(HTTPDownloader *)downloader didErrored:(NSError *)error
+- (void)HTTPDownloader:(SVHTTPDownloader *)downloader didErrored:(NSError *)error
 {
     if([self.delegate respondsToSelector:@selector(soundDownloader:didFailWithError:)]){
         [self.delegate soundDownloader:self didFailWithError:error];
     }
 }
 
-- (void)HTTPDownloaderDidFinished:(HTTPDownloader *)downloader_
+- (void)HTTPDownloaderDidFinished:(SVHTTPDownloader *)downloader_
 {
     NSData *soudData = [NSData dataWithContentsOfFile:[self tmpSoundPath]];
     if(soudData.length != 0){
-        NSString *cache = [CodeUtils encodeWithData:soudData];
-        [self.wordSoundCache setValue:cache forKey:[CodeUtils encodeWithString:self.word]];
+        NSString *cache = [SVCodeUtils encodeWithData:soudData];
+        [self.wordSoundCache setValue:cache forKey:[SVCodeUtils encodeWithString:self.word]];
         [self notifySuccessWithData:soudData];
     }else{
         [self HTTPDownloader:downloader_ didErrored:[NSError errorWithDomain:@"SoundDownloader"

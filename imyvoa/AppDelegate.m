@@ -18,26 +18,26 @@
 #import "NewsDetailViewController.h"
 #import "LuaVoaNewsContentProvider.h"
 #import "OnlineDictionary.h"
-#import "CommonUtils.h"
-#import "CodeUtils.h"
+#import "SVCommonUtils.h"
+#import "SVCodeUtils.h"
 #import "DictionaryViewController.h"
-#import "DataBaseKeyValueManager.h"
-#import "UITools.h"
+#import "SVDataBaseKeyValueManager.h"
+#import "SVUITools.h"
 #import "AllGlossaryViewController.h"
 #import "SettingViewController.h"
 #import "LINavigationController.h"
-#import "LuaApp.h"
-#import "LuaAppManager.h"
-#import "ApplicationScriptBundle.h"
-#import "LocalAppBundle.h"
-#import "TimeCostTracer.h"
+#import "SVApp.h"
+#import "SVAppManager.h"
+#import "SVApplicationScriptBundle.h"
+#import "SVLocalAppBundle.h"
+#import "SVTimeCostTracer.h"
 
 @interface AppDelegate () <SplashViewControllerDelegate, UITabBarControllerDelegate>
 
 @property(nonatomic, retain)UINavigationController *newsListNC;
 @property(nonatomic, retain)UINavigationController *localNewsListNC;
 @property(nonatomic, retain)UITabBarController *tabBarController;
-@property(nonatomic, retain)LuaApp *pluginApp;
+@property(nonatomic, retain)SVApp *pluginApp;
 
 @end
 
@@ -66,7 +66,7 @@
     NSString *filePath = [[NSBundle mainBundle] pathForResource:@"common" ofType:@"lua"];
     NSString *script = [NSString stringWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:nil];
     NSLog(@"%@", script);
-    NSLog(@"%@", [CodeUtils encodeWithString:script]);
+    NSLog(@"%@", [SVCodeUtils encodeWithString:script]);
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -212,7 +212,7 @@
     self.window.rootViewController = tabBarController;
     
     if([tabBarController.tabBar respondsToSelector:@selector(setBackgroundImage:)]){
-        tabBarController.tabBar.backgroundImage = [UITools createPureColorImageWithColor:[UIColor blackColor]
+        tabBarController.tabBar.backgroundImage = [SVUITools createPureColorImageWithColor:[UIColor blackColor]
                                                                                     size:CGSizeMake(320, 44.0f)];
     }
 }
@@ -224,8 +224,8 @@
         [viewController setLoading:YES];
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
             NSString *appFilePath = [[NSBundle mainBundle] pathForResource:@"WebBrowser.pkg" ofType:nil];
-            [TimeCostTracer markWithIdentifier:@"load_plugin_app"];
-            id<ScriptBundle> bundle = [[[LocalAppBundle alloc] initWithPackageFile:appFilePath] autorelease];
+            [SVTimeCostTracer markWithIdentifier:@"load_plugin_app"];
+            id<SVScriptBundle> bundle = [[[SVLocalAppBundle alloc] initWithPackageFile:appFilePath] autorelease];
             if(!bundle){
                 dispatch_async(dispatch_get_main_queue(), ^{
                     [viewController setCenterLabelText:@"加载失败"];
@@ -233,13 +233,13 @@
                 });
                 return;
             }
-            LuaApp *app = [[[LuaApp alloc] initWithScriptBundle:bundle relatedViewController:viewController] autorelease];
+            SVApp *app = [[[SVApp alloc] initWithScriptBundle:bundle relatedViewController:viewController] autorelease];
             dispatch_async(dispatch_get_main_queue(), ^{
-                [TimeCostTracer markWithIdentifier:@"run_app"];
-                [LuaAppManager runApp:app];
-                [TimeCostTracer timeCostWithIdentifier:@"run_app" print:YES];
+                [SVTimeCostTracer markWithIdentifier:@"run_app"];
+                [SVAppManager runApp:app];
+                [SVTimeCostTracer timeCostWithIdentifier:@"run_app" print:YES];
                 self.pluginApp = app;
-                [TimeCostTracer timeCostWithIdentifier:@"load_plugin_app" print:YES];
+                [SVTimeCostTracer timeCostWithIdentifier:@"load_plugin_app" print:YES];
                 [viewController setLoading:NO];
             });
         });

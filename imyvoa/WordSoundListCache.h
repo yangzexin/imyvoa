@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "ProviderPool.h"
+#import "SVProviderPool.h"
 
 typedef void(^SoundListCacheCompletion) (NSArray *wordList, NSArray *failureList);
 typedef void(^SoundListCacheStep) (NSString *word);

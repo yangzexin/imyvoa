@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @class SplashViewController;
-@class TaskQueue;
+@class SVTaskQueue;
 
 @protocol SplashViewControllerDelegate <NSObject>
 
@@ -20,7 +20,7 @@
 
 @interface SplashViewController : UIViewController {
     id<SplashViewControllerDelegate> _delegate;
-    TaskQueue *_taskQueue;
+    SVTaskQueue *_taskQueue;
 }
 
 @property(nonatomic, assign)id<SplashViewControllerDelegate> delegate;

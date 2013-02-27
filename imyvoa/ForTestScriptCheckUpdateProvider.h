@@ -8,9 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "ScriptCheckUpdateProvider.h"
-#import "TaskQueue.h"
+#import "SVTaskQueue.h"
 
-@interface ForTestScriptCheckUpdateProvider : NSObject <ScriptCheckUpdateProvider, TaskExecutable> {
+@interface ForTestScriptCheckUpdateProvider : NSObject <ScriptCheckUpdateProvider, SVTaskExecutable> {
     id<ScriptCheckUpdateProviderDelegate> _delegate;
 }
 

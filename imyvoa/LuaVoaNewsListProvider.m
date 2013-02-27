@@ -10,14 +10,14 @@
 #import "LuaHelper.h"
 #import "HTTPRequester.h"
 #import "NewsItem.h"
-#import "DataBaseKeyValueManager.h"
+#import "SVDataBaseKeyValueManager.h"
 #import "LocalLuaScriptProvider.h"
 
 @interface LuaVoaNewsListProvider () <HTTPRequesterDelegate, HTTPRequesterDataSource, LuaScriptProviderDelegate>
 
 @property(nonatomic, retain)HTTPRequester *httpRequester;
 
-@property(nonatomic, retain)id<KeyValueManager> cache;
+@property(nonatomic, retain)id<SVKeyValueManager> cache;
 
 @property(nonatomic, retain)id<LuaScriptProvider> luaScriptProvider;
 
@@ -49,7 +49,7 @@
 {
     self = [super init];
     
-    self.cache = [[[DataBaseKeyValueManager alloc] initWithDBName:@"news_list" atFolder:[[SharedResource sharedInstance] cachePath]] autorelease];
+    self.cache = [[[SVDataBaseKeyValueManager alloc] initWithDBName:@"news_list" atFolder:[[SharedResource sharedInstance] cachePath]] autorelease];
     self.luaScriptProvider = [[[LocalLuaScriptProvider alloc] init] autorelease];
     
     return self;

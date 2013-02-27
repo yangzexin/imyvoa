@@ -9,9 +9,9 @@
 #import "SettingViewController.h"
 #import "ContentProviderFactory.h"
 #import "SoundCache.h"
-#import "ZipHandler.h"
-#import "ZipHandlerFactory.h"
-#import "CommonUtils.h"
+#import "SVZipHandler.h"
+#import "SVZipHandlerFactory.h"
+#import "SVCommonUtils.h"
 
 #define kBackupCache            @"备份缓存"
 #define kClearNewContentCache   @"清除新闻内容缓存"
@@ -75,14 +75,14 @@
             });
         });
     }else if([field isEqualToString:kBackupCache]){
-        id<ZipHandler> zip = [ZipHandlerFactory defaultZipHandler];
+        id<SVZipHandler> zip = [SVZipHandlerFactory defaultZipHandler];
         [self setWaiting:YES];
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
             NSString *documentPath = [NSString stringWithFormat:@"%@/Documents", NSHomeDirectory()];
             NSDateFormatter *dateFormatter = [[NSDateFormatter new] autorelease];
             [dateFormatter setDateFormat:@"yyyy-MM-dd"];
             NSString *backupFileName = [NSString stringWithFormat:@"backup_%@.zip", [dateFormatter stringFromDate:[[NSDate new] autorelease]]];
-            backupFileName = [CommonUtils countableTempFileName:backupFileName atDirectory:documentPath];
+            backupFileName = [SVCommonUtils countableTempFileName:backupFileName atDirectory:documentPath];
             [zip zipWithDirectoryPath:[[SharedResource sharedInstance] cachePath]
                            toFilePath:[documentPath stringByAppendingPathComponent:backupFileName]];
             dispatch_async(dispatch_get_main_queue(), ^{

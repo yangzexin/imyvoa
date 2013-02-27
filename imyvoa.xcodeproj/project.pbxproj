@@ -321,12 +321,12 @@
 			name = AddInFrameworks;
 			sourceTree = "<group>";
 		};
-		3E88B28116BE8D860054B6AE /* Libraries */ = {
+		3E88B28116BE8D860054B6AE /* SubProjects */ = {
 			isa = PBXGroup;
 			children = (
 				3E8FB78E16DCEA9100313566 /* Savanna.xcodeproj */,
 			);
-			name = Libraries;
+			name = SubProjects;
 			sourceTree = "<group>";
 		};
 		3E8FB78F16DCEA9100313566 /* Products */ = {
@@ -557,7 +557,7 @@
 			children = (
 				CF7C5A90155B6D7700429671 /* imyvoa */,
 				3E88B0CB16BE8BDE0054B6AE /* Default-568h@2x.png */,
-				3E88B28116BE8D860054B6AE /* Libraries */,
+				3E88B28116BE8D860054B6AE /* SubProjects */,
 				3E755F0416129D02007DCD7A /* AddInFrameworks */,
 				CF7C5A89155B6D7700429671 /* Frameworks */,
 				CF7C5A87155B6D7700429671 /* Products */,

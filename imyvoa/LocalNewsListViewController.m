@@ -13,10 +13,10 @@
 #import "Utils.h"
 #import "NewsItemCell.h"
 #import "SoundCache.h"
-#import "UITools.h"
+#import "SVUITools.h"
 #import "CustomPickerView.h"
 #import "Player.h"
-#import "AlertDialog.h"
+#import "SVAlertDialog.h"
 #import "ContentProviderFactory.h"
 
 #define kSortByAddDate NSLocalizedString(@"sort_by_add_date", nil)
@@ -111,7 +111,7 @@ UIPickerViewDataSource
     self.tableView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     [self.view addSubview:self.tableView];
     
-    UIImage *sortImg = [UITools createPureColorImageWithColor:[UIColor darkGrayColor] 
+    UIImage *sortImg = [SVUITools createPureColorImageWithColor:[UIColor darkGrayColor]
                                                          size:CGSizeMake(60, 30)];
     UIButton *tmpBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     [tmpBtn setBackgroundImage:sortImg forState:UIControlStateNormal];
@@ -247,7 +247,7 @@ UIPickerViewDataSource
     if(editingStyle == UITableViewCellEditingStyleDelete){
         NewsItem *item = [self.sortedNewsItemList objectAtIndex:indexPath.row];
         if([[[SoundCache sharedInstance] filePathForSoundURLString:item.soundLink] isEqualToString:[[Player sharedInstance] currentSoundFilePath]]){
-            [AlertDialog showWithTitle:@"" message:@"正在播放该新闻，是否停止并删除?" completion:^void(NSInteger buttonIndex, NSString *buttonTitle){
+            [SVAlertDialog showWithTitle:@"" message:@"正在播放该新闻，是否停止并删除?" completion:^void(NSInteger buttonIndex, NSString *buttonTitle){
                 if(buttonIndex == 1){
                     [[Player sharedInstance] stop];
                     [self removeItem:item atIndexPath:indexPath];

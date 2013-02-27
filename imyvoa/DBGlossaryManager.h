@@ -7,11 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "KeyValueManager.h"
+#import "SVKeyValueManager.h"
 #import "GlossaryManager.h"
 
 @interface DBGlossaryManager : NSObject <GlossaryManager> {
-    id<KeyValueManager> _glossaryLibrary;
+    id<SVKeyValueManager> _glossaryLibrary;
 }
 
 - (id)initWithIdentifier:(NSString *)identifier;

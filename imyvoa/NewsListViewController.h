@@ -11,14 +11,14 @@
 #import "VoaNewsDetailProvider.h"
 #import "BaseViewController.h"
 
-@class HTTPDownloader;
+@class SVHTTPDownloader;
 @class PopOutTableView;
 
 @interface NewsListViewController : BaseViewController {
     id<VoaNewsListProvider> _voaNewsListProvider;
     id<VoaNewsDetailProvider> _voaNewsDetailProvider;
     
-    HTTPDownloader *_httpDownloader;
+    SVHTTPDownloader *_httpDownloader;
     
     NSArray *_newsItemList;
     

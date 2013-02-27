@@ -7,14 +7,14 @@
 //
 
 #import "DBGlossaryManager.h"
-#import "KeyValueManager.h"
-#import "DataBaseKeyValueManager.h"
-#import "CommonUtils.h"
-#import "CodeUtils.h"
+#import "SVKeyValueManager.h"
+#import "SVDataBaseKeyValueManager.h"
+#import "SVCommonUtils.h"
+#import "SVCodeUtils.h"
 
 @interface DBGlossaryManager ()
 
-@property(nonatomic, retain)id<KeyValueManager> glossaryLibrary;
+@property(nonatomic, retain)id<SVKeyValueManager> glossaryLibrary;
 
 @end
 
@@ -33,7 +33,7 @@
     self = [super init];
     
     NSString *fileName = [NSString stringWithFormat:@"glossary+%@", identifier];
-    self.glossaryLibrary = [[[DataBaseKeyValueManager alloc] initWithDBName:fileName atFolder:[[SharedResource sharedInstance] cachePath]] autorelease];
+    self.glossaryLibrary = [[[SVDataBaseKeyValueManager alloc] initWithDBName:fileName atFolder:[[SharedResource sharedInstance] cachePath]] autorelease];
     
     return self;
 }
