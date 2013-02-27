@@ -16,7 +16,7 @@
     
 }
 
-- (void)addProviderToPool:(id<ProviderPoolable>)provider;
+- (void)addProviderToPool:(id<SVProviderPoolable>)provider;
 - (UIView *)customTitleView;
 
 @end

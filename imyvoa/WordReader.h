@@ -12,7 +12,7 @@
 
 typedef void(^WordReaderCompletion) (void);
 
-@protocol WordReader <ProviderPoolable>
+@protocol WordReader <SVProviderPoolable>
 
 - (void)readWord:(NSString *)word wordReaderControl:(id<WordReaderControl>)wordReaderControl completion:(WordReaderCompletion)completion;
 - (void)stop;

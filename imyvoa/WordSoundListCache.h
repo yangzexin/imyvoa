@@ -12,7 +12,7 @@
 typedef void(^SoundListCacheCompletion) (NSArray *wordList, NSArray *failureList);
 typedef void(^SoundListCacheStep) (NSString *word);
 
-@protocol WordSoundListCache <ProviderPoolable>
+@protocol WordSoundListCache <SVProviderPoolable>
 
 - (void)cacheWordList:(NSArray *)wordList step:(SoundListCacheStep)step completion:(SoundListCacheCompletion)completion;
 

@@ -9,6 +9,6 @@
 #import <Foundation/Foundation.h>
 #import "SVProviderPool.h"
 
-@protocol ContentProvider <ProviderPoolable>
+@protocol ContentProvider <SVProviderPoolable>
 
 @end

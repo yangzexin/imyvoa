@@ -90,7 +90,7 @@
     self.customTitle = title;
 }
 
-- (void)addProviderToPool:(id<ProviderPoolable>)provider
+- (void)addProviderToPool:(id<SVProviderPoolable>)provider
 {
     [_providerPool tryToReleaseProvider];
     [_providerPool addProvider:provider];
