@@ -151,7 +151,8 @@ GridViewWrapperDelegate
     }
     self.gridViewWrapper = [[[SVGridViewWrapper alloc] initWithNumberOfColumns:numOfColumns] autorelease];
     self.gridViewWrapper.delegate = self;
-    self.tableView.dataSource = self.gridViewWrapper;
+    self.tableView.dataSource = UIInterfaceOrientationIsLandscape([UIApplication sharedApplication].statusBarOrientation) ?
+        self.gridViewWrapperForLandscape : self.gridViewWrapper;
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.tableView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     [self.view addSubview:self.tableView];
@@ -316,7 +317,8 @@ GridViewWrapperDelegate
 {
     BOOL reloadData = UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad;
     if(reloadData){
-        self.tableView.dataSource = UIDeviceOrientationIsLandscape([UIDevice currentDevice].orientation) ? self.gridViewWrapperForLandscape : self.gridViewWrapper;
+        self.tableView.dataSource = UIInterfaceOrientationIsLandscape([UIApplication sharedApplication].statusBarOrientation) ?
+            self.gridViewWrapperForLandscape : self.gridViewWrapper;
         [self.tableView reloadData];
     }
     return UIUserInterfaceIdiomPad == UI_USER_INTERFACE_IDIOM();
@@ -435,6 +437,7 @@ GridViewWrapperDelegate
         if(cacheItem){
             item.soundLink = cacheItem.soundLink;
             item.soundExists = [[SoundCache sharedInstance] filePathForSoundURLString:item.soundLink] != nil;
+            item.content = cacheItem.content;
         }
     }
     [self.tableView reloadData];
@@ -518,7 +521,7 @@ GridViewWrapperDelegate
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if(self.gridViewWrapper){
-        if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad && UIDeviceOrientationIsLandscape([UIDevice currentDevice].orientation)){
+        if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad && UIInterfaceOrientationIsLandscape([UIApplication sharedApplication].statusBarOrientation)){
             return 215;
         }
         return self.view.frame.size.width / self.gridViewWrapper.numberOfColumns + 10;
@@ -716,12 +719,25 @@ GridViewWrapperDelegate
     
     NewsItem *item = [self.newsItemList objectAtIndex:index];
     titleLabel.text = item.title;
-    NewsItem *cachedItem = [self.voaNewsDetailProvider newsItemFromLocalCache:item];
-    contentLabel.text = cachedItem.content.length == 0 ? @"" : [Utils stripHTMLTags:cachedItem.content];
+    contentLabel.text = item.content.length == 0 ? @"" : [Utils stripHTMLTags:item.content];
     if(contentLabel.text.length != 0){
         contentLabel.text = [[contentLabel.text substringFromIndex:item.title.length]
                              stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+        [self resizeLabel:titleLabel y:titleLabel.frame.origin.y];
+        [self resizeLabel:contentLabel y:titleLabel.frame.origin.y + titleLabel.frame.size.height + 5];
+        CGRect tmpRect = contentLabel.frame;
+        tmpRect.size.height = containerView.frame.size.height - 5 - contentLabel.frame.origin.y;
+        contentLabel.frame = tmpRect;
     }
+}
+
+- (void)resizeLabel:(UILabel *)label y:(CGFloat)y
+{
+    CGSize textSize = [label.text sizeWithFont:label.font constrainedToSize:label.frame.size];
+    CGRect tmpRect = label.frame;
+    tmpRect.size.height = textSize.height;
+    tmpRect.origin.y = y;
+    label.frame = tmpRect;
 }
 
 - (void)gridViewWrapper:(SVGridViewWrapper *)gridViewWrapper viewItemTappedAtIndex:(NSInteger)index
