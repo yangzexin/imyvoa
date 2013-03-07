@@ -55,7 +55,7 @@
 
 - (NSString *)name
 {
-    return [SVAppManager runApp:[SharedResource sharedInstance].newsAnalyserApp params:[NSArray arrayWithObject:@"dictionary_name"]];
+    return [SVAppManager runApp:[SharedResource sharedInstance].scriptApp params:[NSArray arrayWithObject:@"dictionary_name"]];
 }
 
 - (void)query:(NSString *)str delegate:(id<DictionaryDelegate>)delegate
@@ -70,7 +70,7 @@
 //        NSLog(@"from cache:%@", dictWord.word);
         [self notifySucceed:dictWord.definition];
     }else{
-        NSString *urlString = [SVAppManager runApp:[SharedResource sharedInstance].newsAnalyserApp
+        NSString *urlString = [SVAppManager runApp:[SharedResource sharedInstance].scriptApp
                                             params:[NSArray arrayWithObjects:@"dictionary_url", str, nil]];
         self.httpRequester = [HTTPRequester newHTTPRequester];
         self.httpRequester.urlString = urlString;
@@ -113,7 +113,7 @@
 
 - (NSString *)analyzeContent:(NSString *)content
 {
-    NSString *result = [SVAppManager runApp:[SharedResource sharedInstance].newsAnalyserApp
+    NSString *result = [SVAppManager runApp:[SharedResource sharedInstance].scriptApp
                                      params:[NSArray arrayWithObjects:@"analyse_dictionary_content", content, nil]];
     return result;
 }

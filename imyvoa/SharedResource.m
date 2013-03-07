@@ -31,7 +31,7 @@ NSString *kNewsItemDidAddToCacheNotification = @"kNewsItemDidAddToCacheNotificat
 - (void)dealloc
 {
     [_newsItem release];
-    self.newsAnalyserApp = nil;
+    self.scriptApp = nil;
     [super dealloc];
 }
 

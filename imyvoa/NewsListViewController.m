@@ -222,12 +222,12 @@ GridViewWrapperDelegate
     }
     
     if(self.newsItemList.count == 0){
-        if([SharedResource sharedInstance].newsAnalyserApp == nil){
+        if([SharedResource sharedInstance].scriptApp == nil){
             [self setLoading:YES];
             dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
                 id<SVScriptBundle> scriptBundle = [[[SVApplicationScriptBundle alloc] initWithMainScriptName:@"main"] autorelease];
                 SVApp *app = [[[SVApp alloc] initWithScriptBundle:scriptBundle] autorelease];
-                [SharedResource sharedInstance].newsAnalyserApp = app;
+                [SharedResource sharedInstance].scriptApp = app;
                 dispatch_async(dispatch_get_main_queue(), ^{
                     [self requestNewsList];
                 });

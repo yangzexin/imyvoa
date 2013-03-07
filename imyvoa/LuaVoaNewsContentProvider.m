@@ -118,14 +118,14 @@
 {
     NewsItem *item = [self.newsItem copy];
     
-    item.content = [SVAppManager runApp:[SharedResource sharedInstance].newsAnalyserApp
+    item.content = [SVAppManager runApp:[SharedResource sharedInstance].scriptApp
                                  params:[NSArray arrayWithObjects:@"analyse_news_content", result, nil]];
     const char *css = {"font-size:18px;font-weight:bold;padding-bottom:20px;"};
     NSString *title = [NSString stringWithFormat:@"<div style=\"%@\">%@</div>", 
                        [NSString stringWithUTF8String:css], item.title];
     item.content = [item.content stringByReplacingOccurrencesOfString:@"$title" 
                                                            withString:title];
-    item.soundLink = [SVAppManager runApp:[SharedResource sharedInstance].newsAnalyserApp
+    item.soundLink = [SVAppManager runApp:[SharedResource sharedInstance].scriptApp
                                    params:[NSArray arrayWithObjects:@"analyse_news_sound_url", result, nil]];
     
     // add to cache

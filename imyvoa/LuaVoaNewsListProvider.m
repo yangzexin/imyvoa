@@ -87,7 +87,7 @@
 #pragma mark - HTTPRequesterDataSource
 - (NSString *)urlStringForHTTPRequester:(HTTPRequester *)requester
 {
-    NSString *urlString = [SVAppManager runApp:[SharedResource sharedInstance].newsAnalyserApp
+    NSString *urlString = [SVAppManager runApp:[SharedResource sharedInstance].scriptApp
                                         params:[NSArray arrayWithObjects:@"news_list_url", nil]];
     
     return urlString;
@@ -100,15 +100,15 @@
         [self saveCache:result];
     }
     
-    NSString *formattedResult = [SVAppManager runApp:[SharedResource sharedInstance].newsAnalyserApp
+    NSString *formattedResult = [SVAppManager runApp:[SharedResource sharedInstance].scriptApp
                                               params:[NSArray arrayWithObjects:@"analyse_news_list", result, nil]];
     NSMutableArray *newsList = nil;
     if(formattedResult){
         newsList = [NSMutableArray array];
         NSArray *itemList = [formattedResult componentsSeparatedByString:
-                             [SVAppManager runApp:[SharedResource sharedInstance].newsAnalyserApp
+                             [SVAppManager runApp:[SharedResource sharedInstance].scriptApp
                                            params:[NSArray arrayWithObject:@"news_item_separator"]]];
-        NSString *linkSeparator = [SVAppManager runApp:[SharedResource sharedInstance].newsAnalyserApp
+        NSString *linkSeparator = [SVAppManager runApp:[SharedResource sharedInstance].scriptApp
                                                 params:[NSArray arrayWithObject:@"news_item_link_separator"]];
         for(NSString *item in itemList){
             NSArray *tmp = [item componentsSeparatedByString:linkSeparator];
