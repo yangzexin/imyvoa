@@ -347,11 +347,13 @@ GridViewWrapperDelegate
 
 - (BOOL)shouldAutorotate
 {
-    BOOL reloadData = UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad;
-    if(reloadData){
-        self.tableView.dataSource = UIInterfaceOrientationIsLandscape([UIApplication sharedApplication].statusBarOrientation) ?
+    if(self.tableView.dataSource == self.gridViewWrapper || self.tableView.dataSource == self.gridViewWrapperForLandscape){
+        BOOL reloadData = UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad;
+        if(reloadData){
+            self.tableView.dataSource = UIInterfaceOrientationIsLandscape([UIApplication sharedApplication].statusBarOrientation) ?
             self.gridViewWrapperForLandscape : self.gridViewWrapper;
-        [self.tableView reloadData];
+            [self.tableView reloadData];
+        }
     }
     return UIUserInterfaceIdiomPad == UI_USER_INTERFACE_IDIOM();
 }
