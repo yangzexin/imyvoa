@@ -25,6 +25,11 @@
 #import "UIViewBlocked.h"
 #import "ContentProviderFactory.h"
 #import "SVGridViewWrapper.h"
+#import "SVScriptBundle.h"
+#import "SVOnlineAppBundle.h"
+#import "SVApplicationScriptBundle.h"
+#import "SVApp.h"
+#import "SVAppManager.h"
 
 #define BTN_BG_COLOR [UIColor clearColor]
 
@@ -217,7 +222,19 @@ GridViewWrapperDelegate
     }
     
     if(self.newsItemList.count == 0){
-        [self requestNewsList];
+        if([SharedResource sharedInstance].newsAnalyserApp == nil){
+            [self setLoading:YES];
+            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+                id<SVScriptBundle> scriptBundle = [[[SVApplicationScriptBundle alloc] initWithMainScriptName:@"main"] autorelease];
+                SVApp *app = [[[SVApp alloc] initWithScriptBundle:scriptBundle] autorelease];
+                [SharedResource sharedInstance].newsAnalyserApp = app;
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [self requestNewsList];
+                });
+            });
+        }else{
+            [self requestNewsList];
+        }
     }
     [self updateRightBarButtonItemStatus];
     

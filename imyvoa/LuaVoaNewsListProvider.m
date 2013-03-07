@@ -7,11 +7,11 @@
 //
 
 #import "LuaVoaNewsListProvider.h"
-#import "LuaHelper.h"
 #import "HTTPRequester.h"
 #import "NewsItem.h"
 #import "SVDataBaseKeyValueManager.h"
 #import "LocalLuaScriptProvider.h"
+#import "SVAppManager.h"
 
 @interface LuaVoaNewsListProvider () <HTTPRequesterDelegate, HTTPRequesterDataSource, LuaScriptProviderDelegate>
 
@@ -66,14 +66,7 @@
 - (void)requestNewsListWithDelegate:(id<VoaNewsListProviderDelegate>)delegate
 {
     self.delegate = delegate;
-    
-    if([LuaHelper sharedInstance].script.length == 0){
-        // 脚本未加载
-        [self.luaScriptProvider getScript:self];
-    }else{
-        // 脚本已经加载，请求列表
-        [self requestNewsList];
-    }
+    [self requestNewsList];
 }
 
 - (void)providerWillRemoveFromPool
@@ -91,26 +84,11 @@
     return [self.cache valueForKey:@"news_list"];
 }
 
-#pragma mark - LuaScriptProviderDelegate
-- (void)luaScriptProvider:(id)provider didRecieveResult:(NSString *)result
-{
-    NSLog(@"lua script hava loaded succeed");
-    [LuaHelper sharedInstance].script = result;
-    // 脚本加载完毕，请求新闻
-    [self requestNewsList];
-}
-
-- (void)luaScriptProvider:(id)provider didFailedWithError:(NSError *)error
-{
-    if([self.delegate respondsToSelector:@selector(voaNewsListProvider:didFailedWithError:)]){
-        [self.delegate voaNewsListProvider:self didFailedWithError:error];
-    }
-}
-
 #pragma mark - HTTPRequesterDataSource
 - (NSString *)urlStringForHTTPRequester:(HTTPRequester *)requester
 {
-    NSString *urlString = [[LuaHelper sharedInstance] invokeProperty:@"specialVOAURLString"];
+    NSString *urlString = [SVAppManager runApp:[SharedResource sharedInstance].newsAnalyserApp
+                                        params:[NSArray arrayWithObjects:@"news_list_url", nil]];
     
     return urlString;
 }
@@ -122,16 +100,18 @@
         [self saveCache:result];
     }
     
-    NSString *formattedResult = [[LuaHelper sharedInstance] invokeMethodWithName:@"analyseNewsList" 
-                                                                      paramValue:result];
+    NSString *formattedResult = [SVAppManager runApp:[SharedResource sharedInstance].newsAnalyserApp
+                                              params:[NSArray arrayWithObjects:@"analyse_news_list", result, nil]];
     NSMutableArray *newsList = nil;
     if(formattedResult){
         newsList = [NSMutableArray array];
         NSArray *itemList = [formattedResult componentsSeparatedByString:
-                             [[LuaHelper sharedInstance] invokeProperty:@"itemSeparator"]];
+                             [SVAppManager runApp:[SharedResource sharedInstance].newsAnalyserApp
+                                           params:[NSArray arrayWithObject:@"news_item_separator"]]];
+        NSString *linkSeparator = [SVAppManager runApp:[SharedResource sharedInstance].newsAnalyserApp
+                                                params:[NSArray arrayWithObject:@"news_item_link_separator"]];
         for(NSString *item in itemList){
-            NSArray *tmp = [item componentsSeparatedByString:
-                            [[LuaHelper sharedInstance] invokeProperty:@"linkSeparator"]];
+            NSArray *tmp = [item componentsSeparatedByString:linkSeparator];
             if(tmp.count == 2){
                 NewsItem *newsItem = [[NewsItem alloc] init];
                 newsItem.title = [tmp objectAtIndex:1];

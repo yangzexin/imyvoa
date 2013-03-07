@@ -137,14 +137,3 @@ function analyseSoundURL(html)
     return "";
 end
 
-function dictionaryName()
-    return "8efad85e588b";
-end
-
-function dictionaryURLForWord(word)
-    local haiciURL = "http://3g.dict.cn/s.php?q=";
-    word = string.gsub(word, " ", "+");
-    
-    return haiciURL..word;
-end
-

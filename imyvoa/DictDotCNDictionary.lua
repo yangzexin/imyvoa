@@ -1,11 +1,11 @@
-
 require "Utils"
+require "common.lua"
 
 function main(args)
-    return analyseHTML(args);
+    return analyseDictionaryHTML(args);
 end
 
-function analyseHTML(HTML)
+function analyseDictionaryHTML(HTML)
     --po(HTML);
     local beginIndex = ustring::find(HTML, "<div class=\"content\">", 0);
     local endIndex = ustring::find(HTML, "function checkForm(obj)", beginIndex);
@@ -16,33 +16,13 @@ function analyseHTML(HTML)
     return content;
 end
 
-function removeTag(html, tagName, removeContent)
-	local tagBegin = "<"..tagName;
-	local tagEnd = "</"..tagName..">";
+function dictionaryName()
+    return "在线词典";
+end
+
+function dictionaryURLForWord(word)
+    local haiciURL = "http://3g.dict.cn/s.php?q=";
+    word = string.gsub(word, " ", "+");
     
-	local resultStr = html;
-	local prefix = "";
-	local suffix = "";
-	local beginIndex = 0;
-	local endIndex = 0;
-	local beginIndex2 = 0;
-	local endIndex2 = 0;
-	
-	while true do
-		beginIndex, endIndex = string.find(resultStr, tagBegin);
-		if beginIndex == nil then
-			break;
-		end
-		if removeContent then
-			beginIndex2, endIndex2 = string.find(resultStr, tagEnd, endIndex);
-            else
-			beginIndex2, endIndex2 = string.find(resultStr, ">", endIndex);
-		end
-		
-		prefix = string.sub(resultStr, 0, beginIndex - 1);
-		suffix = string.sub(resultStr, endIndex2 + 1, string.len(resultStr));
-		resultStr = prefix..suffix;
-	end
-	resultStr = string.gsub(resultStr, tagEnd, "");
-	return resultStr;
+    return haiciURL..word;
 end

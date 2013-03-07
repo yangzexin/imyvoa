@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3E08CB4D16DB3EB10099A91A /* WebBrowser.pkg in Resources */ = {isa = PBXBuildFile; fileRef = 3E08CB4C16DB3EB10099A91A /* WebBrowser.pkg */; };
 		3E08CB4F16DB40780099A91A /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E08CB4E16DB40780099A91A /* ImageIO.framework */; };
+		3E0ADFC316E8556700685764 /* main.lua in Resources */ = {isa = PBXBuildFile; fileRef = 3E0ADFC216E8556700685764 /* main.lua */; };
 		3E4B51B1161068190078603F /* SoundURLMaker.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E4B51B0161068190078603F /* SoundURLMaker.m */; };
 		3E4B51B5161068A90078603F /* SoundDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E4B51B4161068A90078603F /* SoundDownloader.m */; };
 		3E542A8D1611DF680072BBF0 /* PlaySoundView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E542A8C1611DF680072BBF0 /* PlaySoundView.m */; };
@@ -68,7 +68,6 @@
 		67F8820B155E6590006609F9 /* ForTestScriptCheckUpdateProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 67F8820A155E6590006609F9 /* ForTestScriptCheckUpdateProvider.m */; };
 		67F8820E155E663B006609F9 /* FromGoogleScriptUpdateProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 67F8820D155E663B006609F9 /* FromGoogleScriptUpdateProvider.m */; };
 		CF05DD37155B92B800FE8F52 /* LocalLuaScriptProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = CF05DD36155B92B800FE8F52 /* LocalLuaScriptProvider.m */; };
-		CF05DD3D155B96F100FE8F52 /* LuaHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = CF05DD3C155B96F100FE8F52 /* LuaHelper.m */; };
 		CF1B0C6E1589D7EA00553254 /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = CF1B0C6D1589D7EA00553254 /* Utils.m */; };
 		CF1B0C711589DE4D00553254 /* CustomPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = CF1B0C701589DE4D00553254 /* CustomPickerView.m */; };
 		CF32395315B5402E0009D646 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF32395215B5402E0009D646 /* AudioToolbox.framework */; };
@@ -91,7 +90,6 @@
 		CFE2F041155B7ADB00D66255 /* HTTPRequester.m in Sources */ = {isa = PBXBuildFile; fileRef = CFE2F03E155B7ADB00D66255 /* HTTPRequester.m */; };
 		CFE2F049155B89FC00D66255 /* NewsItem.m in Sources */ = {isa = PBXBuildFile; fileRef = CFE2F048155B89FC00D66255 /* NewsItem.m */; };
 		CFE2F04C155B8AE300D66255 /* LuaVoaNewsListProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = CFE2F04B155B8AE300D66255 /* LuaVoaNewsListProvider.m */; };
-		CFE2F051155B8C9000D66255 /* LuaInvoker.m in Sources */ = {isa = PBXBuildFile; fileRef = CFE2F050155B8C9000D66255 /* LuaInvoker.m */; };
 		CFE6E171157CCE67007970CC /* SoundCache.m in Sources */ = {isa = PBXBuildFile; fileRef = CFE6E170157CCE67007970CC /* SoundCache.m */; };
 		CFEE74F1155BAE8A00EDDACB /* LuaVoaNewsContentProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = CFEE74F0155BAE8A00EDDACB /* LuaVoaNewsContentProvider.m */; };
 		CFEE74F4155BB59F00EDDACB /* SharedResource.m in Sources */ = {isa = PBXBuildFile; fileRef = CFEE74F3155BB59F00EDDACB /* SharedResource.m */; };
@@ -108,8 +106,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		3E08CB4C16DB3EB10099A91A /* WebBrowser.pkg */ = {isa = PBXFileReference; lastKnownFileType = file; path = WebBrowser.pkg; sourceTree = "<group>"; };
 		3E08CB4E16DB40780099A91A /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
+		3E0ADFC216E8556700685764 /* main.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = main.lua; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.lua; };
 		3E4B51AF161068190078603F /* SoundURLMaker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoundURLMaker.h; sourceTree = "<group>"; };
 		3E4B51B0161068190078603F /* SoundURLMaker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SoundURLMaker.m; sourceTree = "<group>"; };
 		3E4B51B3161068A90078603F /* SoundDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoundDownloader.h; sourceTree = "<group>"; };
@@ -208,8 +206,6 @@
 		67F8820D155E663B006609F9 /* FromGoogleScriptUpdateProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FromGoogleScriptUpdateProvider.m; sourceTree = "<group>"; };
 		CF05DD35155B92B800FE8F52 /* LocalLuaScriptProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocalLuaScriptProvider.h; sourceTree = "<group>"; };
 		CF05DD36155B92B800FE8F52 /* LocalLuaScriptProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocalLuaScriptProvider.m; sourceTree = "<group>"; };
-		CF05DD3B155B96F100FE8F52 /* LuaHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LuaHelper.h; sourceTree = "<group>"; };
-		CF05DD3C155B96F100FE8F52 /* LuaHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LuaHelper.m; sourceTree = "<group>"; };
 		CF1B0C6C1589D7EA00553254 /* Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
 		CF1B0C6D1589D7EA00553254 /* Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utils.m; sourceTree = "<group>"; };
 		CF1B0C6F1589DE4D00553254 /* CustomPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomPickerView.h; sourceTree = "<group>"; };
@@ -250,8 +246,6 @@
 		CFE2F04A155B8AE300D66255 /* LuaVoaNewsListProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LuaVoaNewsListProvider.h; sourceTree = "<group>"; };
 		CFE2F04B155B8AE300D66255 /* LuaVoaNewsListProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LuaVoaNewsListProvider.m; sourceTree = "<group>"; };
 		CFE2F04E155B8BEA00D66255 /* ContentProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContentProvider.h; sourceTree = "<group>"; };
-		CFE2F04F155B8C9000D66255 /* LuaInvoker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LuaInvoker.h; sourceTree = "<group>"; };
-		CFE2F050155B8C9000D66255 /* LuaInvoker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LuaInvoker.m; sourceTree = "<group>"; };
 		CFE2F054155B918900D66255 /* LuaScriptProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LuaScriptProvider.h; sourceTree = "<group>"; };
 		CFE6E16F157CCE67007970CC /* SoundCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoundCache.h; sourceTree = "<group>"; };
 		CFE6E170157CCE67007970CC /* SoundCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SoundCache.m; sourceTree = "<group>"; };
@@ -362,7 +356,6 @@
 		3EE9432516BF90E700DD4C1C /* PluginScripts */ = {
 			isa = PBXGroup;
 			children = (
-				3E08CB4C16DB3EB10099A91A /* WebBrowser.pkg */,
 			);
 			name = PluginScripts;
 			sourceTree = "<group>";
@@ -522,10 +515,6 @@
 			children = (
 				CFE2F03D155B7ADB00D66255 /* HTTPRequester.h */,
 				CFE2F03E155B7ADB00D66255 /* HTTPRequester.m */,
-				CFE2F04F155B8C9000D66255 /* LuaInvoker.h */,
-				CFE2F050155B8C9000D66255 /* LuaInvoker.m */,
-				CF05DD3B155B96F100FE8F52 /* LuaHelper.h */,
-				CF05DD3C155B96F100FE8F52 /* LuaHelper.m */,
 				CF1B0C6C1589D7EA00553254 /* Utils.h */,
 				CF1B0C6D1589D7EA00553254 /* Utils.m */,
 				3E542AB01615E1ED0072BBF0 /* ApplicationKeeper.h */,
@@ -665,6 +654,7 @@
 			children = (
 				CFE2F039155B7A5F00D66255 /* common.lua */,
 				3E69E30B16C53A3E00DC3BFD /* DictDotCNDictionary.lua */,
+				3E0ADFC216E8556700685764 /* main.lua */,
 			);
 			name = LuaScript;
 			sourceTree = "<group>";
@@ -820,8 +810,8 @@
 				3E542AAE1615DE610072BBF0 /* blank.mp3 in Resources */,
 				3E88B0CC16BE8BDE0054B6AE /* Default-568h@2x.png in Resources */,
 				3E69E30C16C53A3E00DC3BFD /* DictDotCNDictionary.lua in Resources */,
-				3E08CB4D16DB3EB10099A91A /* WebBrowser.pkg in Resources */,
 				3E8FB79516DCEAB500313566 /* BaseScripts.bundle in Resources */,
+				3E0ADFC316E8556700685764 /* main.lua in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -841,9 +831,7 @@
 				CFE2F041155B7ADB00D66255 /* HTTPRequester.m in Sources */,
 				CFE2F049155B89FC00D66255 /* NewsItem.m in Sources */,
 				CFE2F04C155B8AE300D66255 /* LuaVoaNewsListProvider.m in Sources */,
-				CFE2F051155B8C9000D66255 /* LuaInvoker.m in Sources */,
 				CF05DD37155B92B800FE8F52 /* LocalLuaScriptProvider.m in Sources */,
-				CF05DD3D155B96F100FE8F52 /* LuaHelper.m in Sources */,
 				CFEE74F1155BAE8A00EDDACB /* LuaVoaNewsContentProvider.m in Sources */,
 				CFEE74F4155BB59F00EDDACB /* SharedResource.m in Sources */,
 				67F8820B155E6590006609F9 /* ForTestScriptCheckUpdateProvider.m in Sources */,

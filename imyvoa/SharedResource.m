@@ -7,7 +7,6 @@
 //
 
 #import "SharedResource.h"
-#import "LuaHelper.h"
 #import "SVCommonUtils.h"
 #import "OnlineDictionary.h"
 
@@ -32,6 +31,7 @@ NSString *kNewsItemDidAddToCacheNotification = @"kNewsItemDidAddToCacheNotificat
 - (void)dealloc
 {
     [_newsItem release];
+    self.newsAnalyserApp = nil;
     [super dealloc];
 }
 
@@ -44,7 +44,7 @@ NSString *kNewsItemDidAddToCacheNotification = @"kNewsItemDidAddToCacheNotificat
 
 - (NSString *)luaScriptVersionCode
 {
-    return [[LuaHelper sharedInstance] invokeProperty:@"versionCode"];
+    return @"0.0.0";
 }
 
 - (NSString *)soundTempFilePath

@@ -8,7 +8,6 @@
 
 #import "OnlineDictionary.h"
 #import "SVCodeUtils.h"
-#import "LuaHelper.h"
 #import "DBDictionaryCache.h"
 #import "DictonaryWord.h"
 #import "SVApp.h"
@@ -56,7 +55,7 @@
 
 - (NSString *)name
 {
-    return [SVCodeUtils stringDecodedWithString:[[LuaHelper sharedInstance] invokeProperty:@"dictionaryName"]];
+    return [SVAppManager runApp:[SharedResource sharedInstance].newsAnalyserApp params:[NSArray arrayWithObject:@"dictionary_name"]];
 }
 
 - (void)query:(NSString *)str delegate:(id<DictionaryDelegate>)delegate
@@ -71,8 +70,8 @@
 //        NSLog(@"from cache:%@", dictWord.word);
         [self notifySucceed:dictWord.definition];
     }else{
-        NSString *urlString = [[LuaHelper sharedInstance] invokeMethodWithName:@"dictionaryURLForWord" 
-                                                                    paramValue:str];
+        NSString *urlString = [SVAppManager runApp:[SharedResource sharedInstance].newsAnalyserApp
+                                            params:[NSArray arrayWithObjects:@"dictionary_url", str, nil]];
         self.httpRequester = [HTTPRequester newHTTPRequester];
         self.httpRequester.urlString = urlString;
         self.httpRequester.delegate = self;
@@ -114,9 +113,8 @@
 
 - (NSString *)analyzeContent:(NSString *)content
 {
-    id<SVScriptBundle> bundle = [[[SVApplicationScriptBundle alloc] initWithMainScriptName:@"DictDotCNDictionary"] autorelease];
-    SVApp *app = [[[SVApp alloc] initWithScriptBundle:bundle baseWindow:nil] autorelease];
-    NSString *result = [SVAppManager runApp:app params:content];
+    NSString *result = [SVAppManager runApp:[SharedResource sharedInstance].newsAnalyserApp
+                                     params:[NSArray arrayWithObjects:@"analyse_dictionary_content", content, nil]];
     return result;
 }
 

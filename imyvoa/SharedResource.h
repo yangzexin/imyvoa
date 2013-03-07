@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 #import "Dictionary.h"
 
+@class SVApp;
+
 OBJC_EXPORT NSString *kNewsItemDidRemoveFromCacheNotification;
 OBJC_EXPORT NSString *kNewsItemDidAddToCacheNotification;
 
@@ -19,6 +21,7 @@ OBJC_EXPORT NSString *kNewsItemDidAddToCacheNotification;
 }
 
 @property(nonatomic, retain)NewsItem *currentPlayingNewsItem; // 当前正在播放的新闻
+@property(nonatomic, retain)SVApp *newsAnalyserApp;
 
 + (SharedResource *)sharedInstance;
 
