@@ -13,8 +13,10 @@
 #import "SVZipHandlerFactory.h"
 #import "SVCommonUtils.h"
 #import "SVAlertDialog.h"
+#import "SelectRestoreBackupController.h"
 
 #define kBackupCache            @"备份缓存"
+#define kRestoreFromBackup      @"从备份中恢复"
 #define kClearNewContentCache   @"清除新闻内容缓存"
 #define kAboutUs                @"关于我们"
 
@@ -36,7 +38,7 @@
 {
     self = [super init];
     self.title = NSLocalizedString(@"Settings", nil);
-    self.sectionDictionary = @{@"s1" : @[kBackupCache, kClearNewContentCache, kAboutUs]};
+    self.sectionDictionary = @{@"s1" : @[kBackupCache, kRestoreFromBackup, kClearNewContentCache, kAboutUs]};
     
     return self;
 }
@@ -95,6 +97,16 @@
                 [self alert:[NSString stringWithFormat:@"备份成功, 文件名：%@，可通过iTunes将文件提取出", backupFileName]];
             });
         });
+    }else if([field isEqualToString:kRestoreFromBackup]){
+        SelectRestoreBackupController *selectRestoreVC = [[SelectRestoreBackupController new] autorelease];
+        selectRestoreVC.title = @"恢复缓存";;
+        [selectRestoreVC setRestoreHandler:^(NSString *zipFilePath) {
+            [selectRestoreVC setWaiting:YES];
+            NSLog(@"%@", zipFilePath);
+        }];
+        UINavigationController *tmpNC = [[[UINavigationController alloc] initWithRootViewController:selectRestoreVC] autorelease];
+        tmpNC.modalPresentationStyle = UIModalPresentationFormSheet;
+        [self presentModalViewController:tmpNC animated:YES];
     }else if([field isEqualToString:kAboutUs]){
         NSString *about = [NSString stringWithFormat:@"版本:%@，电子邮箱：yang3800650071@163.com", [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"]];
         [SVAlertDialog showWithTitle:kAboutUs message:about completion:nil cancelButtonTitle:@"确定" otherButtonTitles:nil];
@@ -119,7 +131,10 @@
     NSString *field = [array objectAtIndex:indexPath.row];
     UITableViewCell *cell = nil;
     
-    if([field isEqualToString:kBackupCache] || [field isEqualToString:kAboutUs] || [field isEqualToString:kClearNewContentCache]){
+    if([field isEqualToString:kBackupCache]
+       || [field isEqualToString:kRestoreFromBackup]
+       || [field isEqualToString:kAboutUs]
+       || [field isEqualToString:kClearNewContentCache]){
         cell = [tableView dequeueReusableCellWithIdentifier:identifierDefaultRow];
         if(!cell){
             cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifierDefaultRow] autorelease];

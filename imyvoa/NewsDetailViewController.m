@@ -354,6 +354,14 @@ UIScrollViewDelegate
                                              selector:@selector(onPlayerDidPlayFinishNotification:) 
                                                  name:kPlayerDidPlayFinishNotification 
                                                object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(applicationWillResignActiveNotification:)
+                                                 name:UIApplicationWillResignActiveNotification
+                                               object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(applicationWillEnterForeground:)
+                                                 name:UIApplicationWillEnterForegroundNotification
+                                               object:nil];
 }
 
 - (void)viewDidUnload
@@ -372,6 +380,9 @@ UIScrollViewDelegate
     
     self.viewGlossaryBtn.title = [NSString stringWithFormat:@"%@(%d)", 
                                   NSLocalizedString(@"Glossary", nil), [self.glossaryManager wordList].count];
+    
+    [[UIApplication sharedApplication] beginReceivingRemoteControlEvents];
+    [self becomeFirstResponder];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -380,6 +391,20 @@ UIScrollViewDelegate
     UIScrollView *scrollView = [self.webView getScrollView];
     [self.scrollPositionDict setValue:[NSString stringWithFormat:@"%f", scrollView.contentOffset.y] 
                                forKey:[SVCodeUtils encodeWithString:self.newsItem.title]];
+}
+
+- (void)remoteControlReceivedWithEvent:(UIEvent *)event
+{
+    if(event.subtype == UIEventSubtypeRemoteControlTogglePlayPause){
+        if([Player sharedInstance].currentSoundFilePath.length != 0){
+            [Player sharedInstance].playing ? [[Player sharedInstance] pause] : [[Player sharedInstance] play];
+        }
+    }
+}
+
+- (BOOL)canBecomeFirstResponder
+{
+    return YES;
 }
 
 #pragma mark - events
@@ -464,6 +489,16 @@ UIScrollViewDelegate
     GlossaryLibraryViewController *vc = [[GlossaryLibraryViewController alloc] initWithGlossaryManager:self.glossaryManager];
     [self.navigationController pushViewController:vc animated:YES];
     [vc release];
+}
+
+- (void)applicationWillResignActiveNotification:(NSNotification *)n
+{
+    [self viewWillDisappear:YES];
+}
+
+- (void)applicationWillEnterForeground:(NSNotification *)n
+{
+    [self webViewDidFinishLoad:self.webView];
 }
 
 - (void)onPlayBtnTapped:(UIBarButtonItem *)btn

@@ -71,27 +71,6 @@
     
 }
 
-- (void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
-    [[UIApplication sharedApplication] beginReceivingRemoteControlEvents];
-    [self becomeFirstResponder];
-}
-
-- (void)remoteControlReceivedWithEvent:(UIEvent *)event
-{
-    if(event.subtype == UIEventSubtypeRemoteControlTogglePlayPause){
-        if([Player sharedInstance].currentSoundFilePath.length != 0){
-            [Player sharedInstance].playing ? [[Player sharedInstance] pause] : [[Player sharedInstance] play];
-        }
-    }
-}
-
-- (BOOL)canBecomeFirstResponder
-{
-    return YES;
-}
-
 - (void)setCustomTitle:(NSString *)customTitle
 {
     if(_customTitle != customTitle){

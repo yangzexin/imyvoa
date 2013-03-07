@@ -29,6 +29,7 @@
 		3E9265331615A5F200CF7ACE /* WordReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E9265321615A5F200CF7ACE /* WordReader.m */; };
 		3E9265371615A9A900CF7ACE /* WordReaderControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E9265361615A9A900CF7ACE /* WordReaderControl.m */; };
 		3EA6C91116BF5184001A706A /* UIViewBlocked.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EA6C91016BF5184001A706A /* UIViewBlocked.m */; };
+		3EA7EA6716E8D72500992AD3 /* SelectRestoreBackupController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EA7EA6616E8D72500992AD3 /* SelectRestoreBackupController.m */; };
 		3EA95AF41625AFC000E0CB15 /* AllGlossaryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EA95AF31625AFC000E0CB15 /* AllGlossaryViewController.m */; };
 		3EA95AF81625B03100E0CB15 /* AllGlossaryManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EA95AF71625B03100E0CB15 /* AllGlossaryManager.m */; };
 		3EB87B5116C8F82B00C94FF9 /* ContentProviderFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EB87B5016C8F82B00C94FF9 /* ContentProviderFactory.m */; };
@@ -138,6 +139,8 @@
 		3E9265361615A9A900CF7ACE /* WordReaderControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WordReaderControl.m; sourceTree = "<group>"; };
 		3EA6C90F16BF5184001A706A /* UIViewBlocked.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIViewBlocked.h; sourceTree = "<group>"; };
 		3EA6C91016BF5184001A706A /* UIViewBlocked.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIViewBlocked.m; sourceTree = "<group>"; };
+		3EA7EA6516E8D72500992AD3 /* SelectRestoreBackupController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectRestoreBackupController.h; sourceTree = "<group>"; };
+		3EA7EA6616E8D72500992AD3 /* SelectRestoreBackupController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectRestoreBackupController.m; sourceTree = "<group>"; };
 		3EA95AF21625AFC000E0CB15 /* AllGlossaryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AllGlossaryViewController.h; sourceTree = "<group>"; };
 		3EA95AF31625AFC000E0CB15 /* AllGlossaryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AllGlossaryViewController.m; sourceTree = "<group>"; };
 		3EA95AF61625B03100E0CB15 /* AllGlossaryManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AllGlossaryManager.h; sourceTree = "<group>"; };
@@ -624,6 +627,8 @@
 				3EA95AF31625AFC000E0CB15 /* AllGlossaryViewController.m */,
 				3EE9431E16BF89D900DD4C1C /* SettingViewController.h */,
 				3EE9431F16BF89D900DD4C1C /* SettingViewController.m */,
+				3EA7EA6516E8D72500992AD3 /* SelectRestoreBackupController.h */,
+				3EA7EA6616E8D72500992AD3 /* SelectRestoreBackupController.m */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -863,6 +868,7 @@
 				3EE9432316BF8A2600DD4C1C /* BaseTableViewController.m in Sources */,
 				3EB87B5116C8F82B00C94FF9 /* ContentProviderFactory.m in Sources */,
 				3E59B65916D74EC000DF05A7 /* DictionaryFactory.m in Sources */,
+				3EA7EA6716E8D72500992AD3 /* SelectRestoreBackupController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
