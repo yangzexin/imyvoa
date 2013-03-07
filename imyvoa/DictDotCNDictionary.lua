@@ -1,10 +1,6 @@
 require "Utils"
 require "common.lua"
 
-function main(args)
-    return analyseDictionaryHTML(args);
-end
-
 function analyseDictionaryHTML(HTML)
     --po(HTML);
     local beginIndex = ustring::find(HTML, "<div class=\"content\">", 0);

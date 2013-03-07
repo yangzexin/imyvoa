@@ -1,7 +1,3 @@
-function versionCode()
-    return "6";
-end
-
 function baseURLString()
     return "http://www.51voa.com";
 end
