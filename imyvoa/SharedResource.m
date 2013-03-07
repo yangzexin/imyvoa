@@ -42,11 +42,6 @@ NSString *kNewsItemDidAddToCacheNotification = @"kNewsItemDidAddToCacheNotificat
     return self;
 }
 
-- (NSString *)luaScriptVersionCode
-{
-    return @"0.0.0";
-}
-
 - (NSString *)soundTempFilePath
 {
     NSString *saveFilePath = [[SVCommonUtils tmpPath] stringByAppendingPathComponent:@"tmp.mp3"];

@@ -25,8 +25,6 @@ OBJC_EXPORT NSString *kNewsItemDidAddToCacheNotification;
 
 + (SharedResource *)sharedInstance;
 
-- (NSString *)luaScriptVersionCode; // lua 脚本版本号
-
 - (NSString *)soundTempFilePath; // 下载声音文件临时目录
 - (NSString *)cachePath;
 
