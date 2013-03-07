@@ -156,8 +156,9 @@ GridViewWrapperDelegate
     }
     self.gridViewWrapper = [[[SVGridViewWrapper alloc] initWithNumberOfColumns:numOfColumns] autorelease];
     self.gridViewWrapper.delegate = self;
-    self.tableView.dataSource = UIInterfaceOrientationIsLandscape([UIApplication sharedApplication].statusBarOrientation) ?
-        self.gridViewWrapperForLandscape : self.gridViewWrapper;
+    self.tableView.dataSource = self;
+//    self.tableView.dataSource = UIInterfaceOrientationIsLandscape([UIApplication sharedApplication].statusBarOrientation) ?
+//        self.gridViewWrapperForLandscape : self.gridViewWrapper;
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.tableView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     [self.view addSubview:self.tableView];
@@ -546,7 +547,7 @@ GridViewWrapperDelegate
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if(self.gridViewWrapper){
+    if(self.gridViewWrapper && (tableView.dataSource == self.gridViewWrapper || tableView.dataSource == self.gridViewWrapperForLandscape)){
         if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad && UIInterfaceOrientationIsLandscape([UIApplication sharedApplication].statusBarOrientation)){
             return 215;
         }
@@ -755,6 +756,7 @@ GridViewWrapperDelegate
         tmpRect.size.height = containerView.frame.size.height - 5 - contentLabel.frame.origin.y;
         contentLabel.frame = tmpRect;
     }
+//    contentLabel.textColor = item.isCached ? [UIColor colorWithRed:0 green:43.0f/255.0f blue:148.0f/255.0f alpha:1.0f] : [UIColor blackColor];
 }
 
 - (void)resizeLabel:(UILabel *)label y:(CGFloat)y

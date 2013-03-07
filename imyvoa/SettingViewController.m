@@ -12,10 +12,11 @@
 #import "SVZipHandler.h"
 #import "SVZipHandlerFactory.h"
 #import "SVCommonUtils.h"
+#import "SVAlertDialog.h"
 
 #define kBackupCache            @"备份缓存"
 #define kClearNewContentCache   @"清除新闻内容缓存"
-#define kAboutUs                @"关于"
+#define kAboutUs                @"关于我们"
 
 @interface SettingViewController ()
 
@@ -62,18 +63,22 @@
     NSArray *array = [self.sectionDictionary objectForKey:[[self.sectionDictionary allKeys] objectAtIndex:indexPath.section]];
     NSString *field = [array objectAtIndex:indexPath.row];
     if([field isEqualToString:kClearNewContentCache]){
-        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-            id<VoaNewsDetailProvider> provider = [ContentProviderFactory newsDetailProvider];
-            for(NewsItem *item in [provider localCacheNewsItemList]){
-                if([[SoundCache sharedInstance] filePathForSoundURLString:item.soundLink] == nil){
-                    NSLog(@"remove cache item:%@", item.title);
-                    [provider removeCacheWithNewsItem:item];
-                }
+        [SVAlertDialog showWithTitle:@"警告" message:@"本地缓存的新闻将会被全部清除，确定要清除吗？" completion:^(NSInteger buttonIndex, NSString *buttonTitle) {
+            if(buttonIndex == 1){
+                dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+                    id<VoaNewsDetailProvider> provider = [ContentProviderFactory newsDetailProvider];
+                    for(NewsItem *item in [provider localCacheNewsItemList]){
+                        if([[SoundCache sharedInstance] filePathForSoundURLString:item.soundLink] == nil){
+                            NSLog(@"remove cache item:%@", item.title);
+                            [provider removeCacheWithNewsItem:item];
+                        }
+                    }
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        [self alert:@"清除完毕"];
+                    });
+                });
             }
-            dispatch_async(dispatch_get_main_queue(), ^{
-                [self alert:@"清除成功"];
-            });
-        });
+        } cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
     }else if([field isEqualToString:kBackupCache]){
         id<SVZipHandler> zip = [SVZipHandlerFactory defaultZipHandler];
         [self setWaiting:YES];
@@ -87,9 +92,12 @@
                            toFilePath:[documentPath stringByAppendingPathComponent:backupFileName]];
             dispatch_async(dispatch_get_main_queue(), ^{
                 [self setWaiting:NO];
-                [self alert:[NSString stringWithFormat:@"备份成功, 文件名：%@，可通过iTunes讲文件提取出", backupFileName]];
+                [self alert:[NSString stringWithFormat:@"备份成功, 文件名：%@，可通过iTunes将文件提取出", backupFileName]];
             });
         });
+    }else if([field isEqualToString:kAboutUs]){
+        NSString *about = [NSString stringWithFormat:@"版本:%@，电子邮箱：yang3800650071@163.com", [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"]];
+        [SVAlertDialog showWithTitle:kAboutUs message:about completion:nil cancelButtonTitle:@"确定" otherButtonTitles:nil];
     }
 }
 

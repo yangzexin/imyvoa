@@ -353,13 +353,6 @@
 			name = WordSoundListCache;
 			sourceTree = "<group>";
 		};
-		3EE9432516BF90E700DD4C1C /* PluginScripts */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = PluginScripts;
-			sourceTree = "<group>";
-		};
 		67200CF5156E4EA00083032E /* DictionaryCache */ = {
 			isa = PBXGroup;
 			children = (
@@ -586,7 +579,6 @@
 				CFEE74F2155BB59F00EDDACB /* SharedResource.h */,
 				CFEE74F3155BB59F00EDDACB /* SharedResource.m */,
 				CFE2F038155B7A3100D66255 /* LuaScript */,
-				3EE9432516BF90E700DD4C1C /* PluginScripts */,
 				CF7C5A91155B6D7700429671 /* Supporting Files */,
 			);
 			path = imyvoa;
