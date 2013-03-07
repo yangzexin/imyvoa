@@ -252,6 +252,11 @@ GridViewWrapperDelegate
     [self popOutCellWillShowAtPopOutTableView:self.popOutTableView];
     
     [self updateSoundStatus];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(applicationWillResignActiveNotification:)
+                                                 name:UIApplicationWillResignActiveNotification
+                                               object:nil];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -408,6 +413,24 @@ GridViewWrapperDelegate
     }
 }
 
+- (void)applicationWillResignActiveNotification:(NSNotification *)notification
+{
+    if([Player sharedInstance].playing){
+        NewsItem *targetItem = nil;
+        for(NewsItem *tmpItem in self.newsItemList){
+            if([[[SoundCache sharedInstance] filePathForSoundURLString:tmpItem.soundLink] isEqualToString:[Player sharedInstance].currentSoundFilePath]){
+                targetItem = tmpItem;
+                break;
+            }
+        }
+        if(targetItem){
+            self.navigationController.viewControllers = [NSArray arrayWithObject:self];
+            self.tabBarController.selectedIndex = 0;
+            [self viewNewsItem:targetItem animated:NO];
+        }
+    }
+}
+
 #pragma mark - private methods
 - (void)requestNewsList
 {
@@ -429,11 +452,16 @@ GridViewWrapperDelegate
 
 - (void)viewNewsItem:(NewsItem *)item
 {
+    [self viewNewsItem:item animated:YES];
+}
+
+- (void)viewNewsItem:(NewsItem *)item animated:(BOOL)animated
+{
     self.searchBar.hidden = YES;
     NewsDetailViewController *vc = [[[NewsDetailViewController alloc] initWithNewsItem:item] autorelease];
     vc.ignoreCache = NO;
     vc.hidesBottomBarWhenPushed =  YES;
-    [self.navigationController pushViewController:vc animated:YES];
+    [self.navigationController pushViewController:vc animated:animated];
 }
 
 - (void)updateRightBarButtonItemStatus
@@ -441,7 +469,7 @@ GridViewWrapperDelegate
     BOOL downloading = self.httpDownloader.downloading;
     if(!downloading){
         self.navigationItem.rightBarButtonItem
-        = [SharedResource sharedInstance].currentPlayingNewsItem == nil ? nil : self.gotoNowPlayingBtn;
+            = [SharedResource sharedInstance].currentPlayingNewsItem == nil ? nil : self.gotoNowPlayingBtn;
     }
     CGRect tmpRect = self.navigationController.navigationBar.bounds;
     if(self.navigationItem.rightBarButtonItem != nil){

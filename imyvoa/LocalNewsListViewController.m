@@ -130,6 +130,10 @@ UIPickerViewDataSource
                                              selector:@selector(onNewsItemDidAddToCacheNotification:) 
                                                  name:kNewsItemDidAddToCacheNotification 
                                                object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(applicationWillResignActiveNotification:)
+                                                 name:UIApplicationDidEnterBackgroundNotification
+                                               object:nil];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -204,6 +208,19 @@ UIPickerViewDataSource
     return newsList;
 }
 
+- (void)viewNewsItem:(NewsItem *)item
+{
+    [self viewNewsItem:item animated:YES];
+}
+
+- (void)viewNewsItem:(NewsItem *)item animated:(BOOL)animated
+{
+    NewsDetailViewController *vc = [[[NewsDetailViewController alloc] initWithNewsItem:item] autorelease];
+    vc.ignoreCache = YES;
+    vc.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:vc animated:animated];
+}
+
 #pragma mark - events
 - (void)onNewsItemDidAddToCacheNotification:(NSNotification *)notification
 {
@@ -220,15 +237,31 @@ UIPickerViewDataSource
     [pickerView present];
 }
 
+- (void)applicationWillResignActiveNotification:(NSNotification *)notification
+{
+    UINavigationController *firstNavigationController = [self.tabBarController.viewControllers objectAtIndex:0];
+    if(firstNavigationController.viewControllers.count == 1 && [Player sharedInstance].playing){
+        NewsItem *targetItem = nil;
+        for(NewsItem *tmpItem in self.sortedNewsItemList){
+            if([[[SoundCache sharedInstance] filePathForSoundURLString:tmpItem.soundLink] isEqualToString:[Player sharedInstance].currentSoundFilePath]){
+                targetItem = tmpItem;
+                break;
+            }
+        }
+        if(targetItem){
+            self.tabBarController.selectedIndex = 1;
+            self.navigationController.viewControllers = [NSArray arrayWithObject:self];
+            [self viewNewsItem:targetItem animated:NO];
+        }
+    }
+}
+
 #pragma mark - UITableViewDelegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     NewsItem *item = [self.sortedNewsItemList objectAtIndex:indexPath.row];
-    NewsDetailViewController *vc = [[[NewsDetailViewController alloc] initWithNewsItem:item] autorelease];
-    vc.ignoreCache = YES;
-    vc.hidesBottomBarWhenPushed = YES;
-    [self.navigationController pushViewController:vc animated:YES];
+    [self viewNewsItem:item];
 }
 
 - (void)removeItem:(NewsItem *)item atIndexPath:(NSIndexPath *)indexPath
