@@ -32,5 +32,5 @@ recite_words = "朗读";
 stop_play = "停止";
 title_drag_to_trigger = "继续下拉更新";
 title_release_to_refresh = "松开更新";
-Plugins = "插件";
+Plugins = "小工具";
 Settings = "设置";
