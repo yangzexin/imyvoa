@@ -17,7 +17,7 @@
 
 #define kBackupCache            @"备份缓存"
 #define kRestoreFromBackup      @"从备份中恢复"
-#define kClearNewContentCache   @"清除新闻内容缓存"
+#define kClearNewContentCache   @"清空缓存"
 #define kAboutUs                @"关于我们"
 
 @interface SettingViewController ()
@@ -65,7 +65,7 @@
     NSArray *array = [self.sectionDictionary objectForKey:[[self.sectionDictionary allKeys] objectAtIndex:indexPath.section]];
     NSString *field = [array objectAtIndex:indexPath.row];
     if([field isEqualToString:kClearNewContentCache]){
-        [SVAlertDialog showWithTitle:@"警告" message:@"本地缓存的新闻将会被全部清除，确定要清除吗？" completion:^(NSInteger buttonIndex, NSString *buttonTitle) {
+        [SVAlertDialog showWithTitle:@"清空" message:@"本地缓存的新闻内容将会被全部清空，是否继续？" completion:^(NSInteger buttonIndex, NSString *buttonTitle) {
             if(buttonIndex == 1){
                 dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
                     id<VoaNewsDetailProvider> provider = [ContentProviderFactory newsDetailProvider];
@@ -82,27 +82,40 @@
             }
         } cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
     }else if([field isEqualToString:kBackupCache]){
-        id<SVZipHandler> zip = [SVZipHandlerFactory defaultZipHandler];
-        [self setWaiting:YES];
-        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-            NSString *documentPath = [NSString stringWithFormat:@"%@/Documents", NSHomeDirectory()];
-            NSDateFormatter *dateFormatter = [[NSDateFormatter new] autorelease];
-            [dateFormatter setDateFormat:@"yyyy-MM-dd"];
-            NSString *backupFileName = [NSString stringWithFormat:@"backup_%@.zip", [dateFormatter stringFromDate:[[NSDate new] autorelease]]];
-            backupFileName = [SVCommonUtils countableTempFileName:backupFileName atDirectory:documentPath];
-            [zip zipWithDirectoryPath:[[SharedResource sharedInstance] cachePath]
-                           toFilePath:[documentPath stringByAppendingPathComponent:backupFileName]];
-            dispatch_async(dispatch_get_main_queue(), ^{
-                [self setWaiting:NO];
-                [self alert:[NSString stringWithFormat:@"备份成功, 文件名：%@，可通过iTunes将文件提取出", backupFileName]];
-            });
-        });
+        [SVAlertDialog showWithTitle:@"备份" message:@"备份可能需要一段时间，是否继续?" completion:^(NSInteger buttonIndex, NSString *buttonTitle) {
+            if(buttonIndex == 1){id<SVZipHandler> zip = [SVZipHandlerFactory defaultZipHandler];
+                [self setWaiting:YES];
+                dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+                    NSString *documentPath = [NSString stringWithFormat:@"%@/Documents", NSHomeDirectory()];
+                    NSDateFormatter *dateFormatter = [[NSDateFormatter new] autorelease];
+                    [dateFormatter setDateFormat:@"yyyy-MM-dd"];
+                    NSString *backupFileName = [NSString stringWithFormat:@"backup_%@.zip", [dateFormatter stringFromDate:[[NSDate new] autorelease]]];
+                    backupFileName = [SVCommonUtils countableTempFileName:backupFileName atDirectory:documentPath];
+                    [zip zipWithDirectoryPath:[[SharedResource sharedInstance] cachePath]
+                                   toFilePath:[documentPath stringByAppendingPathComponent:backupFileName]];
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        [self setWaiting:NO];
+                        [self alert:[NSString stringWithFormat:@"备份成功, 文件名：%@，可通过iTunes将文件提取出", backupFileName]];
+                    });
+                });
+            }
+        } cancelButtonTitle:@"取消" otherButtonTitles:@"继续", nil];
     }else if([field isEqualToString:kRestoreFromBackup]){
         SelectRestoreBackupController *selectRestoreVC = [[SelectRestoreBackupController new] autorelease];
         selectRestoreVC.title = @"恢复缓存";;
         [selectRestoreVC setRestoreHandler:^(NSString *zipFilePath) {
             [selectRestoreVC setWaiting:YES];
-            NSLog(@"%@", zipFilePath);
+            [[NSFileManager defaultManager] removeItemAtPath:[SharedResource sharedInstance].cachePath error:nil];
+            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+                id<SVZipHandler> zip = [SVZipHandlerFactory defaultZipHandler];
+                [zip unzipWithFilePath:zipFilePath toDirectoryPath:[[SharedResource sharedInstance].cachePath stringByDeletingLastPathComponent]];
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [selectRestoreVC setWaiting:NO];
+                    [SVAlertDialog showWithTitle:@"恢复" message:@"恢复成功" completion:^(NSInteger buttonIndex, NSString *buttonTitle) {
+                        [self dismissModalViewControllerAnimated:YES];
+                    } cancelButtonTitle:@"确定" otherButtonTitles:nil];
+                });
+            });
         }];
         UINavigationController *tmpNC = [[[UINavigationController alloc] initWithRootViewController:selectRestoreVC] autorelease];
         tmpNC.modalPresentationStyle = UIModalPresentationFormSheet;

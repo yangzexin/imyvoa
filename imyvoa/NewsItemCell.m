@@ -71,7 +71,7 @@
     NSString *dateString = [Utils formattedDateStringFromNewsItemTitle:title];
     NSString *realTitle = [Utils newsTitleFromNewsItemTitle:title];
     if(dateString && realTitle){
-        title = [NSString stringWithFormat:@"(%@) %@", dateString, realTitle];
+        title = [NSString stringWithFormat:@"%@ %@", dateString, realTitle];
     }
     self.textLabel.text = title;
 //    self.textLabel.numberOfLines = [title sizeWithFont:self.textLabel.font
