@@ -193,18 +193,18 @@
     AllGlossaryViewController *glossaryVC = [[[AllGlossaryViewController alloc] init] autorelease];
     UINavigationController *glossaryNC = [[[UINavigationController alloc] initWithRootViewController:glossaryVC] autorelease];
     glossaryNC.title = NSLocalizedString(@"Glossary", nil);
-    glossaryNC.tabBarItem.image = [UIImage imageNamed:@"icon_news_list"];
+    glossaryNC.tabBarItem.image = [UIImage imageNamed:@"icon_glossary_list.png"];
     [self configureNavigationBar:glossaryNC.navigationBar];
     
     UINavigationController *pluginNC = [[LINavigationController new] autorelease];
     pluginNC.title = NSLocalizedString(@"Plugins", nil);
-    pluginNC.tabBarItem.image = nil;
+    pluginNC.tabBarItem.image = [UIImage imageNamed:@"icon_plugin.png"];
     [self configureNavigationBar:pluginNC.navigationBar];
     
     SettingViewController *settingVC = [[SettingViewController new] autorelease];
     UINavigationController *settingNC = [[[UINavigationController alloc] initWithRootViewController:settingVC] autorelease];
     settingNC.title = NSLocalizedString(@"Settings", nil);
-    settingNC.tabBarItem.image = nil;
+    settingNC.tabBarItem.image = [UIImage imageNamed:@"icon_settings.png"];
     [self configureNavigationBar:settingNC.navigationBar];
     
     tabBarController.viewControllers = [NSArray arrayWithObjects:self.newsListNC, self.localNewsListNC, glossaryNC, pluginNC, settingNC, nil];

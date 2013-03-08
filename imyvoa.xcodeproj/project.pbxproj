@@ -35,6 +35,12 @@
 		3EB87B5116C8F82B00C94FF9 /* ContentProviderFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EB87B5016C8F82B00C94FF9 /* ContentProviderFactory.m */; };
 		3EE9432016BF89D900DD4C1C /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EE9431F16BF89D900DD4C1C /* SettingViewController.m */; };
 		3EE9432316BF8A2600DD4C1C /* BaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EE9432216BF8A2600DD4C1C /* BaseTableViewController.m */; };
+		3EF1294316E9D57600A7C271 /* icon_plugin.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EF1294116E9D57600A7C271 /* icon_plugin.png */; };
+		3EF1294416E9D57600A7C271 /* icon_plugin@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EF1294216E9D57600A7C271 /* icon_plugin@2x.png */; };
+		3EF1294816E9D66000A7C271 /* icon_settings.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EF1294616E9D66000A7C271 /* icon_settings.png */; };
+		3EF1294916E9D66000A7C271 /* icon_settings@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EF1294716E9D66000A7C271 /* icon_settings@2x.png */; };
+		3EF1294C16E9D76B00A7C271 /* icon_glossary_list.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EF1294A16E9D76B00A7C271 /* icon_glossary_list.png */; };
+		3EF1294D16E9D76B00A7C271 /* icon_glossary_list@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EF1294B16E9D76B00A7C271 /* icon_glossary_list@2x.png */; };
 		67200CFB156E4FE10083032E /* DictonaryWord.m in Sources */ = {isa = PBXBuildFile; fileRef = 67200CFA156E4FE10083032E /* DictonaryWord.m */; };
 		67200CFF156E51EC0083032E /* DBDictionaryCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 67200CFE156E51EC0083032E /* DBDictionaryCache.m */; };
 		67200D01156E52F30083032E /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 67200D00156E52F30083032E /* libsqlite3.dylib */; };
@@ -151,6 +157,12 @@
 		3EE9431F16BF89D900DD4C1C /* SettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingViewController.m; sourceTree = "<group>"; };
 		3EE9432116BF8A2600DD4C1C /* BaseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseTableViewController.h; sourceTree = "<group>"; };
 		3EE9432216BF8A2600DD4C1C /* BaseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseTableViewController.m; sourceTree = "<group>"; };
+		3EF1294116E9D57600A7C271 /* icon_plugin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_plugin.png; sourceTree = "<group>"; };
+		3EF1294216E9D57600A7C271 /* icon_plugin@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_plugin@2x.png"; sourceTree = "<group>"; };
+		3EF1294616E9D66000A7C271 /* icon_settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_settings.png; sourceTree = "<group>"; };
+		3EF1294716E9D66000A7C271 /* icon_settings@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_settings@2x.png"; sourceTree = "<group>"; };
+		3EF1294A16E9D76B00A7C271 /* icon_glossary_list.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_glossary_list.png; sourceTree = "<group>"; };
+		3EF1294B16E9D76B00A7C271 /* icon_glossary_list@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_glossary_list@2x.png"; sourceTree = "<group>"; };
 		67200CF7156E4ED90083032E /* DictionaryCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DictionaryCache.h; sourceTree = "<group>"; };
 		67200CF9156E4FE10083032E /* DictonaryWord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DictonaryWord.h; sourceTree = "<group>"; };
 		67200CFA156E4FE10083032E /* DictonaryWord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DictonaryWord.m; sourceTree = "<group>"; };
@@ -458,6 +470,12 @@
 		67D5A6391586207D00EB5959 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				3EF1294A16E9D76B00A7C271 /* icon_glossary_list.png */,
+				3EF1294B16E9D76B00A7C271 /* icon_glossary_list@2x.png */,
+				3EF1294616E9D66000A7C271 /* icon_settings.png */,
+				3EF1294716E9D66000A7C271 /* icon_settings@2x.png */,
+				3EF1294116E9D57600A7C271 /* icon_plugin.png */,
+				3EF1294216E9D57600A7C271 /* icon_plugin@2x.png */,
 				67D5A644158620F300EB5959 /* btn_download.png */,
 				67D5A643158620F300EB5959 /* btn_download@2x.png */,
 				67D5A64A15862EED00EB5959 /* icon_local_list.png */,
@@ -809,6 +827,12 @@
 				3E69E30C16C53A3E00DC3BFD /* DictDotCNDictionary.lua in Resources */,
 				3E8FB79516DCEAB500313566 /* BaseScripts.bundle in Resources */,
 				3E0ADFC316E8556700685764 /* main.lua in Resources */,
+				3EF1294316E9D57600A7C271 /* icon_plugin.png in Resources */,
+				3EF1294416E9D57600A7C271 /* icon_plugin@2x.png in Resources */,
+				3EF1294816E9D66000A7C271 /* icon_settings.png in Resources */,
+				3EF1294916E9D66000A7C271 /* icon_settings@2x.png in Resources */,
+				3EF1294C16E9D76B00A7C271 /* icon_glossary_list.png in Resources */,
+				3EF1294D16E9D76B00A7C271 /* icon_glossary_list@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
