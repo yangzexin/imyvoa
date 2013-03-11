@@ -393,6 +393,11 @@ UIScrollViewDelegate
                                forKey:[SVCodeUtils encodeWithString:self.newsItem.title]];
 }
 
+- (void)viewDidDisappear:(BOOL)animated
+{
+    [super viewDidDisappear:animated];
+}
+
 - (void)remoteControlReceivedWithEvent:(UIEvent *)event
 {
     if(event.subtype == UIEventSubtypeRemoteControlTogglePlayPause){
