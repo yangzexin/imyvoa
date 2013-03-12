@@ -23,6 +23,7 @@
 #import "SVDataBaseKeyValueManager.h"
 #import "ContentProviderFactory.h"
 #import "DictionaryFactory.h"
+#import "VOWebView.h"
 
 typedef enum{
     ToolbarStatePlaying,
@@ -178,7 +179,7 @@ UIScrollViewDelegate
     CGRect frame;
     // webview
     frame = self.view.bounds;
-    self.webView = [[[UIWebView alloc] initWithFrame:frame] autorelease];
+    self.webView = [[[VOWebView alloc] initWithFrame:frame] autorelease];
     self.webView.delegate = self;
     [self.webView getScrollView].delegate = self;
     [self.webView removeShadow];
@@ -421,7 +422,8 @@ UIScrollViewDelegate
             return ![SVCommonUtils stringContainsChinese:selectedText];
         }
     }
-    return [super canPerformAction:action withSender:sender];
+    BOOL can = [super canPerformAction:action withSender:sender];
+    return can;
 }
 
 - (void)onDictMenuItemTapped
