@@ -134,7 +134,7 @@
 //                                                         size:self.newsListNC.navigationBar.frame.size];
 //        [navigationBar setBackgroundImage:img forBarMetrics:UIBarMetricsDefault];
 //    }
-    
+    navigationBar.tintColor = [UIColor colorWithRed:94.0f/255.0f green:0.0f/255.0f blue:3.0f/255.0f alpha:1.0f];
     if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad){
         navigationBar.barStyle = UIBarStyleBlack;
     }
