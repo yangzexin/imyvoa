@@ -16,6 +16,8 @@
     
 }
 
+- (void)addViewToNonPrefersList:(UIView *)view;
+- (void)removeViewFromNonPrefersList:(UIView *)view;
 - (void)addProviderToPool:(id<SVProviderPoolable>)provider;
 - (UIView *)customTitleView;
 

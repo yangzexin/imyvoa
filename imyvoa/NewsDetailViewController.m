@@ -214,6 +214,7 @@ UIScrollViewDelegate
     self.toolbar.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     [self.view addSubview:self.toolbar];
     self.toolbar.barStyle = UIBarStyleBlackTranslucent;
+    [self addViewToNonPrefersList:self.toolbar];
     
     // topControlView
     frame = self.view.bounds;

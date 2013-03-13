@@ -17,6 +17,7 @@
 @property(nonatomic, retain)UILabel *titleLabel;
 @property(nonatomic, copy)NSString *customTitle;
 @property(nonatomic, retain)SVProviderPool *providerPool;
+@property(nonatomic, retain)NSMutableArray *nonPrefersViewList;
 
 @end
 
@@ -32,6 +33,7 @@
     [_customTitle release];
     [_titleLabel release];
     [_providerPool release];
+    self.nonPrefersViewList = nil;
 
     [super dealloc];
 }
@@ -44,6 +46,7 @@
     _customTitle = @"";
     
     _providerPool = [[SVProviderPool alloc] init];
+    self.nonPrefersViewList = [NSMutableArray array];
     
     return self;
 }
@@ -110,6 +113,16 @@
     [_providerPool addProvider:provider];
 }
 
+- (void)addViewToNonPrefersList:(UIView *)view
+{
+    [self.nonPrefersViewList addObject:view];
+}
+
+- (void)removeViewFromNonPrefersList:(UIView *)view
+{
+    [self.nonPrefersViewList removeObject:view];
+}
+
 - (UIView *)customTitleView
 {
     return self.titleLabel;
@@ -129,6 +142,9 @@
     UITabBar *tabBar = self.navigationController.tabBarController.tabBar;
     if(tabBar){
         [views addObject:tabBar];
+    }
+    for(UIView *view in self.nonPrefersViewList){
+        [views removeObject:view];
     }
     [[SVUIPrefersManager defaultManager] configureViews:views];
 }
