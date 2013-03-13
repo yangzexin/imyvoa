@@ -32,6 +32,9 @@
 #import "SVLocalAppBundle.h"
 #import "SVTimeCostTracer.h"
 #import "SVOnlineAppBundle.h"
+#import "NewsDetailTutorial.h"
+#import "TutorialManager.h"
+#import "TutorialableNavigationController.h"
 
 @interface AppDelegate () <SplashViewControllerDelegate, UITabBarControllerDelegate>
 
@@ -76,6 +79,9 @@
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
+    
+    [[TutorialManager defaultManager] setTutorialWithPageName:NSStringFromClass([NewsDetailViewController class])
+                                                     tutorial:[[NewsDetailTutorial new] autorelease]];
     
     SplashViewController *splashVC = [[[SplashViewController alloc] init] autorelease];
     splashVC.delegate = self;
@@ -176,7 +182,7 @@
     self.tabBarController.delegate = self;
     
     NewsListViewController *newsListVC = [[[NewsListViewController alloc] init] autorelease];
-    self.newsListNC = [[[UINavigationController alloc] initWithRootViewController:newsListVC] autorelease];
+    self.newsListNC = [[[TutorialableNavigationController alloc] initWithRootViewController:newsListVC] autorelease];
 //    self.newsListNC.navigationBar.barStyle = UIBarStyleBlack;
     self.newsListNC.title = NSLocalizedString(@"title_news_list", nil);
     self.newsListNC.tabBarItem.image = [UIImage imageNamed:@"icon_news_list"];

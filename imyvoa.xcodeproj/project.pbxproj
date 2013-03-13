@@ -20,6 +20,10 @@
 		3E542AB21615E1ED0072BBF0 /* ApplicationKeeper.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E542AB11615E1ED0072BBF0 /* ApplicationKeeper.m */; };
 		3E59B65916D74EC000DF05A7 /* DictionaryFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E59B65816D74EC000DF05A7 /* DictionaryFactory.m */; };
 		3E69E30C16C53A3E00DC3BFD /* DictDotCNDictionary.lua in Resources */ = {isa = PBXBuildFile; fileRef = 3E69E30B16C53A3E00DC3BFD /* DictDotCNDictionary.lua */; };
+		3E8429CA16F05D4800175B2B /* TutorialManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E8429C916F05D4800175B2B /* TutorialManager.m */; };
+		3E8429CD16F05DAA00175B2B /* Tutorial.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E8429CC16F05DAA00175B2B /* Tutorial.m */; };
+		3E8429D116F05F0200175B2B /* NewsDetailTutorial.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E8429D016F05F0200175B2B /* NewsDetailTutorial.m */; };
+		3E8429D416F0613B00175B2B /* TutorialableNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E8429D316F0613B00175B2B /* TutorialableNavigationController.m */; };
 		3E88B0CC16BE8BDE0054B6AE /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E88B0CB16BE8BDE0054B6AE /* Default-568h@2x.png */; };
 		3E88B28E16BE91920054B6AE /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E88B28D16BE91910054B6AE /* CFNetwork.framework */; };
 		3E88B29016BE91A00054B6AE /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E88B28F16BE91A00054B6AE /* CoreLocation.framework */; };
@@ -136,6 +140,14 @@
 		3E59B65716D74EC000DF05A7 /* DictionaryFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DictionaryFactory.h; sourceTree = "<group>"; };
 		3E59B65816D74EC000DF05A7 /* DictionaryFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DictionaryFactory.m; sourceTree = "<group>"; };
 		3E69E30B16C53A3E00DC3BFD /* DictDotCNDictionary.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = DictDotCNDictionary.lua; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.lua; };
+		3E8429C816F05D4800175B2B /* TutorialManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TutorialManager.h; sourceTree = "<group>"; };
+		3E8429C916F05D4800175B2B /* TutorialManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TutorialManager.m; sourceTree = "<group>"; };
+		3E8429CB16F05DAA00175B2B /* Tutorial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tutorial.h; sourceTree = "<group>"; };
+		3E8429CC16F05DAA00175B2B /* Tutorial.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tutorial.m; sourceTree = "<group>"; };
+		3E8429CF16F05F0200175B2B /* NewsDetailTutorial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsDetailTutorial.h; sourceTree = "<group>"; };
+		3E8429D016F05F0200175B2B /* NewsDetailTutorial.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsDetailTutorial.m; sourceTree = "<group>"; };
+		3E8429D216F0613B00175B2B /* TutorialableNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TutorialableNavigationController.h; sourceTree = "<group>"; };
+		3E8429D316F0613B00175B2B /* TutorialableNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TutorialableNavigationController.m; sourceTree = "<group>"; };
 		3E88B0CB16BE8BDE0054B6AE /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		3E88B28D16BE91910054B6AE /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		3E88B28F16BE91A00054B6AE /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -322,6 +334,7 @@
 		3E59B65F16D753E400DF05A7 /* SubModules */ = {
 			isa = PBXGroup;
 			children = (
+				3E8429C616F05D3400175B2B /* TutorialManager */,
 				3E9265261615979800CF7ACE /* WordSoundListCache */,
 				3E926521161596CB00CF7ACE /* WordSoundListReader */,
 				6772CE53158A214D001D0057 /* GlossaryManager */,
@@ -350,6 +363,27 @@
 				CFE2F03B155B7A9C00D66255 /* SystemConfiguration.framework */,
 			);
 			name = AddInFrameworks;
+			sourceTree = "<group>";
+		};
+		3E8429C616F05D3400175B2B /* TutorialManager */ = {
+			isa = PBXGroup;
+			children = (
+				3E8429CE16F05EE500175B2B /* Tutorials */,
+				3E8429C816F05D4800175B2B /* TutorialManager.h */,
+				3E8429C916F05D4800175B2B /* TutorialManager.m */,
+				3E8429CB16F05DAA00175B2B /* Tutorial.h */,
+				3E8429CC16F05DAA00175B2B /* Tutorial.m */,
+			);
+			name = TutorialManager;
+			sourceTree = "<group>";
+		};
+		3E8429CE16F05EE500175B2B /* Tutorials */ = {
+			isa = PBXGroup;
+			children = (
+				3E8429CF16F05F0200175B2B /* NewsDetailTutorial.h */,
+				3E8429D016F05F0200175B2B /* NewsDetailTutorial.m */,
+			);
+			name = Tutorials;
 			sourceTree = "<group>";
 		};
 		3E88B28116BE8D860054B6AE /* SubProjects */ = {
@@ -672,6 +706,8 @@
 				3EE9431F16BF89D900DD4C1C /* SettingViewController.m */,
 				3EA7EA6516E8D72500992AD3 /* SelectRestoreBackupController.h */,
 				3EA7EA6616E8D72500992AD3 /* SelectRestoreBackupController.m */,
+				3E8429D216F0613B00175B2B /* TutorialableNavigationController.h */,
+				3E8429D316F0613B00175B2B /* TutorialableNavigationController.m */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -923,6 +959,10 @@
 				3E59B65916D74EC000DF05A7 /* DictionaryFactory.m in Sources */,
 				3EA7EA6716E8D72500992AD3 /* SelectRestoreBackupController.m in Sources */,
 				3EC9117716EF14DF004C4E79 /* VOWebView.m in Sources */,
+				3E8429CA16F05D4800175B2B /* TutorialManager.m in Sources */,
+				3E8429CD16F05DAA00175B2B /* Tutorial.m in Sources */,
+				3E8429D116F05F0200175B2B /* NewsDetailTutorial.m in Sources */,
+				3E8429D416F0613B00175B2B /* TutorialableNavigationController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
