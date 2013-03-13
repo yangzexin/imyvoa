@@ -56,7 +56,9 @@
 - (void)showTutorialWithPageName:(NSString *)pageName
 {
     id<Tutorial> tutorial = [self tutorialForPageName:pageName];
-    [tutorial show];
+    if(![tutorial outOfUseful]){
+        [tutorial show];
+    }
 }
 
 @end
