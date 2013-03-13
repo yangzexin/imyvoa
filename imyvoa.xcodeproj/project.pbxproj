@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		3E08CB4F16DB40780099A91A /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E08CB4E16DB40780099A91A /* ImageIO.framework */; };
 		3E0ADFC316E8556700685764 /* main.lua in Resources */ = {isa = PBXBuildFile; fileRef = 3E0ADFC216E8556700685764 /* main.lua */; };
-		3E1CD64E16F06C01001507E7 /* UIPerfers.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E1CD64D16F06C01001507E7 /* UIPerfers.m */; };
+		3E1CD65B16F07532001507E7 /* VOAUIPrefers.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E1CD65A16F07532001507E7 /* VOAUIPrefers.m */; };
 		3E3FDFDA16F022B60098683D /* imyvoa57x57.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E3FDFD916F022B60098683D /* imyvoa57x57.png */; };
 		3E3FDFDD16F022BC0098683D /* imyvoa114x114.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E3FDFDC16F022BC0098683D /* imyvoa114x114.png */; };
 		3E3FDFDF16F022C70098683D /* imyvoa72x72.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E3FDFDE16F022C70098683D /* imyvoa72x72.png */; };
@@ -127,8 +127,8 @@
 /* Begin PBXFileReference section */
 		3E08CB4E16DB40780099A91A /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
 		3E0ADFC216E8556700685764 /* main.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = main.lua; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.lua; };
-		3E1CD64C16F06C01001507E7 /* UIPerfers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIPerfers.h; sourceTree = "<group>"; };
-		3E1CD64D16F06C01001507E7 /* UIPerfers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIPerfers.m; sourceTree = "<group>"; };
+		3E1CD65916F07532001507E7 /* VOAUIPrefers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VOAUIPrefers.h; sourceTree = "<group>"; };
+		3E1CD65A16F07532001507E7 /* VOAUIPrefers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VOAUIPrefers.m; sourceTree = "<group>"; };
 		3E3FDFD916F022B60098683D /* imyvoa57x57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = imyvoa57x57.png; sourceTree = SOURCE_ROOT; };
 		3E3FDFDC16F022BC0098683D /* imyvoa114x114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = imyvoa114x114.png; sourceTree = SOURCE_ROOT; };
 		3E3FDFDE16F022C70098683D /* imyvoa72x72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = imyvoa72x72.png; sourceTree = SOURCE_ROOT; };
@@ -327,15 +327,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		3E1CD64A16F06BEE001507E7 /* UIPrefers */ = {
-			isa = PBXGroup;
-			children = (
-				3E1CD64C16F06C01001507E7 /* UIPerfers.h */,
-				3E1CD64D16F06C01001507E7 /* UIPerfers.m */,
-			);
-			name = UIPrefers;
-			sourceTree = "<group>";
-		};
 		3E3FDFE216F0230A0098683D /* icons */ = {
 			isa = PBXGroup;
 			children = (
@@ -350,7 +341,6 @@
 		3E59B65F16D753E400DF05A7 /* SubModules */ = {
 			isa = PBXGroup;
 			children = (
-				3E1CD64A16F06BEE001507E7 /* UIPrefers */,
 				3E8429C616F05D3400175B2B /* TutorialManager */,
 				3E9265261615979800CF7ACE /* WordSoundListCache */,
 				3E926521161596CB00CF7ACE /* WordSoundListReader */,
@@ -469,7 +459,7 @@
 			name = impl;
 			sourceTree = "<group>";
 		};
-		676C57E4158D9AF6004EA808 /* UIComponents */ = {
+		676C57E4158D9AF6004EA808 /* UI */ = {
 			isa = PBXGroup;
 			children = (
 				CF1B0C6F1589DE4D00553254 /* CustomPickerView.h */,
@@ -486,8 +476,10 @@
 				3EA6C91016BF5184001A706A /* UIViewBlocked.m */,
 				3EC9117516EF14DF004C4E79 /* VOWebView.h */,
 				3EC9117616EF14DF004C4E79 /* VOWebView.m */,
+				3E1CD65916F07532001507E7 /* VOAUIPrefers.h */,
+				3E1CD65A16F07532001507E7 /* VOAUIPrefers.m */,
 			);
-			name = UIComponents;
+			name = UI;
 			sourceTree = "<group>";
 		};
 		676C57F7158DB617004EA808 /* LocalLuaScriptProvider */ = {
@@ -667,7 +659,7 @@
 			children = (
 				3E59B65F16D753E400DF05A7 /* SubModules */,
 				CFE2F01B155B78E700D66255 /* Additions */,
-				676C57E4158D9AF6004EA808 /* UIComponents */,
+				676C57E4158D9AF6004EA808 /* UI */,
 				CFE2F046155B89BF00D66255 /* Model */,
 				CFE2F043155B898400D66255 /* ContentProvider */,
 				CF05DD3A155B96D500FE8F52 /* Utils */,
@@ -984,7 +976,7 @@
 				3E8429CD16F05DAA00175B2B /* Tutorial.m in Sources */,
 				3E8429D116F05F0200175B2B /* NewsDetailTutorial.m in Sources */,
 				3E8429D416F0613B00175B2B /* TutorialableNavigationController.m in Sources */,
-				3E1CD64E16F06C01001507E7 /* UIPerfers.m in Sources */,
+				3E1CD65B16F07532001507E7 /* VOAUIPrefers.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

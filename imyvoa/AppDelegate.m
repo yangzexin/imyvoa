@@ -35,6 +35,8 @@
 #import "NewsDetailTutorial.h"
 #import "TutorialManager.h"
 #import "TutorialableNavigationController.h"
+#import "SVUIPrefersManager.h"
+#import "VOAUIPrefers.h"
 
 @interface AppDelegate () <SplashViewControllerDelegate, UITabBarControllerDelegate>
 
@@ -80,12 +82,20 @@
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     
+    [[SVUIPrefersManager defaultManager] setCurrentPrefers:[[VOAUIPrefers new] autorelease]];
     [[TutorialManager defaultManager] setTutorialWithPageName:NSStringFromClass([NewsDetailViewController class])
                                                      tutorial:[[NewsDetailTutorial new] autorelease]];
     
     SplashViewController *splashVC = [[[SplashViewController alloc] init] autorelease];
     splashVC.delegate = self;
     self.window.rootViewController = splashVC;
+    
+    [[SVUIPrefersManager defaultManager] configureViews:@[
+                                                          [[UILabel new] autorelease],
+                                                          [[UIView new] autorelease],
+                                                          [[UITableView new] autorelease],
+                                                         [[UIScrollView new] autorelease]
+     ]];
     
 //    [self printEncryptedScript];
 //    NSLog(@"%@", [CodeUtils encodeWithString:@"词典"]);
