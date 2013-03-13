@@ -10,6 +10,7 @@
 #import <QuartzCore/QuartzCore.h>
 #import "SVProviderPool.h"
 #import "Player.h"
+#import "SVUIPrefersManager.h"
 
 @interface BaseViewController ()
 
@@ -27,6 +28,7 @@
 
 - (void)dealloc
 {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
     [_customTitle release];
     [_titleLabel release];
     [_providerPool release];
@@ -46,10 +48,21 @@
     return self;
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [self updateUIPerfers];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(_UIPrefersManagerCurrentPrefersDidChange:)
+                                                 name:kSVUIPrefersManagerCurrentPrefersDidChange
+                                               object:nil];
 }
+
 - (void)loadView
 {
     [super loadView];
@@ -100,6 +113,29 @@
 - (UIView *)customTitleView
 {
     return self.titleLabel;
+}
+
+- (void)updateUIPerfers
+{
+    NSMutableArray *views = [NSMutableArray arrayWithArray:self.view.subviews];
+    UINavigationBar *navigationBar = self.navigationController.navigationBar;
+    if(navigationBar){
+        [views addObject:navigationBar];
+    }
+    UIToolbar *toolbar = self.navigationController.toolbar;
+    if(toolbar){
+        [views addObject:toolbar];
+    }
+    UITabBar *tabBar = self.navigationController.tabBarController.tabBar;
+    if(tabBar){
+        [views addObject:tabBar];
+    }
+    [[SVUIPrefersManager defaultManager] configureViews:views];
+}
+
+- (void)_UIPrefersManagerCurrentPrefersDidChange:(NSNotification *)n
+{
+    [self updateUIPerfers];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation

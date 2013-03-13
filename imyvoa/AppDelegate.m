@@ -90,13 +90,6 @@
     splashVC.delegate = self;
     self.window.rootViewController = splashVC;
     
-    [[SVUIPrefersManager defaultManager] configureViews:@[
-                                                          [[UILabel new] autorelease],
-                                                          [[UIView new] autorelease],
-                                                          [[UITableView new] autorelease],
-                                                         [[UIScrollView new] autorelease]
-     ]];
-    
 //    [self printEncryptedScript];
 //    NSLog(@"%@", [CodeUtils encodeWithString:@"词典"]);
     return YES;

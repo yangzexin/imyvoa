@@ -13,6 +13,7 @@
 #import "SharedResource.h"
 #import "PlaySoundView.h"
 #import "DictionaryFactory.h"
+#import "BaseViewController.h"
 
 @interface DictionaryViewController () <UIWebViewDelegate>
 
@@ -100,7 +101,7 @@
         self.toolbar.barStyle = UIBarStyleBlack;
     }
     
-    self.dictVC = [[[UIViewController alloc] init] autorelease];
+    self.dictVC = [[[BaseViewController alloc] init] autorelease];
     self.dictVC.title = [self.dictionary name];
     [self pushViewController:self.dictVC animated:NO];
     
