@@ -227,7 +227,7 @@
 //            NSString *appFilePath = [[NSBundle mainBundle] pathForResource:@"WebBrowser.pkg" ofType:nil];
             [SVTimeCostTracer markWithIdentifier:@"load_plugin_app"];
             id<SVScriptBundle> bundle = [[[SVOnlineAppBundle alloc]
-                                          initWithURL:[NSURL URLWithString:@"http://imyvoaspecial.googlecode.com/files/imyvoa_plugin.pkg"]] autorelease];
+                                          initWithURL:[NSURL URLWithString:@"http://imyvoaspecial.googlecode.com/files/com.yzx.imyvoa.plugins.pkg"]] autorelease];
             if(!bundle){
                 dispatch_async(dispatch_get_main_queue(), ^{
                     [viewController setCenterLabelText:@"加载失败"];
