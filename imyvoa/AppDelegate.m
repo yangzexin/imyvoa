@@ -232,8 +232,13 @@
 {
     if(self.tabBarController.selectedIndex == 3 && self.pluginApp == nil){
         [viewController setLoading:YES];
+        static BOOL loading = NO;
+        if(loading){
+            return;
+        }
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
 //            NSString *appFilePath = [[NSBundle mainBundle] pathForResource:@"WebBrowser.pkg" ofType:nil];
+            loading = YES;
             [SVTimeCostTracer markWithIdentifier:@"load_plugin_app"];
             id<SVScriptBundle> bundle = [[[SVOnlineAppBundle alloc]
                                           initWithURL:[NSURL URLWithString:@"http://imyvoaspecial.googlecode.com/files/com.yzx.imyvoa.plugins.pkg"]] autorelease];
@@ -252,6 +257,7 @@
                 self.pluginApp = app;
                 [SVTimeCostTracer timeCostWithIdentifier:@"load_plugin_app" print:YES];
                 [viewController setLoading:NO];
+                loading = NO;
             });
         });
     }
