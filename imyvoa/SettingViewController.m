@@ -38,7 +38,9 @@
 {
     self = [super init];
     self.title = NSLocalizedString(@"Settings", nil);
-    self.sectionDictionary = @{@"s1" : @[kBackupCache, kRestoreFromBackup, kClearNewContentCache, kAboutUs]};
+    self.sectionDictionary = @{@"1" : @[kBackupCache, kRestoreFromBackup, kClearNewContentCache],
+                               @"3" : @[kAboutUs]
+                               };
     
     return self;
 }
@@ -144,16 +146,16 @@
     NSString *field = [array objectAtIndex:indexPath.row];
     UITableViewCell *cell = nil;
     
+    cell = [tableView dequeueReusableCellWithIdentifier:identifierDefaultRow];
+    if(!cell){
+        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifierDefaultRow] autorelease];
+        cell.textLabel.font = [UIFont systemFontOfSize:14.0f];
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    }
     if([field isEqualToString:kBackupCache]
        || [field isEqualToString:kRestoreFromBackup]
        || [field isEqualToString:kAboutUs]
        || [field isEqualToString:kClearNewContentCache]){
-        cell = [tableView dequeueReusableCellWithIdentifier:identifierDefaultRow];
-        if(!cell){
-            cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifierDefaultRow] autorelease];
-            cell.textLabel.font = [UIFont systemFontOfSize:14.0f];
-            cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-        }
         cell.textLabel.text = field;
     }
     
