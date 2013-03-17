@@ -52,6 +52,7 @@
         }
         self.backupFileNameList = zipFileNameList;
     }
+    self.navigationItem.rightBarButtonItem.enabled = self.backupFileNameList.count != 0;
 }
 
 #pragma mark - events
@@ -66,9 +67,11 @@
         [SVAlertDialog showWithTitle:@"警告" message:@"恢复到此缓存会清空当前的所有缓存，是否继续？" completion:^(NSInteger buttonIndex, NSString *buttonTitle) {
             if(buttonIndex == 1){
                 NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-                self.restoreHandler([[SVCommonUtils documentPath] stringByAppendingPathComponent:[self.backupFileNameList objectAtIndex:indexPath.row]]);
+                if(indexPath){
+                    self.restoreHandler([[SVCommonUtils documentPath] stringByAppendingPathComponent:[self.backupFileNameList objectAtIndex:indexPath.row]]);
+                }
             }
-        } cancelButtonTitle:@"继续" otherButtonTitles:@"继续", nil];
+        } cancelButtonTitle:@"取消" otherButtonTitles:@"继续", nil];
     }
 }
 
