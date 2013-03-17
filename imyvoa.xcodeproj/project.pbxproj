@@ -14,6 +14,7 @@
 		3E3FDFDD16F022BC0098683D /* imyvoa114x114.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E3FDFDC16F022BC0098683D /* imyvoa114x114.png */; };
 		3E3FDFDF16F022C70098683D /* imyvoa72x72.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E3FDFDE16F022C70098683D /* imyvoa72x72.png */; };
 		3E3FDFE116F022D20098683D /* imyvoa144x144.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E3FDFE016F022D20098683D /* imyvoa144x144.png */; };
+		3E41C19916F584DA00F01993 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E41C19816F584DA00F01993 /* MediaPlayer.framework */; };
 		3E4B51B1161068190078603F /* SoundURLMaker.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E4B51B0161068190078603F /* SoundURLMaker.m */; };
 		3E4B51B5161068A90078603F /* SoundDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E4B51B4161068A90078603F /* SoundDownloader.m */; };
 		3E542A8D1611DF680072BBF0 /* PlaySoundView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E542A8C1611DF680072BBF0 /* PlaySoundView.m */; };
@@ -133,6 +134,7 @@
 		3E3FDFDC16F022BC0098683D /* imyvoa114x114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = imyvoa114x114.png; sourceTree = SOURCE_ROOT; };
 		3E3FDFDE16F022C70098683D /* imyvoa72x72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = imyvoa72x72.png; sourceTree = SOURCE_ROOT; };
 		3E3FDFE016F022D20098683D /* imyvoa144x144.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = imyvoa144x144.png; sourceTree = SOURCE_ROOT; };
+		3E41C19816F584DA00F01993 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		3E4B51AF161068190078603F /* SoundURLMaker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoundURLMaker.h; sourceTree = "<group>"; };
 		3E4B51B0161068190078603F /* SoundURLMaker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SoundURLMaker.m; sourceTree = "<group>"; };
 		3E4B51B3161068A90078603F /* SoundDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoundDownloader.h; sourceTree = "<group>"; };
@@ -306,6 +308,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3E41C19916F584DA00F01993 /* MediaPlayer.framework in Frameworks */,
 				3E8FB79616DCEAE300313566 /* libSavanna.a in Frameworks */,
 				3E08CB4F16DB40780099A91A /* ImageIO.framework in Frameworks */,
 				3E88B29616BE91D00054B6AE /* MobileCoreServices.framework in Frameworks */,
@@ -365,6 +368,7 @@
 				67200D00156E52F30083032E /* libsqlite3.dylib */,
 				3E88B29316BE91BF0054B6AE /* libz.dylib */,
 				3E88B29116BE91AF0054B6AE /* MapKit.framework */,
+				3E41C19816F584DA00F01993 /* MediaPlayer.framework */,
 				3E88B29516BE91D00054B6AE /* MobileCoreServices.framework */,
 				67CF07AB155E9F0B00F0519B /* QuartzCore.framework */,
 				CFE2F03B155B7A9C00D66255 /* SystemConfiguration.framework */,
