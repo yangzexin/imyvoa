@@ -228,16 +228,11 @@ GridViewWrapperDelegate
             dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
                 id<SVScriptBundle> scriptBundle = [[[SVOnlineAppBundle alloc]
                                                     initWithURL:[NSURL URLWithString:@"http://imyvoaspecial.googlecode.com/files/com.yzx.imyvoa.pkg"]] autorelease];
-                if(scriptBundle){
-                    SVApp *app = [[[SVApp alloc] initWithScriptBundle:scriptBundle] autorelease];
-                    [SharedResource sharedInstance].scriptApp = app;
-                }else{
-                    dispatch_async(dispatch_get_main_queue(), ^{
-                        [self alert:@"加在失败，错误代码-1002"];
-                        [self setLoading:NO];
-                    });
-                    return ;
+                if(!scriptBundle){
+                    scriptBundle = [[[SVApplicationScriptBundle alloc] initWithMainScriptName:@"main"] autorelease];
                 }
+                SVApp *app = [[[SVApp alloc] initWithScriptBundle:scriptBundle] autorelease];
+                [SharedResource sharedInstance].scriptApp = app;
                 dispatch_async(dispatch_get_main_queue(), ^{
                     [self requestNewsList];
                 });
