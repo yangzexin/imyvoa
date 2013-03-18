@@ -63,6 +63,9 @@
 
 - (void)restoreButtonTapped
 {
+    if(self.tableView.indexPathForSelectedRow == nil){
+        return;
+    }
     if(self.restoreHandler){
         [SVAlertDialog showWithTitle:@"警告" message:@"恢复到此缓存会清空当前的所有缓存，是否继续？" completion:^(NSInteger buttonIndex, NSString *buttonTitle) {
             if(buttonIndex == 1){
