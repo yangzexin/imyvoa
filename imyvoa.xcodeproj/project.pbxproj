@@ -10,6 +10,7 @@
 		3E08CB4F16DB40780099A91A /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E08CB4E16DB40780099A91A /* ImageIO.framework */; };
 		3E0ADFC316E8556700685764 /* main.lua in Resources */ = {isa = PBXBuildFile; fileRef = 3E0ADFC216E8556700685764 /* main.lua */; };
 		3E1CD65B16F07532001507E7 /* VOAUIPrefers.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E1CD65A16F07532001507E7 /* VOAUIPrefers.m */; };
+		3E2D348B16F82F9400D03CB9 /* PluginNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E2D348A16F82F9400D03CB9 /* PluginNavigationController.m */; };
 		3E3FDFDA16F022B60098683D /* imyvoa57x57.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E3FDFD916F022B60098683D /* imyvoa57x57.png */; };
 		3E3FDFDD16F022BC0098683D /* imyvoa114x114.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E3FDFDC16F022BC0098683D /* imyvoa114x114.png */; };
 		3E3FDFDF16F022C70098683D /* imyvoa72x72.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E3FDFDE16F022C70098683D /* imyvoa72x72.png */; };
@@ -130,6 +131,8 @@
 		3E0ADFC216E8556700685764 /* main.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = main.lua; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.lua; };
 		3E1CD65916F07532001507E7 /* VOAUIPrefers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VOAUIPrefers.h; sourceTree = "<group>"; };
 		3E1CD65A16F07532001507E7 /* VOAUIPrefers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VOAUIPrefers.m; sourceTree = "<group>"; };
+		3E2D348916F82F9400D03CB9 /* PluginNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PluginNavigationController.h; sourceTree = "<group>"; };
+		3E2D348A16F82F9400D03CB9 /* PluginNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PluginNavigationController.m; sourceTree = "<group>"; };
 		3E3FDFD916F022B60098683D /* imyvoa57x57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = imyvoa57x57.png; sourceTree = SOURCE_ROOT; };
 		3E3FDFDC16F022BC0098683D /* imyvoa114x114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = imyvoa114x114.png; sourceTree = SOURCE_ROOT; };
 		3E3FDFDE16F022C70098683D /* imyvoa72x72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = imyvoa72x72.png; sourceTree = SOURCE_ROOT; };
@@ -723,6 +726,8 @@
 				3EA7EA6616E8D72500992AD3 /* SelectRestoreBackupController.m */,
 				3E8429D216F0613B00175B2B /* TutorialableNavigationController.h */,
 				3E8429D316F0613B00175B2B /* TutorialableNavigationController.m */,
+				3E2D348916F82F9400D03CB9 /* PluginNavigationController.h */,
+				3E2D348A16F82F9400D03CB9 /* PluginNavigationController.m */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -981,6 +986,7 @@
 				3E8429D116F05F0200175B2B /* NewsDetailTutorial.m in Sources */,
 				3E8429D416F0613B00175B2B /* TutorialableNavigationController.m in Sources */,
 				3E1CD65B16F07532001507E7 /* VOAUIPrefers.m in Sources */,
+				3E2D348B16F82F9400D03CB9 /* PluginNavigationController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

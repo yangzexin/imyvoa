@@ -18,10 +18,7 @@
 
 @end
 
-@interface SplashViewController : UIViewController {
-    id<SplashViewControllerDelegate> _delegate;
-    SVTaskQueue *_taskQueue;
-}
+@interface SplashViewController : UIViewController
 
 @property(nonatomic, assign)id<SplashViewControllerDelegate> delegate;
 
