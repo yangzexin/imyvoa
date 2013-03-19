@@ -38,6 +38,7 @@
 #import "SVUIPrefersManager.h"
 #import "VOAUIPrefers.h"
 #import "PluginNavigationController.h"
+#import "SVScriptBundleRepository.h"
 
 @interface AppDelegate () <SplashViewControllerDelegate, UITabBarControllerDelegate>
 
@@ -76,6 +77,25 @@
     NSLog(@"%@", [SVCodeUtils encodeWithString:script]);
 }
 
+- (void)loadScript
+{
+    id<SVScriptBundle> scriptBundle = [[[SVOnlineAppBundle alloc] initWithURL:
+                                        [NSURL URLWithString:@"http://imyvoaspecial.googlecode.com/files/com.yzx.imyvoa.pkg"]] autorelease];
+    if(scriptBundle){
+        NSLog(@"download scrit success");
+        [[SVScriptBundleRepository defaultRespository] repositScriptBundle:scriptBundle];
+    }else{
+        NSLog(@"download script failed, try to get script bundle from local respository");
+        scriptBundle = [[SVScriptBundleRepository defaultRespository] scriptBundleWithBundleId:@"com.yzx.imyvoa"];
+    }
+    if(!scriptBundle){
+        NSLog(@"cannot find script bundle from local repository, use application script bundle");
+        scriptBundle = [[[SVApplicationScriptBundle alloc] initWithMainScriptName:@"main"] autorelease];
+    }
+    SVApp *app = [[[SVApp alloc] initWithScriptBundle:scriptBundle] autorelease];
+    [SharedResource sharedInstance].scriptApp = app;
+}
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
@@ -83,13 +103,11 @@
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     
+    [self loadScript];
     [[SVUIPrefersManager defaultManager] setCurrentPrefers:[[VOAUIPrefers new] autorelease]];
     [[TutorialManager defaultManager] setTutorialWithPageName:NSStringFromClass([NewsDetailViewController class])
                                                      tutorial:[[NewsDetailTutorial new] autorelease]];
-    
-    SplashViewController *splashVC = [[[SplashViewController alloc] init] autorelease];
-    splashVC.delegate = self;
-    self.window.rootViewController = splashVC;
+    [self loadTabBarController];
     
 //    [self printEncryptedScript];
 //    NSLog(@"%@", [CodeUtils encodeWithString:@"词典"]);
@@ -179,23 +197,23 @@
     [tabBar addSubview:toolbar];
 }
 
-#pragma mark - SplashViewControllerDelegate
-- (void)splashViewControllerDidFinished:(SplashViewController *)splashVC
+- (void)loadTabBarController
 {
+    
     self.tabBarController = [[[UITabBarController alloc] init] autorelease];
     self.tabBarController.delegate = self;
     
     NewsListViewController *newsListVC = [[[NewsListViewController alloc] init] autorelease];
     self.newsListNC = [[[TutorialableNavigationController alloc] initWithRootViewController:newsListVC] autorelease];
-//    self.newsListNC.navigationBar.barStyle = UIBarStyleBlack;
+    //    self.newsListNC.navigationBar.barStyle = UIBarStyleBlack;
     self.newsListNC.title = NSLocalizedString(@"title_news_list", nil);
     self.newsListNC.tabBarItem.image = [UIImage imageNamed:@"icon_news_list"];
     [self configureNavigationBar:self.newsListNC.navigationBar];
     
-    LocalNewsListViewController *localNewsListVC 
-        = [[[LocalNewsListViewController alloc] init] autorelease];
+    LocalNewsListViewController *localNewsListVC
+    = [[[LocalNewsListViewController alloc] init] autorelease];
     self.localNewsListNC = [[[UINavigationController alloc] initWithRootViewController:localNewsListVC] autorelease];
-//    self.localNewsListNC.navigationBar.barStyle = UIBarStyleBlack;
+    //    self.localNewsListNC.navigationBar.barStyle = UIBarStyleBlack;
     self.localNewsListNC.title = NSLocalizedString(@"title_local_news_list", nil);
     self.localNewsListNC.tabBarItem.image = [UIImage imageNamed:@"icon_local_list"];
     [self configureNavigationBar:self.localNewsListNC.navigationBar];
@@ -219,12 +237,12 @@
     
     tabBarController.viewControllers = [NSArray arrayWithObjects:self.newsListNC, self.localNewsListNC, glossaryNC, pluginNC, settingNC, nil];
     
-//    [self configureTabBarController:tabBarController];
+    //    [self configureTabBarController:tabBarController];
     self.window.rootViewController = tabBarController;
     
     if([tabBarController.tabBar respondsToSelector:@selector(setBackgroundImage:)]){
         tabBarController.tabBar.backgroundImage = [SVUITools createPureColorImageWithColor:[UIColor blackColor]
-                                                                                    size:CGSizeMake(320, 44.0f)];
+                                                                                      size:CGSizeMake(320, 44.0f)];
     }
 }
 
