@@ -32,7 +32,7 @@
 
 - (id)configureNavigationBar:(UINavigationBar *)navigationBar
 {
-    navigationBar.tintColor = [UIColor colorWithRed:94.0f/255.0f green:0.0f/255.0f blue:3.0f/255.0f alpha:1.0f];
+    navigationBar.tintColor = [UIColor colorWithRed:146.0f/255.0f green:28.0f/255.0f blue:7.0f/255.0f alpha:1.0f];
 //    navigationBar.tintColor = [UIColor darkGrayColor];
     if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad){
         navigationBar.barStyle = UIBarStyleBlack;
