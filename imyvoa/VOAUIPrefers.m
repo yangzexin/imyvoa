@@ -73,7 +73,8 @@
 - (id)configureToolbar:(UIToolbar *)toolbar
 {
     toolbar.barStyle = UIBarStyleBlack;
-    toolbar.tintColor = [UIColor darkGrayColor];
+//    toolbar.tintColor = [UIColor darkGrayColor];
+    toolbar.tintColor = [UIColor colorWithRed:146.0f/255.0f green:28.0f/255.0f blue:7.0f/255.0f alpha:1.0f];
     return toolbar;
 }
 
