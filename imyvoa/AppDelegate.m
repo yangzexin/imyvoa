@@ -69,15 +69,6 @@
     [super dealloc];
 }
 
-- (void)printEncryptedScript
-{
-    //NSString *filePath = [[Utils documentPath] stringByAppendingPathComponent:@"common.lua"];
-    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"common" ofType:@"lua"];
-    NSString *script = [NSString stringWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:nil];
-    NSLog(@"%@", script);
-    NSLog(@"%@", [SVCodeUtils encodeWithString:script]);
-}
-
 - (void)loadScript
 {
     id<SVScriptBundle> scriptBundle = [[[SVOnlineAppBundle alloc] initWithURL:
@@ -111,9 +102,6 @@
     [self loadTabBarController];
     
     [MobClick startWithAppkey:@"514a7b3856240b944a0024cb" reportPolicy:REALTIME channelId:nil];
-    
-//    [self printEncryptedScript];
-//    NSLog(@"%@", [CodeUtils encodeWithString:@"词典"]);
     return YES;
 }
 
