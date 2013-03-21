@@ -134,14 +134,17 @@
     UINavigationBar *navigationBar = self.navigationController.navigationBar;
     if(navigationBar){
         [views addObject:navigationBar];
+        [views addObjectsFromArray:[navigationBar subviews]];
     }
     UIToolbar *toolbar = self.navigationController.toolbar;
     if(toolbar){
         [views addObject:toolbar];
+        [views addObjectsFromArray:[toolbar subviews]];
     }
     UITabBar *tabBar = self.navigationController.tabBarController.tabBar;
     if(tabBar){
         [views addObject:tabBar];
+        [views addObjectsFromArray:[tabBar subviews]];
     }
     for(UIView *view in self.nonPrefersViewList){
         [views removeObject:view];

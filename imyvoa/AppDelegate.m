@@ -202,7 +202,6 @@
 
 - (void)loadTabBarController
 {
-    
     self.tabBarController = [[[UITabBarController alloc] init] autorelease];
     self.tabBarController.delegate = self;
     
