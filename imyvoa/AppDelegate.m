@@ -39,6 +39,7 @@
 #import "VOAUIPrefers.h"
 #import "PluginNavigationController.h"
 #import "SVScriptBundleRepository.h"
+#import "MobClick.h"
 
 @interface AppDelegate () <SplashViewControllerDelegate, UITabBarControllerDelegate>
 
@@ -108,6 +109,8 @@
     [[TutorialManager defaultManager] setTutorialWithPageName:NSStringFromClass([NewsDetailViewController class])
                                                      tutorial:[[NewsDetailTutorial new] autorelease]];
     [self loadTabBarController];
+    
+    [MobClick startWithAppkey:@"514a7b3856240b944a0024cb" reportPolicy:REALTIME channelId:nil];
     
 //    [self printEncryptedScript];
 //    NSLog(@"%@", [CodeUtils encodeWithString:@"词典"]);

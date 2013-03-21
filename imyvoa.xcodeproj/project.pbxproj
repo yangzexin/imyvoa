@@ -51,6 +51,8 @@
 		3EDE559716F8AA3F0052A038 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E32D05D16F84492008AEC81 /* Default.png */; };
 		3EE9432016BF89D900DD4C1C /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EE9431F16BF89D900DD4C1C /* SettingViewController.m */; };
 		3EE9432316BF8A2600DD4C1C /* BaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EE9432216BF8A2600DD4C1C /* BaseTableViewController.m */; };
+		3EEEC6FD16FAB36100B2B8BE /* OpenUDID.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EEEC6FC16FAB36100B2B8BE /* OpenUDID.m */; };
+		3EEEC70216FAB39300B2B8BE /* libMobClickLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EEEC70016FAB39300B2B8BE /* libMobClickLibrary.a */; };
 		3EF1294316E9D57600A7C271 /* icon_plugin.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EF1294116E9D57600A7C271 /* icon_plugin.png */; };
 		3EF1294416E9D57600A7C271 /* icon_plugin@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EF1294216E9D57600A7C271 /* icon_plugin@2x.png */; };
 		3EF1294816E9D66000A7C271 /* icon_settings.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EF1294616E9D66000A7C271 /* icon_settings.png */; };
@@ -196,6 +198,10 @@
 		3EE9431F16BF89D900DD4C1C /* SettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingViewController.m; sourceTree = "<group>"; };
 		3EE9432116BF8A2600DD4C1C /* BaseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseTableViewController.h; sourceTree = "<group>"; };
 		3EE9432216BF8A2600DD4C1C /* BaseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseTableViewController.m; sourceTree = "<group>"; };
+		3EEEC6FB16FAB36100B2B8BE /* OpenUDID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenUDID.h; sourceTree = "<group>"; };
+		3EEEC6FC16FAB36100B2B8BE /* OpenUDID.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenUDID.m; sourceTree = "<group>"; };
+		3EEEC70016FAB39300B2B8BE /* libMobClickLibrary.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libMobClickLibrary.a; sourceTree = "<group>"; };
+		3EEEC70116FAB39300B2B8BE /* MobClick.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobClick.h; sourceTree = "<group>"; };
 		3EF1294116E9D57600A7C271 /* icon_plugin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_plugin.png; sourceTree = "<group>"; };
 		3EF1294216E9D57600A7C271 /* icon_plugin@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_plugin@2x.png"; sourceTree = "<group>"; };
 		3EF1294616E9D66000A7C271 /* icon_settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_settings.png; sourceTree = "<group>"; };
@@ -331,6 +337,7 @@
 				CF7C5A8B155B6D7700429671 /* UIKit.framework in Frameworks */,
 				CF7C5A8D155B6D7700429671 /* Foundation.framework in Frameworks */,
 				CF7C5A8F155B6D7700429671 /* CoreGraphics.framework in Frameworks */,
+				3EEEC70216FAB39300B2B8BE /* libMobClickLibrary.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -440,6 +447,33 @@
 				3E926528161597E100CF7ACE /* WordSoundListCache.m */,
 			);
 			name = WordSoundListCache;
+			sourceTree = "<group>";
+		};
+		3EEEC6F916FAB35600B2B8BE /* 3rdLibraries */ = {
+			isa = PBXGroup;
+			children = (
+				3EEEC6FF16FAB38700B2B8BE /* umeng */,
+				3EEEC6FE16FAB37000B2B8BE /* OpenUDID */,
+			);
+			name = 3rdLibraries;
+			sourceTree = "<group>";
+		};
+		3EEEC6FE16FAB37000B2B8BE /* OpenUDID */ = {
+			isa = PBXGroup;
+			children = (
+				3EEEC6FB16FAB36100B2B8BE /* OpenUDID.h */,
+				3EEEC6FC16FAB36100B2B8BE /* OpenUDID.m */,
+			);
+			name = OpenUDID;
+			sourceTree = "<group>";
+		};
+		3EEEC6FF16FAB38700B2B8BE /* umeng */ = {
+			isa = PBXGroup;
+			children = (
+				3EEEC70016FAB39300B2B8BE /* libMobClickLibrary.a */,
+				3EEEC70116FAB39300B2B8BE /* MobClick.h */,
+			);
+			name = umeng;
 			sourceTree = "<group>";
 		};
 		67200CF5156E4EA00083032E /* DictionaryCache */ = {
@@ -641,6 +675,7 @@
 				3E88B0CB16BE8BDE0054B6AE /* Default-568h@2x.png */,
 				3E32D06016F8449C008AEC81 /* Default@2x.png */,
 				3E32D05D16F84492008AEC81 /* Default.png */,
+				3EEEC6F916FAB35600B2B8BE /* 3rdLibraries */,
 				CF7C5A90155B6D7700429671 /* imyvoa */,
 				3E88B28116BE8D860054B6AE /* SubProjects */,
 				3E755F0416129D02007DCD7A /* AddInFrameworks */,
@@ -995,6 +1030,7 @@
 				3E8429D416F0613B00175B2B /* TutorialableNavigationController.m in Sources */,
 				3E1CD65B16F07532001507E7 /* VOAUIPrefers.m in Sources */,
 				3E2D348B16F82F9400D03CB9 /* PluginNavigationController.m in Sources */,
+				3EEEC6FD16FAB36100B2B8BE /* OpenUDID.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1083,6 +1119,10 @@
 				GCC_PREFIX_HEADER = "imyvoa/imyvoa-Prefix.pch";
 				HEADER_SEARCH_PATHS = "../Savanna/**";
 				INFOPLIST_FILE = "imyvoa/imyvoa-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-all_load",
@@ -1102,6 +1142,10 @@
 				GCC_PREFIX_HEADER = "imyvoa/imyvoa-Prefix.pch";
 				HEADER_SEARCH_PATHS = "../Savanna/**";
 				INFOPLIST_FILE = "imyvoa/imyvoa-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-all_load",
