@@ -75,10 +75,13 @@
                                         [NSURL URLWithString:@"http://imyvoaspecial.googlecode.com/files/com.yzx.imyvoa.pkg"]] autorelease];
     if(scriptBundle){
         NSLog(@"download scrit success");
-        [[SVScriptBundleRepository defaultRespository] repositScriptBundle:scriptBundle];
+        [[SVScriptBundleRepository defaultRespository] repositScriptBundle:scriptBundle newBundleId:@"com.yzx.imyvoa"];
     }else{
         NSLog(@"download script failed, try to get script bundle from local respository");
         scriptBundle = [[SVScriptBundleRepository defaultRespository] scriptBundleWithBundleId:@"com.yzx.imyvoa"];
+        if(scriptBundle){
+            NSLog(@"local script bundle found in repository");
+        }
     }
     if(!scriptBundle){
         NSLog(@"cannot find script bundle from local repository, use application script bundle");

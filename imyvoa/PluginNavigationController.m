@@ -45,7 +45,7 @@
         if(!bundle){
             bundle = [[SVScriptBundleRepository defaultRespository] scriptBundleWithBundleId:@"com.yzx.imyvoa.plugins"];
         }else{
-            [[SVScriptBundleRepository defaultRespository] repositScriptBundle:bundle];
+            [[SVScriptBundleRepository defaultRespository] repositScriptBundle:bundle newBundleId:@"com.yzx.imyvoa.plugins"];
         }
         if(bundle){
             SVApp *app = [[[SVApp alloc] initWithScriptBundle:bundle relatedViewController:self] autorelease];
