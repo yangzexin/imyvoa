@@ -74,7 +74,7 @@
     id<SVScriptBundle> scriptBundle = [[[SVOnlineAppBundle alloc] initWithURL:
                                         [NSURL URLWithString:@"http://imyvoaspecial.googlecode.com/files/com.yzx.imyvoa.pkg"]] autorelease];
     if(scriptBundle){
-        NSLog(@"download scrit success");
+        NSLog(@"download script success");
         [[SVScriptBundleRepository defaultRespository] repositScriptBundle:scriptBundle newBundleId:@"com.yzx.imyvoa"];
     }else{
         NSLog(@"download script failed, try to get script bundle from local respository");
