@@ -652,7 +652,7 @@ GridViewWrapperDelegate
     // rename sound file
     NewsItem *selectedItem = [self.newsItemList objectAtIndex:self.popOutTableView.selectedCellIndex];
     NSString *newPath = [[SoundCache soundCachePath] stringByAppendingPathComponent:
-                         [SVCodeUtils hexStringByMD5EncryptWithString:selectedItem.title]];
+                         [SVCodeUtils hexStringByMD5EncryptingString:selectedItem.title]];
     [[NSFileManager defaultManager] moveItemAtPath:[SharedResource sharedInstance].soundTempFilePath 
                                             toPath:newPath 
                                              error:nil];

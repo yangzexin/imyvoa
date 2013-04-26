@@ -894,7 +894,7 @@ UIScrollViewDelegate
     
     // rename sound file
     NSString *newPath = [[SoundCache soundCachePath] stringByAppendingPathComponent:
-                         [SVCodeUtils hexStringByMD5EncryptWithString:self.newsItem.title]];
+                         [SVCodeUtils hexStringByMD5EncryptingString:self.newsItem.title]];
     [[NSFileManager defaultManager] moveItemAtPath:[SharedResource sharedInstance].soundTempFilePath 
                                             toPath:newPath 
                                              error:nil];

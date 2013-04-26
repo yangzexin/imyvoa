@@ -59,12 +59,12 @@
 
 - (void)addSoundURLString:(NSString *)sounURLString atFilePath:(NSString *)filePath
 {
-    [self.cache setValue:filePath forKey:[SVCodeUtils hexStringByMD5EncryptWithString:sounURLString]];
+    [self.cache setValue:filePath forKey:[SVCodeUtils hexStringByMD5EncryptingString:sounURLString]];
 }
 
 - (NSString *)filePathForSoundURLString:(NSString *)soundURLString
 {
-    NSString *soundPath = [self.cache valueForKey:[SVCodeUtils hexStringByMD5EncryptWithString:soundURLString]];
+    NSString *soundPath = [self.cache valueForKey:[SVCodeUtils hexStringByMD5EncryptingString:soundURLString]];
     
     if([soundPath length] != 0 && [[NSFileManager defaultManager] fileExistsAtPath:soundPath]){
         return soundPath;
