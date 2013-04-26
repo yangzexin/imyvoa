@@ -392,7 +392,7 @@ UIScrollViewDelegate
     [super viewWillDisappear:animated];
     UIScrollView *scrollView = [self.webView getScrollView];
     [self.scrollPositionDict setValue:[NSString stringWithFormat:@"%f", scrollView.contentOffset.y] 
-                               forKey:[SVCodeUtils encodeWithString:self.newsItem.title]];
+                               forKey:[SVCodeUtils hexStringByEncodingString:self.newsItem.title]];
 }
 
 - (void)viewDidDisappear:(BOOL)animated
@@ -811,7 +811,7 @@ UIScrollViewDelegate
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
 {
     [self.scrollPositionDict setValue:[NSString stringWithFormat:@"%f", scrollView.contentOffset.y] 
-                               forKey:[SVCodeUtils encodeWithString:self.newsItem.title]];
+                               forKey:[SVCodeUtils hexStringByEncodingString:self.newsItem.title]];
 }
 
 #pragma mark - UIAlertViewDelegate
@@ -840,7 +840,7 @@ UIScrollViewDelegate
     
     [self updateWebViewPadding];
     
-    NSString *positionValue = [self.scrollPositionDict valueForKey:[SVCodeUtils encodeWithString:self.newsItem.title]];
+    NSString *positionValue = [self.scrollPositionDict valueForKey:[SVCodeUtils hexStringByEncodingString:self.newsItem.title]];
     CGPoint position = [webView getScrollView].contentOffset;
     position.y = [positionValue floatValue];
     [webView getScrollView].contentOffset = position;
@@ -894,7 +894,7 @@ UIScrollViewDelegate
     
     // rename sound file
     NSString *newPath = [[SoundCache soundCachePath] stringByAppendingPathComponent:
-                         [SVCodeUtils md5ForString:self.newsItem.title]];
+                         [SVCodeUtils hexStringByMD5EncryptWithString:self.newsItem.title]];
     [[NSFileManager defaultManager] moveItemAtPath:[SharedResource sharedInstance].soundTempFilePath 
                                             toPath:newPath 
                                              error:nil];

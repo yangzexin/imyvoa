@@ -63,10 +63,10 @@
 - (void)downloadWithWord:(NSString *)word_
 {
     self.word = word_;
-    NSString *encodeWord = [SVCodeUtils encodeWithString:word];
+    NSString *encodeWord = [SVCodeUtils hexStringByEncodingString:word];
     NSString *cache = [self.wordSoundCache valueForKey:encodeWord];
     if(cache){
-        NSData *data = [SVCodeUtils dataDecodedWithString:cache];
+        NSData *data = [SVCodeUtils dataByDecodingHexString:cache];
         [self notifySuccessWithData:data];
     }else{
         NSString *soundURL = [self.soundURLMaker makeURLStringForWord:word];
@@ -102,8 +102,8 @@
 {
     NSData *soudData = [NSData dataWithContentsOfFile:[self tmpSoundPath]];
     if(soudData.length != 0){
-        NSString *cache = [SVCodeUtils encodeWithData:soudData];
-        [self.wordSoundCache setValue:cache forKey:[SVCodeUtils encodeWithString:self.word]];
+        NSString *cache = [SVCodeUtils hexStringByEncodingData:soudData];
+        [self.wordSoundCache setValue:cache forKey:[SVCodeUtils hexStringByEncodingString:self.word]];
         [self notifySuccessWithData:soudData];
     }else{
         [self HTTPDownloader:downloader_ didErrored:[NSError errorWithDomain:@"SoundDownloader"
