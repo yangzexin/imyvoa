@@ -7,9 +7,9 @@
 //
 
 #import "AppDelegate.h"
-#import "SVObjectToStringSerializer.h"
 #import "NewsItem.h"
 #import "SVRuntimeUtils.h"
+#import "SVSerializationUtils.h"
 
 @implementation AppDelegate
 
@@ -27,15 +27,28 @@
     [self.window makeKeyAndVisible];
     
     NewsItem *item = [[NewsItem new] autorelease];
-    item.title = @"news title";
+    item.title = @"news title中文";
     item.content =  @"news content";
-    item.soundExists = NO;
+    item.soundExists = YES;
     
-    SVObjectToStringSerializer *serializer = [[SVObjectToStringSerializer new] autorelease];
-    NSString *string = [serializer stringBySerializingObject:item];
-    NSLog(@"%@", string);
+    NSMutableArray *items = [NSMutableArray array];
+    for(NSInteger i = 0; i < 10; ++i){
+        NewsItem *tmpItem = [[NewsItem new] autorelease];
+        tmpItem.title = [NSString stringWithFormat:@"new title - %0d", i];
+        [items addObject:tmpItem];
+        if(i % 2 == 0){
+            tmpItem.soundExists = YES;
+        }
+    }
     
-    NSLog(@"%@", [SVRuntimeUtils descriptionOfObject:[serializer objectByDeserializingString:string ojectClass:[NewsItem class]]]);
+    NSString *tmpstring = [SVSerializationUtils stringBySerializingObject:item];
+    NSLog(@"%@", [SVRuntimeUtils descriptionOfObject:[SVSerializationUtils objectByDeserializingString:tmpstring objectClass:[NewsItem class]]]);
+    
+    tmpstring = [SVSerializationUtils stringBySerializingObjects:items];
+    NSLog(@"%@", [SVRuntimeUtils descriptionOfObjects:[SVSerializationUtils objectsByDeserializingString:tmpstring objectClass:[NewsItem class]]]);
+    
+    NSLog(@"%@", [SVSerializationUtils XMLStringBySerializingObject:item]);
+    NSLog(@"%@", [SVSerializationUtils XMLStringBySerializingObjects:items]);
     
     return YES;
 }

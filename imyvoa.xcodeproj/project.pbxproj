@@ -1334,6 +1334,7 @@
 				3E712870172A6E6200CF5639 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CF7C5A80155B6D7700429671 /* Build configuration list for PBXProject "imyvoa" */ = {
 			isa = XCConfigurationList;
