@@ -50,6 +50,8 @@
     NSLog(@"%@", [SVSerializationUtils XMLStringBySerializingObject:item]);
     NSLog(@"%@", [SVSerializationUtils XMLStringBySerializingObjects:items]);
     
+    NSLog(@"%@", [SVRuntimeUtils propertiesOfObject:item]);
+    
     return YES;
 }
 
