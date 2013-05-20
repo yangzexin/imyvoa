@@ -10,7 +10,7 @@
 #import "NewsItem.h"
 #import "SVHTTPDownloader.h"
 #import "SVCommonUtils.h"
-#import "SVCodeUtils.h"
+#import "SVEncryptUtils.h"
 #import "SoundCache.h"
 #import "SharedResource.h"
 #import "Player.h"
@@ -652,7 +652,7 @@ GridViewWrapperDelegate
     // rename sound file
     NewsItem *selectedItem = [self.newsItemList objectAtIndex:self.popOutTableView.selectedCellIndex];
     NSString *newPath = [[SoundCache soundCachePath] stringByAppendingPathComponent:
-                         [SVCodeUtils hexStringByMD5EncryptingString:selectedItem.title]];
+                         [SVEncryptUtils hexStringByMD5EncryptingString:selectedItem.title]];
     [[NSFileManager defaultManager] moveItemAtPath:[SharedResource sharedInstance].soundTempFilePath 
                                             toPath:newPath 
                                              error:nil];

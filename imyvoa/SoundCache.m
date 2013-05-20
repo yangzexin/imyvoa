@@ -8,7 +8,7 @@
 
 #import "SoundCache.h"
 #import "SVDataBaseKeyValueManager.h"
-#import "SVCodeUtils.h"
+#import "SVEncryptUtils.h"
 
 @interface SoundCache ()
 
@@ -59,12 +59,12 @@
 
 - (void)addSoundURLString:(NSString *)sounURLString atFilePath:(NSString *)filePath
 {
-    [self.cache setValue:filePath forKey:[SVCodeUtils hexStringByMD5EncryptingString:sounURLString]];
+    [self.cache setValue:filePath forKey:[SVEncryptUtils hexStringByMD5EncryptingString:sounURLString]];
 }
 
 - (NSString *)filePathForSoundURLString:(NSString *)soundURLString
 {
-    NSString *soundPath = [self.cache valueForKey:[SVCodeUtils hexStringByMD5EncryptingString:soundURLString]];
+    NSString *soundPath = [self.cache valueForKey:[SVEncryptUtils hexStringByMD5EncryptingString:soundURLString]];
     
     if([soundPath length] != 0 && [[NSFileManager defaultManager] fileExistsAtPath:soundPath]){
         return soundPath;

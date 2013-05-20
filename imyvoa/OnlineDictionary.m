@@ -7,7 +7,7 @@
 //
 
 #import "OnlineDictionary.h"
-#import "SVCodeUtils.h"
+#import "SVEncryptUtils.h"
 #import "DBDictionaryCache.h"
 #import "DictonaryWord.h"
 #import "SVApp.h"

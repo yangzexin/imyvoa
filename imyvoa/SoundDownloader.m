@@ -11,7 +11,7 @@
 #import "SVHTTPDownloader.h"
 #import "SVKeyValueManager.h"
 #import "SVDataBaseKeyValueManager.h"
-#import "SVCodeUtils.h"
+#import "SVEncryptUtils.h"
 
 @interface SoundDownloader () <HTTPDownloaderDelegate>
 
@@ -63,10 +63,10 @@
 - (void)downloadWithWord:(NSString *)word_
 {
     self.word = word_;
-    NSString *encodeWord = [SVCodeUtils hexStringByEncodingString:word];
+    NSString *encodeWord = [SVEncryptUtils hexStringByEncodingString:word];
     NSString *cache = [self.wordSoundCache valueForKey:encodeWord];
     if(cache){
-        NSData *data = [SVCodeUtils dataByDecodingHexString:cache];
+        NSData *data = [SVEncryptUtils dataByDecodingHexString:cache];
         [self notifySuccessWithData:data];
     }else{
         NSString *soundURL = [self.soundURLMaker makeURLStringForWord:word];
@@ -102,8 +102,8 @@
 {
     NSData *soudData = [NSData dataWithContentsOfFile:[self tmpSoundPath]];
     if(soudData.length != 0){
-        NSString *cache = [SVCodeUtils hexStringByEncodingData:soudData];
-        [self.wordSoundCache setValue:cache forKey:[SVCodeUtils hexStringByEncodingString:self.word]];
+        NSString *cache = [SVEncryptUtils hexStringByEncodingData:soudData];
+        [self.wordSoundCache setValue:cache forKey:[SVEncryptUtils hexStringByEncodingString:self.word]];
         [self notifySuccessWithData:soudData];
     }else{
         [self HTTPDownloader:downloader_ didErrored:[NSError errorWithDomain:@"SoundDownloader"

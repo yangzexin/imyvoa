@@ -8,7 +8,7 @@
 
 #import "DBDictionaryCache.h"
 #import "SVCommonUtils.h"
-#import "SVCodeUtils.h"
+#import "SVEncryptUtils.h"
 #import "DictonaryWord.h"
 #import "SVDataBaseKeyValueManager.h"
 

@@ -12,7 +12,7 @@
 #import "SVCommonUtils.h"
 #import "SVHTTPDownloader.h"
 #import "SharedResource.h"
-#import "SVCodeUtils.h"
+#import "SVEncryptUtils.h"
 #import "SoundCache.h"
 #import "Player.h"
 #import "SVTimer.h"
@@ -392,7 +392,7 @@ UIScrollViewDelegate
     [super viewWillDisappear:animated];
     UIScrollView *scrollView = [self.webView getScrollView];
     [self.scrollPositionDict setValue:[NSString stringWithFormat:@"%f", scrollView.contentOffset.y] 
-                               forKey:[SVCodeUtils hexStringByEncodingString:self.newsItem.title]];
+                               forKey:[SVEncryptUtils hexStringByEncodingString:self.newsItem.title]];
 }
 
 - (void)viewDidDisappear:(BOOL)animated
@@ -811,7 +811,7 @@ UIScrollViewDelegate
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
 {
     [self.scrollPositionDict setValue:[NSString stringWithFormat:@"%f", scrollView.contentOffset.y] 
-                               forKey:[SVCodeUtils hexStringByEncodingString:self.newsItem.title]];
+                               forKey:[SVEncryptUtils hexStringByEncodingString:self.newsItem.title]];
 }
 
 #pragma mark - UIAlertViewDelegate
@@ -840,7 +840,7 @@ UIScrollViewDelegate
     
     [self updateWebViewPadding];
     
-    NSString *positionValue = [self.scrollPositionDict valueForKey:[SVCodeUtils hexStringByEncodingString:self.newsItem.title]];
+    NSString *positionValue = [self.scrollPositionDict valueForKey:[SVEncryptUtils hexStringByEncodingString:self.newsItem.title]];
     CGPoint position = [webView getScrollView].contentOffset;
     position.y = [positionValue floatValue];
     [webView getScrollView].contentOffset = position;
@@ -894,7 +894,7 @@ UIScrollViewDelegate
     
     // rename sound file
     NSString *newPath = [[SoundCache soundCachePath] stringByAppendingPathComponent:
-                         [SVCodeUtils hexStringByMD5EncryptingString:self.newsItem.title]];
+                         [SVEncryptUtils hexStringByMD5EncryptingString:self.newsItem.title]];
     [[NSFileManager defaultManager] moveItemAtPath:[SharedResource sharedInstance].soundTempFilePath 
                                             toPath:newPath 
                                              error:nil];

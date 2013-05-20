@@ -10,7 +10,7 @@
 #import "SVKeyValueManager.h"
 #import "SVDataBaseKeyValueManager.h"
 #import "SVCommonUtils.h"
-#import "SVCodeUtils.h"
+#import "SVEncryptUtils.h"
 
 @interface DBGlossaryManager ()
 

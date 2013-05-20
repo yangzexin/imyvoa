@@ -19,7 +19,7 @@
 #import "LuaVoaNewsContentProvider.h"
 #import "OnlineDictionary.h"
 #import "SVCommonUtils.h"
-#import "SVCodeUtils.h"
+#import "SVEncryptUtils.h"
 #import "DictionaryViewController.h"
 #import "SVDataBaseKeyValueManager.h"
 #import "SVUITools.h"
