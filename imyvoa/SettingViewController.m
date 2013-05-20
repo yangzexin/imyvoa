@@ -14,6 +14,7 @@
 #import "SVCommonUtils.h"
 #import "SVAlertDialog.h"
 #import "SelectRestoreBackupController.h"
+#import "AboutUsViewController.h"
 
 #define kBackupCache            @"备份缓存"
 #define kRestoreFromBackup      @"从备份中恢复"

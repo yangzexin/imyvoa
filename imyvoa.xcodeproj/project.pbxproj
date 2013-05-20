@@ -76,6 +76,7 @@
 		3EC2AE3816FABC3000290867 /* libMobClickLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EC2AE3516FABC3000290867 /* libMobClickLibrary.a */; };
 		3EC9117716EF14DF004C4E79 /* VOWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EC9117616EF14DF004C4E79 /* VOWebView.m */; };
 		3EDE559716F8AA3F0052A038 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E32D05D16F84492008AEC81 /* Default.png */; };
+		3EE1F312174A5EE9006649F4 /* AboutUsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EE1F311174A5EE9006649F4 /* AboutUsViewController.m */; };
 		3EE9432016BF89D900DD4C1C /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EE9431F16BF89D900DD4C1C /* SettingViewController.m */; };
 		3EE9432316BF8A2600DD4C1C /* BaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EE9432216BF8A2600DD4C1C /* BaseTableViewController.m */; };
 		3EF1294316E9D57600A7C271 /* icon_plugin.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EF1294116E9D57600A7C271 /* icon_plugin.png */; };
@@ -152,6 +153,13 @@
 			proxyType = 2;
 			remoteGlobalIDString = 3E653EDF16DCDB4C00368931;
 			remoteInfo = Savanna;
+		};
+		3EE1F315174A5EE9006649F4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3E8FB78E16DCEA9100313566 /* Savanna.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 3ED90657174A057700CDE39F;
+			remoteInfo = SVObjectSerialization;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -234,6 +242,8 @@
 		3EC2AE3616FABC3000290867 /* MobClick.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobClick.h; sourceTree = "<group>"; };
 		3EC9117516EF14DF004C4E79 /* VOWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VOWebView.h; sourceTree = "<group>"; };
 		3EC9117616EF14DF004C4E79 /* VOWebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VOWebView.m; sourceTree = "<group>"; };
+		3EE1F310174A5EE9006649F4 /* AboutUsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutUsViewController.h; sourceTree = "<group>"; };
+		3EE1F311174A5EE9006649F4 /* AboutUsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutUsViewController.m; sourceTree = "<group>"; };
 		3EE9431E16BF89D900DD4C1C /* SettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingViewController.h; sourceTree = "<group>"; };
 		3EE9431F16BF89D900DD4C1C /* SettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingViewController.m; sourceTree = "<group>"; };
 		3EE9432116BF8A2600DD4C1C /* BaseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseTableViewController.h; sourceTree = "<group>"; };
@@ -509,6 +519,7 @@
 			isa = PBXGroup;
 			children = (
 				3E8FB79316DCEA9100313566 /* libSavanna.a */,
+				3EE1F316174A5EE9006649F4 /* libSVObjectSerialization.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -859,6 +870,8 @@
 				3E8429D316F0613B00175B2B /* TutorialableNavigationController.m */,
 				3E2D348916F82F9400D03CB9 /* PluginNavigationController.h */,
 				3E2D348A16F82F9400D03CB9 /* PluginNavigationController.m */,
+				3EE1F310174A5EE9006649F4 /* AboutUsViewController.h */,
+				3EE1F311174A5EE9006649F4 /* AboutUsViewController.m */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -1028,6 +1041,13 @@
 			remoteRef = 3E8FB79216DCEA9100313566 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
+		3EE1F316174A5EE9006649F4 /* libSVObjectSerialization.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libSVObjectSerialization.a;
+			remoteRef = 3EE1F315174A5EE9006649F4 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 /* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
@@ -1160,6 +1180,7 @@
 				3E1CD65B16F07532001507E7 /* VOAUIPrefers.m in Sources */,
 				3E2D348B16F82F9400D03CB9 /* PluginNavigationController.m in Sources */,
 				3EC2AE3716FABC3000290867 /* OpenUDID.m in Sources */,
+				3EE1F312174A5EE9006649F4 /* AboutUsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
