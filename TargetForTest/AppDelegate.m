@@ -7,9 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "NewsItem.h"
-#import "SVRuntimeUtils.h"
-#import "SVSerializationUtils.h"
+#import "TestVC.h"
 
 @implementation AppDelegate
 
@@ -26,31 +24,7 @@
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     
-    NewsItem *item = [[NewsItem new] autorelease];
-    item.title = @"news title中文";
-    item.content =  @"news content";
-    item.soundExists = YES;
-    
-    NSMutableArray *items = [NSMutableArray array];
-    for(NSInteger i = 0; i < 10; ++i){
-        NewsItem *tmpItem = [[NewsItem new] autorelease];
-        tmpItem.title = [NSString stringWithFormat:@"new title - %0d", i];
-        [items addObject:tmpItem];
-        if(i % 2 == 0){
-            tmpItem.soundExists = YES;
-        }
-    }
-    
-    NSString *tmpstring = [SVSerializationUtils stringBySerializingObject:item];
-    NSLog(@"%@", [SVRuntimeUtils descriptionOfObject:[SVSerializationUtils objectByDeserializingString:tmpstring objectClass:[NewsItem class]]]);
-    
-    tmpstring = [SVSerializationUtils stringBySerializingObjects:items];
-    NSLog(@"%@", [SVRuntimeUtils descriptionOfObjects:[SVSerializationUtils objectsByDeserializingString:tmpstring objectClass:[NewsItem class]]]);
-    
-    NSLog(@"%@", [SVSerializationUtils XMLStringBySerializingObject:item]);
-    NSLog(@"%@", [SVSerializationUtils XMLStringBySerializingObjects:items]);
-    
-    NSLog(@"%@", [SVRuntimeUtils propertiesOfObject:item]);
+    self.window.rootViewController = [[[UINavigationController alloc] initWithRootViewController:[[TestVC new] autorelease]] autorelease];
     
     return YES;
 }

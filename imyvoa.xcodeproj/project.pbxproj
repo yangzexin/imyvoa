@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3E005B5A174BBAEC00DF9EC3 /* TestVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E005B59174BBAEC00DF9EC3 /* TestVC.m */; };
 		3E08CB4F16DB40780099A91A /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E08CB4E16DB40780099A91A /* ImageIO.framework */; };
 		3E0ADFC316E8556700685764 /* main.lua in Resources */ = {isa = PBXBuildFile; fileRef = 3E0ADFC216E8556700685764 /* main.lua */; };
 		3E1CD65B16F07532001507E7 /* VOAUIPrefers.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E1CD65A16F07532001507E7 /* VOAUIPrefers.m */; };
@@ -164,6 +165,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3E005B58174BBAEC00DF9EC3 /* TestVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestVC.h; sourceTree = "<group>"; };
+		3E005B59174BBAEC00DF9EC3 /* TestVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestVC.m; sourceTree = "<group>"; };
 		3E08CB4E16DB40780099A91A /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
 		3E0ADFC216E8556700685764 /* main.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = main.lua; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.lua; };
 		3E1CD65916F07532001507E7 /* VOAUIPrefers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VOAUIPrefers.h; sourceTree = "<group>"; };
@@ -448,6 +451,8 @@
 				3E712866172A6E6200CF5639 /* AppDelegate.h */,
 				3E712867172A6E6200CF5639 /* AppDelegate.m */,
 				3E71285E172A6E6200CF5639 /* Supporting Files */,
+				3E005B58174BBAEC00DF9EC3 /* TestVC.h */,
+				3E005B59174BBAEC00DF9EC3 /* TestVC.m */,
 			);
 			path = TargetForTest;
 			sourceTree = "<group>";
@@ -1115,6 +1120,7 @@
 				3E712881172A706C00CF5639 /* NewsItem.m in Sources */,
 				3E712864172A6E6200CF5639 /* main.m in Sources */,
 				3E712868172A6E6200CF5639 /* AppDelegate.m in Sources */,
+				3E005B5A174BBAEC00DF9EC3 /* TestVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
