@@ -123,8 +123,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		3E005B58174BBAEC00DF9EC3 /* TestVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestVC.h; sourceTree = "<group>"; };
-		3E005B59174BBAEC00DF9EC3 /* TestVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestVC.m; sourceTree = "<group>"; };
 		3E08CB4E16DB40780099A91A /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
 		3E0ADFC216E8556700685764 /* main.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = main.lua; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.lua; };
 		3E1CD65916F07532001507E7 /* VOAUIPrefers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VOAUIPrefers.h; sourceTree = "<group>"; };
@@ -134,7 +132,7 @@
 		3E32D05D16F84492008AEC81 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		3E32D06016F8449C008AEC81 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		3E3AB27216FFEA5700D8DB15 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
-		3E3D0E531755FD3100351A95 /* libSavanna.a */ = {isa = PBXFileReference; lastKnownFileType = file; name = libSavanna.a; path = "../Savanna/build/Release-iphoneos/libSavanna.a"; sourceTree = "<group>"; };
+		3E3D0E531755FD3100351A95 /* libSavanna.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libSavanna.a; path = "../Savanna/build/Release-iphoneos/libSavanna.a"; sourceTree = "<group>"; };
 		3E3FDFD916F022B60098683D /* imyvoa57x57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = imyvoa57x57.png; sourceTree = SOURCE_ROOT; };
 		3E3FDFDC16F022BC0098683D /* imyvoa114x114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = imyvoa114x114.png; sourceTree = SOURCE_ROOT; };
 		3E3FDFDE16F022C70098683D /* imyvoa72x72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = imyvoa72x72.png; sourceTree = SOURCE_ROOT; };
@@ -152,15 +150,6 @@
 		3E59B65716D74EC000DF05A7 /* DictionaryFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DictionaryFactory.h; sourceTree = "<group>"; };
 		3E59B65816D74EC000DF05A7 /* DictionaryFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DictionaryFactory.m; sourceTree = "<group>"; };
 		3E69E30B16C53A3E00DC3BFD /* DictDotCNDictionary.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = DictDotCNDictionary.lua; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.lua; };
-		3E71285F172A6E6200CF5639 /* TargetForTest-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TargetForTest-Info.plist"; sourceTree = "<group>"; };
-		3E712861172A6E6200CF5639 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		3E712863172A6E6200CF5639 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		3E712865172A6E6200CF5639 /* TargetForTest-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TargetForTest-Prefix.pch"; sourceTree = "<group>"; };
-		3E712866172A6E6200CF5639 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		3E712867172A6E6200CF5639 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		3E712869172A6E6200CF5639 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
-		3E71286B172A6E6200CF5639 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
-		3E71286D172A6E6200CF5639 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		3E8429C816F05D4800175B2B /* TutorialManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TutorialManager.h; sourceTree = "<group>"; };
 		3E8429C916F05D4800175B2B /* TutorialManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TutorialManager.m; sourceTree = "<group>"; };
 		3E8429CB16F05DAA00175B2B /* Tutorial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tutorial.h; sourceTree = "<group>"; };
@@ -376,32 +365,6 @@
 				67C49B21155F5DAF002E20DD /* Dictionary */,
 			);
 			name = SubModules;
-			sourceTree = "<group>";
-		};
-		3E71285D172A6E6100CF5639 /* TargetForTest */ = {
-			isa = PBXGroup;
-			children = (
-				3E712866172A6E6200CF5639 /* AppDelegate.h */,
-				3E712867172A6E6200CF5639 /* AppDelegate.m */,
-				3E71285E172A6E6200CF5639 /* Supporting Files */,
-				3E005B58174BBAEC00DF9EC3 /* TestVC.h */,
-				3E005B59174BBAEC00DF9EC3 /* TestVC.m */,
-			);
-			path = TargetForTest;
-			sourceTree = "<group>";
-		};
-		3E71285E172A6E6200CF5639 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				3E71285F172A6E6200CF5639 /* TargetForTest-Info.plist */,
-				3E712860172A6E6200CF5639 /* InfoPlist.strings */,
-				3E712863172A6E6200CF5639 /* main.m */,
-				3E712865172A6E6200CF5639 /* TargetForTest-Prefix.pch */,
-				3E712869172A6E6200CF5639 /* Default.png */,
-				3E71286B172A6E6200CF5639 /* Default@2x.png */,
-				3E71286D172A6E6200CF5639 /* Default-568h@2x.png */,
-			);
-			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		3E755F0416129D02007DCD7A /* AddInFrameworks */ = {
@@ -699,7 +662,6 @@
 				3EEEC6F916FAB35600B2B8BE /* 3rdLibraries */,
 				CF7C5A90155B6D7700429671 /* imyvoa */,
 				3E755F0416129D02007DCD7A /* AddInFrameworks */,
-				3E71285D172A6E6100CF5639 /* TargetForTest */,
 				CF7C5A89155B6D7700429671 /* Frameworks */,
 				CF7C5A87155B6D7700429671 /* Products */,
 			);
@@ -1045,14 +1007,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		3E712860172A6E6200CF5639 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				3E712861172A6E6200CF5639 /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
 		679DC49B155E78420008D8B5 /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
