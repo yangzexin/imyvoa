@@ -494,13 +494,6 @@
 			name = Tutorials;
 			sourceTree = "<group>";
 		};
-		3E88B28116BE8D860054B6AE /* SubProjects */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = SubProjects;
-			sourceTree = "<group>";
-		};
 		3E926521161596CB00CF7ACE /* WordSoundListReader */ = {
 			isa = PBXGroup;
 			children = (
@@ -753,7 +746,6 @@
 				3E32D05D16F84492008AEC81 /* Default.png */,
 				3EEEC6F916FAB35600B2B8BE /* 3rdLibraries */,
 				CF7C5A90155B6D7700429671 /* imyvoa */,
-				3E88B28116BE8D860054B6AE /* SubProjects */,
 				3E755F0416129D02007DCD7A /* AddInFrameworks */,
 				3E71285D172A6E6100CF5639 /* TargetForTest */,
 				CF7C5A89155B6D7700429671 /* Frameworks */,
