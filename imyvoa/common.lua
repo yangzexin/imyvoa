@@ -31,8 +31,9 @@ function analyseSingleLi(liHtml)
 end
 
 function analyseNewsList(html)
-	local beginIndex, endIndex = string.find(html, "<span id=\"blist\">");
-	local beginIndex2, endIndex2 = string.find(html, "</span>", endIndex);
+    print(html);
+	local beginIndex, endIndex = string.find(html, "<div id=\"list\">");
+	local beginIndex2, endIndex2 = string.find(html, "</div>", endIndex);
 	html = string.sub(html, endIndex + 1, beginIndex2 - 1);
 
 	endIndex2 = 0;

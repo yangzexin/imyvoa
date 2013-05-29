@@ -14,6 +14,7 @@
 		3E2D348B16F82F9400D03CB9 /* PluginNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E2D348A16F82F9400D03CB9 /* PluginNavigationController.m */; };
 		3E32D06116F8449C008AEC81 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E32D06016F8449C008AEC81 /* Default@2x.png */; };
 		3E3AB27316FFEA5700D8DB15 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E3AB27216FFEA5700D8DB15 /* libxml2.dylib */; };
+		3E3D0E541755FD3100351A95 /* libSavanna.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E3D0E531755FD3100351A95 /* libSavanna.a */; };
 		3E3FDFDA16F022B60098683D /* imyvoa57x57.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E3FDFD916F022B60098683D /* imyvoa57x57.png */; };
 		3E3FDFDD16F022BC0098683D /* imyvoa114x114.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E3FDFDC16F022BC0098683D /* imyvoa114x114.png */; };
 		3E3FDFDF16F022C70098683D /* imyvoa72x72.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E3FDFDE16F022C70098683D /* imyvoa72x72.png */; };
@@ -48,7 +49,6 @@
 		3E71287D172A6F4F00CF5639 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E88B29516BE91D00054B6AE /* MobileCoreServices.framework */; };
 		3E71287E172A6F5400CF5639 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67CF07AB155E9F0B00F0519B /* QuartzCore.framework */; };
 		3E71287F172A6F5B00CF5639 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFE2F03B155B7A9C00D66255 /* SystemConfiguration.framework */; };
-		3E712880172A6F6D00CF5639 /* libSavanna.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E8FB79316DCEA9100313566 /* libSavanna.a */; };
 		3E712881172A706C00CF5639 /* NewsItem.m in Sources */ = {isa = PBXBuildFile; fileRef = CFE2F048155B89FC00D66255 /* NewsItem.m */; };
 		3E8429CA16F05D4800175B2B /* TutorialManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E8429C916F05D4800175B2B /* TutorialManager.m */; };
 		3E8429CD16F05DAA00175B2B /* Tutorial.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E8429CC16F05DAA00175B2B /* Tutorial.m */; };
@@ -63,7 +63,6 @@
 		3E88B29416BE91BF0054B6AE /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E88B29316BE91BF0054B6AE /* libz.dylib */; };
 		3E88B29616BE91D00054B6AE /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E88B29516BE91D00054B6AE /* MobileCoreServices.framework */; };
 		3E8FB79516DCEAB500313566 /* BaseScripts.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3E8FB79416DCEAB500313566 /* BaseScripts.bundle */; };
-		3E8FB79616DCEAE300313566 /* libSavanna.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E8FB79316DCEA9100313566 /* libSavanna.a */; };
 		3E926525161596E900CF7ACE /* WordSoundListReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E926524161596E900CF7ACE /* WordSoundListReader.m */; };
 		3E926529161597E100CF7ACE /* WordSoundListCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E926528161597E100CF7ACE /* WordSoundListCache.m */; };
 		3E9265331615A5F200CF7ACE /* WordReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E9265321615A5F200CF7ACE /* WordReader.m */; };
@@ -147,23 +146,6 @@
 		CFEE74F4155BB59F00EDDACB /* SharedResource.m in Sources */ = {isa = PBXBuildFile; fileRef = CFEE74F3155BB59F00EDDACB /* SharedResource.m */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		3E8FB79216DCEA9100313566 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 3E8FB78E16DCEA9100313566 /* Savanna.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 3E653EDF16DCDB4C00368931;
-			remoteInfo = Savanna;
-		};
-		3EE1F315174A5EE9006649F4 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 3E8FB78E16DCEA9100313566 /* Savanna.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 3ED90657174A057700CDE39F;
-			remoteInfo = SVObjectSerialization;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
 		3E005B58174BBAEC00DF9EC3 /* TestVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestVC.h; sourceTree = "<group>"; };
 		3E005B59174BBAEC00DF9EC3 /* TestVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestVC.m; sourceTree = "<group>"; };
@@ -176,6 +158,7 @@
 		3E32D05D16F84492008AEC81 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		3E32D06016F8449C008AEC81 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		3E3AB27216FFEA5700D8DB15 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
+		3E3D0E531755FD3100351A95 /* libSavanna.a */ = {isa = PBXFileReference; lastKnownFileType = file; name = libSavanna.a; path = "../Savanna/build/Release-iphoneos/libSavanna.a"; sourceTree = "<group>"; };
 		3E3FDFD916F022B60098683D /* imyvoa57x57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = imyvoa57x57.png; sourceTree = SOURCE_ROOT; };
 		3E3FDFDC16F022BC0098683D /* imyvoa114x114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = imyvoa114x114.png; sourceTree = SOURCE_ROOT; };
 		3E3FDFDE16F022C70098683D /* imyvoa72x72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = imyvoa72x72.png; sourceTree = SOURCE_ROOT; };
@@ -219,7 +202,6 @@
 		3E88B29116BE91AF0054B6AE /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		3E88B29316BE91BF0054B6AE /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		3E88B29516BE91D00054B6AE /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
-		3E8FB78E16DCEA9100313566 /* Savanna.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Savanna.xcodeproj; path = ../Savanna/Savanna.xcodeproj; sourceTree = "<group>"; };
 		3E8FB79416DCEAB500313566 /* BaseScripts.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = BaseScripts.bundle; path = ../../Savanna/Resources/BaseScripts.bundle; sourceTree = "<group>"; };
 		3E926523161596E900CF7ACE /* WordSoundListReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WordSoundListReader.h; sourceTree = "<group>"; };
 		3E926524161596E900CF7ACE /* WordSoundListReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WordSoundListReader.m; sourceTree = "<group>"; };
@@ -370,7 +352,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3E712880172A6F6D00CF5639 /* libSavanna.a in Frameworks */,
 				3E71287F172A6F5B00CF5639 /* SystemConfiguration.framework in Frameworks */,
 				3E71287E172A6F5400CF5639 /* QuartzCore.framework in Frameworks */,
 				3E71287D172A6F4F00CF5639 /* MobileCoreServices.framework in Frameworks */,
@@ -394,9 +375,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3E3D0E541755FD3100351A95 /* libSavanna.a in Frameworks */,
 				3E3AB27316FFEA5700D8DB15 /* libxml2.dylib in Frameworks */,
 				3E41C19916F584DA00F01993 /* MediaPlayer.framework in Frameworks */,
-				3E8FB79616DCEAE300313566 /* libSavanna.a in Frameworks */,
 				3E08CB4F16DB40780099A91A /* ImageIO.framework in Frameworks */,
 				3E88B29616BE91D00054B6AE /* MobileCoreServices.framework in Frameworks */,
 				3E88B29416BE91BF0054B6AE /* libz.dylib in Frameworks */,
@@ -474,6 +455,7 @@
 		3E755F0416129D02007DCD7A /* AddInFrameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3E3D0E531755FD3100351A95 /* libSavanna.a */,
 				3E3AB27216FFEA5700D8DB15 /* libxml2.dylib */,
 				CF32395215B5402E0009D646 /* AudioToolbox.framework */,
 				CF6243F9157DD4CC0005D794 /* AVFoundation.framework */,
@@ -515,18 +497,8 @@
 		3E88B28116BE8D860054B6AE /* SubProjects */ = {
 			isa = PBXGroup;
 			children = (
-				3E8FB78E16DCEA9100313566 /* Savanna.xcodeproj */,
 			);
 			name = SubProjects;
-			sourceTree = "<group>";
-		};
-		3E8FB78F16DCEA9100313566 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				3E8FB79316DCEA9100313566 /* libSavanna.a */,
-				3EE1F316174A5EE9006649F4 /* libSVObjectSerialization.a */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		3E926521161596CB00CF7ACE /* WordSoundListReader */ = {
@@ -1024,12 +996,6 @@
 			mainGroup = CF7C5A7B155B6D7700429671;
 			productRefGroup = CF7C5A87155B6D7700429671 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = 3E8FB78F16DCEA9100313566 /* Products */;
-					ProjectRef = 3E8FB78E16DCEA9100313566 /* Savanna.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				CF7C5A85155B6D7700429671 /* imyvoa */,
@@ -1037,23 +1003,6 @@
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		3E8FB79316DCEA9100313566 /* libSavanna.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libSavanna.a;
-			remoteRef = 3E8FB79216DCEA9100313566 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		3EE1F316174A5EE9006649F4 /* libSVObjectSerialization.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libSVObjectSerialization.a;
-			remoteRef = 3EE1F315174A5EE9006649F4 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		3E712857172A6E6100CF5639 /* Resources */ = {
