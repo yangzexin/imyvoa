@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3E005B5A174BBAEC00DF9EC3 /* TestVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E005B59174BBAEC00DF9EC3 /* TestVC.m */; };
 		3E08CB4F16DB40780099A91A /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E08CB4E16DB40780099A91A /* ImageIO.framework */; };
 		3E0ADFC316E8556700685764 /* main.lua in Resources */ = {isa = PBXBuildFile; fileRef = 3E0ADFC216E8556700685764 /* main.lua */; };
 		3E1CD65B16F07532001507E7 /* VOAUIPrefers.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E1CD65A16F07532001507E7 /* VOAUIPrefers.m */; };
@@ -27,29 +26,6 @@
 		3E542AB21615E1ED0072BBF0 /* ApplicationKeeper.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E542AB11615E1ED0072BBF0 /* ApplicationKeeper.m */; };
 		3E59B65916D74EC000DF05A7 /* DictionaryFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E59B65816D74EC000DF05A7 /* DictionaryFactory.m */; };
 		3E69E30C16C53A3E00DC3BFD /* DictDotCNDictionary.lua in Resources */ = {isa = PBXBuildFile; fileRef = 3E69E30B16C53A3E00DC3BFD /* DictDotCNDictionary.lua */; };
-		3E71285A172A6E6100CF5639 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF7C5A8A155B6D7700429671 /* UIKit.framework */; };
-		3E71285B172A6E6100CF5639 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF7C5A8C155B6D7700429671 /* Foundation.framework */; };
-		3E71285C172A6E6100CF5639 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF7C5A8E155B6D7700429671 /* CoreGraphics.framework */; };
-		3E712862172A6E6200CF5639 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3E712860172A6E6200CF5639 /* InfoPlist.strings */; };
-		3E712864172A6E6200CF5639 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E712863172A6E6200CF5639 /* main.m */; };
-		3E712868172A6E6200CF5639 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E712867172A6E6200CF5639 /* AppDelegate.m */; };
-		3E71286A172A6E6200CF5639 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E712869172A6E6200CF5639 /* Default.png */; };
-		3E71286C172A6E6200CF5639 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E71286B172A6E6200CF5639 /* Default@2x.png */; };
-		3E71286E172A6E6200CF5639 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E71286D172A6E6200CF5639 /* Default-568h@2x.png */; };
-		3E712873172A6E9700CF5639 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E3AB27216FFEA5700D8DB15 /* libxml2.dylib */; };
-		3E712874172A6E9C00CF5639 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF32395215B5402E0009D646 /* AudioToolbox.framework */; };
-		3E712875172A6EA000CF5639 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF6243F9157DD4CC0005D794 /* AVFoundation.framework */; };
-		3E712876172A6EA600CF5639 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E88B28D16BE91910054B6AE /* CFNetwork.framework */; };
-		3E712877172A6EAB00CF5639 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E88B28F16BE91A00054B6AE /* CoreLocation.framework */; };
-		3E712878172A6EB000CF5639 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E08CB4E16DB40780099A91A /* ImageIO.framework */; };
-		3E712879172A6EB500CF5639 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 67200D00156E52F30083032E /* libsqlite3.dylib */; };
-		3E71287A172A6EBA00CF5639 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E88B29316BE91BF0054B6AE /* libz.dylib */; };
-		3E71287B172A6EBF00CF5639 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E88B29116BE91AF0054B6AE /* MapKit.framework */; };
-		3E71287C172A6F4A00CF5639 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E41C19816F584DA00F01993 /* MediaPlayer.framework */; };
-		3E71287D172A6F4F00CF5639 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E88B29516BE91D00054B6AE /* MobileCoreServices.framework */; };
-		3E71287E172A6F5400CF5639 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67CF07AB155E9F0B00F0519B /* QuartzCore.framework */; };
-		3E71287F172A6F5B00CF5639 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFE2F03B155B7A9C00D66255 /* SystemConfiguration.framework */; };
-		3E712881172A706C00CF5639 /* NewsItem.m in Sources */ = {isa = PBXBuildFile; fileRef = CFE2F048155B89FC00D66255 /* NewsItem.m */; };
 		3E8429CA16F05D4800175B2B /* TutorialManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E8429C916F05D4800175B2B /* TutorialManager.m */; };
 		3E8429CD16F05DAA00175B2B /* Tutorial.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E8429CC16F05DAA00175B2B /* Tutorial.m */; };
 		3E8429D116F05F0200175B2B /* NewsDetailTutorial.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E8429D016F05F0200175B2B /* NewsDetailTutorial.m */; };
@@ -176,7 +152,6 @@
 		3E59B65716D74EC000DF05A7 /* DictionaryFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DictionaryFactory.h; sourceTree = "<group>"; };
 		3E59B65816D74EC000DF05A7 /* DictionaryFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DictionaryFactory.m; sourceTree = "<group>"; };
 		3E69E30B16C53A3E00DC3BFD /* DictDotCNDictionary.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = DictDotCNDictionary.lua; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.lua; };
-		3E712859172A6E6100CF5639 /* TargetForTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TargetForTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E71285F172A6E6200CF5639 /* TargetForTest-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TargetForTest-Info.plist"; sourceTree = "<group>"; };
 		3E712861172A6E6200CF5639 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		3E712863172A6E6200CF5639 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -348,29 +323,6 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		3E712856172A6E6100CF5639 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				3E71287F172A6F5B00CF5639 /* SystemConfiguration.framework in Frameworks */,
-				3E71287E172A6F5400CF5639 /* QuartzCore.framework in Frameworks */,
-				3E71287D172A6F4F00CF5639 /* MobileCoreServices.framework in Frameworks */,
-				3E71287C172A6F4A00CF5639 /* MediaPlayer.framework in Frameworks */,
-				3E71287B172A6EBF00CF5639 /* MapKit.framework in Frameworks */,
-				3E71287A172A6EBA00CF5639 /* libz.dylib in Frameworks */,
-				3E712879172A6EB500CF5639 /* libsqlite3.dylib in Frameworks */,
-				3E712878172A6EB000CF5639 /* ImageIO.framework in Frameworks */,
-				3E712877172A6EAB00CF5639 /* CoreLocation.framework in Frameworks */,
-				3E712876172A6EA600CF5639 /* CFNetwork.framework in Frameworks */,
-				3E712875172A6EA000CF5639 /* AVFoundation.framework in Frameworks */,
-				3E712874172A6E9C00CF5639 /* AudioToolbox.framework in Frameworks */,
-				3E712873172A6E9700CF5639 /* libxml2.dylib in Frameworks */,
-				3E71285A172A6E6100CF5639 /* UIKit.framework in Frameworks */,
-				3E71285B172A6E6100CF5639 /* Foundation.framework in Frameworks */,
-				3E71285C172A6E6100CF5639 /* CoreGraphics.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		CF7C5A83155B6D7700429671 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -757,7 +709,6 @@
 			isa = PBXGroup;
 			children = (
 				CF7C5A86155B6D7700429671 /* imyvoa.app */,
-				3E712859172A6E6100CF5639 /* TargetForTest.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -935,23 +886,6 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		3E712858172A6E6100CF5639 /* TargetForTest */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 3E712872172A6E6200CF5639 /* Build configuration list for PBXNativeTarget "TargetForTest" */;
-			buildPhases = (
-				3E712855172A6E6100CF5639 /* Sources */,
-				3E712856172A6E6100CF5639 /* Frameworks */,
-				3E712857172A6E6100CF5639 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = TargetForTest;
-			productName = TargetForTest;
-			productReference = 3E712859172A6E6100CF5639 /* TargetForTest.app */;
-			productType = "com.apple.product-type.application";
-		};
 		CF7C5A85155B6D7700429671 /* imyvoa */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = CF7C5A9E155B6D7700429671 /* Build configuration list for PBXNativeTarget "imyvoa" */;
@@ -991,23 +925,11 @@
 			projectRoot = "";
 			targets = (
 				CF7C5A85155B6D7700429671 /* imyvoa */,
-				3E712858172A6E6100CF5639 /* TargetForTest */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		3E712857172A6E6100CF5639 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				3E712862172A6E6200CF5639 /* InfoPlist.strings in Resources */,
-				3E71286A172A6E6200CF5639 /* Default.png in Resources */,
-				3E71286C172A6E6200CF5639 /* Default@2x.png in Resources */,
-				3E71286E172A6E6200CF5639 /* Default-568h@2x.png in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		CF7C5A84155B6D7700429671 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1054,17 +976,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		3E712855172A6E6100CF5639 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				3E712881172A706C00CF5639 /* NewsItem.m in Sources */,
-				3E712864172A6E6200CF5639 /* main.m in Sources */,
-				3E712868172A6E6200CF5639 /* AppDelegate.m in Sources */,
-				3E005B5A174BBAEC00DF9EC3 /* TestVC.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		CF7C5A82155B6D7700429671 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1162,43 +1073,6 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		3E71286F172A6E6200CF5639 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_WARN_EMPTY_BODY = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "TargetForTest/TargetForTest-Prefix.pch";
-				HEADER_SEARCH_PATHS = "../Savanna/**";
-				INFOPLIST_FILE = "TargetForTest/TargetForTest-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
-				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				USER_HEADER_SEARCH_PATHS = "../Savanna/**";
-				WRAPPER_EXTENSION = app;
-			};
-			name = Debug;
-		};
-		3E712870172A6E6200CF5639 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_WARN_EMPTY_BODY = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "TargetForTest/TargetForTest-Prefix.pch";
-				HEADER_SEARCH_PATHS = "../Savanna/**";
-				INFOPLIST_FILE = "TargetForTest/TargetForTest-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				USER_HEADER_SEARCH_PATHS = "../Savanna/**";
-				WRAPPER_EXTENSION = app;
-			};
-			name = Release;
-		};
 		CF7C5A9C155B6D7700429671 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1295,15 +1169,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		3E712872172A6E6200CF5639 /* Build configuration list for PBXNativeTarget "TargetForTest" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				3E71286F172A6E6200CF5639 /* Debug */,
-				3E712870172A6E6200CF5639 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		CF7C5A80155B6D7700429671 /* Build configuration list for PBXProject "imyvoa" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
