@@ -370,14 +370,14 @@
 		3E755F0416129D02007DCD7A /* AddInFrameworks */ = {
 			isa = PBXGroup;
 			children = (
-				3E3D0E531755FD3100351A95 /* libSavanna.a */,
-				3E3AB27216FFEA5700D8DB15 /* libxml2.dylib */,
 				CF32395215B5402E0009D646 /* AudioToolbox.framework */,
 				CF6243F9157DD4CC0005D794 /* AVFoundation.framework */,
 				3E88B28D16BE91910054B6AE /* CFNetwork.framework */,
 				3E88B28F16BE91A00054B6AE /* CoreLocation.framework */,
 				3E08CB4E16DB40780099A91A /* ImageIO.framework */,
+				3E3D0E531755FD3100351A95 /* libSavanna.a */,
 				67200D00156E52F30083032E /* libsqlite3.dylib */,
+				3E3AB27216FFEA5700D8DB15 /* libxml2.dylib */,
 				3E88B29316BE91BF0054B6AE /* libz.dylib */,
 				3E88B29116BE91AF0054B6AE /* MapKit.framework */,
 				3E41C19816F584DA00F01993 /* MediaPlayer.framework */,
