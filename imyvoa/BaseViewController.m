@@ -8,15 +8,15 @@
 
 #import "BaseViewController.h"
 #import <QuartzCore/QuartzCore.h>
-#import "SVProviderPool.h"
+#import "YXProviderPool.h"
 #import "Player.h"
-#import "SVUIPrefersManager.h"
+#import "YXUIPrefersManager.h"
 
 @interface BaseViewController ()
 
 @property(nonatomic, retain)UILabel *titleLabel;
 @property(nonatomic, copy)NSString *customTitle;
-@property(nonatomic, retain)SVProviderPool *providerPool;
+@property(nonatomic, retain)YXProviderPool *providerPool;
 @property(nonatomic, retain)NSMutableArray *nonPrefersViewList;
 
 @end
@@ -45,7 +45,7 @@
     self.title = NSLocalizedString(@"back", nil);
     _customTitle = @"";
     
-    _providerPool = [[SVProviderPool alloc] init];
+    _providerPool = [[YXProviderPool alloc] init];
     self.nonPrefersViewList = [NSMutableArray array];
     
     return self;
@@ -62,7 +62,7 @@
     [super viewDidLoad];
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(_UIPrefersManagerCurrentPrefersDidChange:)
-                                                 name:kSVUIPrefersManagerCurrentPrefersDidChange
+                                                 name:kUIPrefersManagerCurrentPrefersDidChangeNotification
                                                object:nil];
 }
 
@@ -107,7 +107,7 @@
     self.customTitle = title;
 }
 
-- (void)addProviderToPool:(id<SVProviderPoolable>)provider
+- (void)addProviderToPool:(id<YXProviderPoolable>)provider
 {
     [_providerPool tryToReleaseProvider];
     [_providerPool addProvider:provider];
@@ -149,7 +149,7 @@
     for(UIView *view in self.nonPrefersViewList){
         [views removeObject:view];
     }
-    [[SVUIPrefersManager defaultManager] configureViews:views];
+    [[YXUIPrefersManager defaultManager] configureViews:views];
 }
 
 - (void)_UIPrefersManagerCurrentPrefersDidChange:(NSNotification *)n

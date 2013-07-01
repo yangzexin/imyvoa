@@ -7,12 +7,12 @@
 //
 
 #import "OnlineDictionary.h"
-#import "SVEncryptUtils.h"
+#import "YXEncryptUtils.h"
 #import "DBDictionaryCache.h"
 #import "DictonaryWord.h"
-#import "SVApp.h"
-#import "SVAppManager.h"
-#import "SVApplicationScriptBundle.h"
+#import "YXApp.h"
+#import "YXAppManager.h"
+#import "YXApplicationScriptBundle.h"
 
 @interface OnlineDictionary () <HTTPRequesterDelegate>
 
@@ -55,7 +55,7 @@
 
 - (NSString *)name
 {
-    return [SVAppManager runApp:[SharedResource sharedInstance].scriptApp params:[NSArray arrayWithObject:@"dictionary_name"]];
+    return [YXAppManager runApp:[SharedResource sharedInstance].scriptApp params:[NSArray arrayWithObject:@"dictionary_name"]];
 }
 
 - (void)query:(NSString *)str delegate:(id<DictionaryDelegate>)delegate
@@ -70,7 +70,7 @@
 //        NSLog(@"from cache:%@", dictWord.word);
         [self notifySucceed:dictWord.definition];
     }else{
-        NSString *urlString = [SVAppManager runApp:[SharedResource sharedInstance].scriptApp
+        NSString *urlString = [YXAppManager runApp:[SharedResource sharedInstance].scriptApp
                                             params:[NSArray arrayWithObjects:@"dictionary_url", str, nil]];
         self.httpRequester = [HTTPRequester newHTTPRequester];
         self.httpRequester.urlString = urlString;
@@ -113,7 +113,7 @@
 
 - (NSString *)analyzeContent:(NSString *)content
 {
-    NSString *result = [SVAppManager runApp:[SharedResource sharedInstance].scriptApp
+    NSString *result = [YXAppManager runApp:[SharedResource sharedInstance].scriptApp
                                      params:[NSArray arrayWithObjects:@"analyse_dictionary_content", content, nil]];
     return result;
 }

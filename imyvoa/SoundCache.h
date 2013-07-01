@@ -7,10 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "SVKeyValueManager.h"
+#import "YXKeyValueManager.h"
 
 @interface SoundCache : NSObject {
-    id<SVKeyValueManager> _cache;
+    id<YXKeyValueManager> _cache;
 }
 
 + (SoundCache *)sharedInstance;

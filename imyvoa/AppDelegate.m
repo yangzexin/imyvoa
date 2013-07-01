@@ -18,27 +18,27 @@
 #import "NewsDetailViewController.h"
 #import "LuaVoaNewsContentProvider.h"
 #import "OnlineDictionary.h"
-#import "SVCommonUtils.h"
-#import "SVEncryptUtils.h"
+#import "YXCommonUtils.h"
+#import "YXEncryptUtils.h"
 #import "DictionaryViewController.h"
-#import "SVDataBaseKeyValueManager.h"
-#import "SVUITools.h"
+#import "YXDatabaseKeyValueManager.h"
+#import "YXUITools.h"
 #import "AllGlossaryViewController.h"
 #import "SettingViewController.h"
 #import "LINavigationController.h"
-#import "SVApp.h"
-#import "SVAppManager.h"
-#import "SVApplicationScriptBundle.h"
-#import "SVLocalAppBundle.h"
-#import "SVTimeCostTracer.h"
-#import "SVOnlineAppBundle.h"
+#import "YXApp.h"
+#import "YXAppManager.h"
+#import "YXApplicationScriptBundle.h"
+#import "YXLocalAppBundle.h"
+#import "YXTimeCostTracer.h"
+#import "YXOnlineAppBundle.h"
 #import "NewsDetailTutorial.h"
 #import "TutorialManager.h"
 #import "TutorialableNavigationController.h"
-#import "SVUIPrefersManager.h"
+#import "YXUIPrefersManager.h"
 #import "VOAUIPrefers.h"
 #import "PluginNavigationController.h"
-#import "SVScriptBundleRepository.h"
+#import "YXScriptBundleRepository.h"
 #import "MobClick.h"
 
 @interface AppDelegate () <SplashViewControllerDelegate, UITabBarControllerDelegate>
@@ -46,7 +46,7 @@
 @property(nonatomic, retain)UINavigationController *newsListNC;
 @property(nonatomic, retain)UINavigationController *localNewsListNC;
 @property(nonatomic, retain)UITabBarController *tabBarController;
-@property(nonatomic, retain)SVApp *pluginApp;
+@property(nonatomic, retain)YXApp *pluginApp;
 
 @end
 
@@ -71,24 +71,24 @@
 
 - (void)loadScript
 {
-    id<SVScriptBundle> scriptBundle = [[[SVOnlineAppBundle alloc] initWithURL:
+    id<YXScriptBundle> scriptBundle = [[[YXOnlineAppBundle alloc] initWithURL:
                                         [NSURL URLWithString:@"http://imyvoaspecial.googlecode.com/files/com.yzx.imyvoa.pkg"] timeoutInterval:10.0f] autorelease];
-    scriptBundle = [[SVApplicationScriptBundle new] autorelease];
+    scriptBundle = [[YXApplicationScriptBundle new] autorelease];
     if(scriptBundle){
         NSLog(@"download script success");
-        [[SVScriptBundleRepository defaultRespository] repositScriptBundle:scriptBundle newBundleId:@"com.yzx.imyvoa"];
+        [[YXScriptBundleRepository defaultRespository] repositScriptBundle:scriptBundle newBundleId:@"com.yzx.imyvoa"];
     }else{
         NSLog(@"download script failed, try to get script bundle from local respository");
-        scriptBundle = [[SVScriptBundleRepository defaultRespository] scriptBundleWithBundleId:@"com.yzx.imyvoa"];
+        scriptBundle = [[YXScriptBundleRepository defaultRespository] scriptBundleWithBundleId:@"com.yzx.imyvoa"];
         if(scriptBundle){
             NSLog(@"local script bundle found in repository");
         }
     }
     if(!scriptBundle){
         NSLog(@"cannot find script bundle from local repository, use application script bundle");
-        scriptBundle = [[[SVApplicationScriptBundle alloc] initWithMainScriptName:@"main"] autorelease];
+        scriptBundle = [[[YXApplicationScriptBundle alloc] initWithMainScriptName:@"main"] autorelease];
     }
-    SVApp *app = [[[SVApp alloc] initWithScriptBundle:scriptBundle] autorelease];
+    YXApp *app = [[[YXApp alloc] initWithScriptBundle:scriptBundle] autorelease];
     [SharedResource sharedInstance].scriptApp = app;
 }
 
@@ -100,7 +100,7 @@
     [self.window makeKeyAndVisible];
     
     [self loadScript];
-    [[SVUIPrefersManager defaultManager] setCurrentPrefers:[[VOAUIPrefers new] autorelease]];
+    [[YXUIPrefersManager defaultManager] setCurrentPrefers:[[VOAUIPrefers new] autorelease]];
     [[TutorialManager defaultManager] setTutorialWithPageName:NSStringFromClass([NewsDetailViewController class])
                                                      tutorial:[[NewsDetailTutorial new] autorelease]];
     [self loadTabBarController];
@@ -235,7 +235,7 @@
     self.window.rootViewController = tabBarController;
     
     if([tabBarController.tabBar respondsToSelector:@selector(setBackgroundImage:)]){
-        tabBarController.tabBar.backgroundImage = [SVUITools createPureColorImageWithColor:[UIColor blackColor]
+        tabBarController.tabBar.backgroundImage = [YXUITools createPureColorImageWithColor:[UIColor blackColor]
                                                                                       size:CGSizeMake(320, 44.0f)];
     }
 }

@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "VoaNewsListProvider.h"
-#import "SVKeyValueManager.h"
+#import "YXKeyValueManager.h"
 #import "LuaScriptProvider.h"
 
 @class HTTPRequester;
@@ -17,7 +17,7 @@
     id<VoaNewsListProviderDelegate> _delegate;
     HTTPRequester *_httpRequester;
     
-    id<SVKeyValueManager> _cache;
+    id<YXKeyValueManager> _cache;
     
     id<LuaScriptProvider> _luaScriptProvider;
 }

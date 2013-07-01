@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @class SplashViewController;
-@class SVTaskQueue;
+@class YXTaskQueue;
 
 @protocol SplashViewControllerDelegate <NSObject>
 

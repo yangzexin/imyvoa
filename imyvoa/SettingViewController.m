@@ -9,10 +9,10 @@
 #import "SettingViewController.h"
 #import "ContentProviderFactory.h"
 #import "SoundCache.h"
-#import "SVZipHandler.h"
-#import "SVZipHandlerFactory.h"
-#import "SVCommonUtils.h"
-#import "SVAlertDialog.h"
+#import "YXZipHandler.h"
+#import "YXZipHandlerFactory.h"
+#import "YXCommonUtils.h"
+#import "YXAlertDialog.h"
 #import "SelectRestoreBackupController.h"
 #import "AboutUsViewController.h"
 
@@ -68,7 +68,7 @@
     NSArray *array = [self.sectionDictionary objectForKey:[[self.sectionDictionary allKeys] objectAtIndex:indexPath.section]];
     NSString *field = [array objectAtIndex:indexPath.row];
     if([field isEqualToString:kClearNewContentCache]){
-        [SVAlertDialog showWithTitle:@"清空" message:@"本地缓存的新闻内容将会被全部清空，是否继续？" completion:^(NSInteger buttonIndex, NSString *buttonTitle) {
+        [YXAlertDialog showWithTitle:@"清空" message:@"本地缓存的新闻内容将会被全部清空，是否继续？" completion:^(NSInteger buttonIndex, NSString *buttonTitle) {
             if(buttonIndex == 1){
                 dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
                     id<VoaNewsDetailProvider> provider = [ContentProviderFactory newsDetailProvider];
@@ -85,15 +85,15 @@
             }
         } cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
     }else if([field isEqualToString:kBackupCache]){
-        [SVAlertDialog showWithTitle:@"备份" message:@"备份可能需要一段时间，是否继续?" completion:^(NSInteger buttonIndex, NSString *buttonTitle) {
-            if(buttonIndex == 1){id<SVZipHandler> zip = [SVZipHandlerFactory defaultZipHandler];
+        [YXAlertDialog showWithTitle:@"备份" message:@"备份可能需要一段时间，是否继续?" completion:^(NSInteger buttonIndex, NSString *buttonTitle) {
+            if(buttonIndex == 1){id<YXZipHandler> zip = [YXZipHandlerFactory defaultZipHandler];
                 [self setWaiting:YES];
                 dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
                     NSString *documentPath = [NSString stringWithFormat:@"%@/Documents", NSHomeDirectory()];
                     NSDateFormatter *dateFormatter = [[NSDateFormatter new] autorelease];
                     [dateFormatter setDateFormat:@"yyyy-MM-dd"];
                     NSString *backupFileName = [NSString stringWithFormat:@"backup_%@.zip", [dateFormatter stringFromDate:[[NSDate new] autorelease]]];
-                    backupFileName = [SVCommonUtils countableTempFileName:backupFileName atDirectory:documentPath];
+                    backupFileName = [YXCommonUtils countableTempFileName:backupFileName atDirectory:documentPath];
                     [zip zipWithDirectoryPath:[[SharedResource sharedInstance] cachePath]
                                    toFilePath:[documentPath stringByAppendingPathComponent:backupFileName]];
                     dispatch_async(dispatch_get_main_queue(), ^{
@@ -110,11 +110,11 @@
             [selectRestoreVC setWaiting:YES];
             [[NSFileManager defaultManager] removeItemAtPath:[SharedResource sharedInstance].cachePath error:nil];
             dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-                id<SVZipHandler> zip = [SVZipHandlerFactory defaultZipHandler];
+                id<YXZipHandler> zip = [YXZipHandlerFactory defaultZipHandler];
                 [zip unzipWithFilePath:zipFilePath toDirectoryPath:[[SharedResource sharedInstance].cachePath stringByDeletingLastPathComponent]];
                 dispatch_async(dispatch_get_main_queue(), ^{
                     [selectRestoreVC setWaiting:NO];
-                    [SVAlertDialog showWithTitle:@"恢复" message:@"恢复成功" completion:^(NSInteger buttonIndex, NSString *buttonTitle) {
+                    [YXAlertDialog showWithTitle:@"恢复" message:@"恢复成功" completion:^(NSInteger buttonIndex, NSString *buttonTitle) {
                         [self dismissModalViewControllerAnimated:YES];
                     } cancelButtonTitle:@"确定" otherButtonTitles:nil];
                 });
@@ -125,7 +125,7 @@
         [self presentModalViewController:tmpNC animated:YES];
     }else if([field isEqualToString:kAboutUs]){
         NSString *about = [NSString stringWithFormat:@"版本:%@，电子邮箱：yang3800650071@163.com", [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"]];
-        [SVAlertDialog showWithTitle:kAboutUs message:about completion:nil cancelButtonTitle:@"确定" otherButtonTitles:nil];
+        [YXAlertDialog showWithTitle:kAboutUs message:about completion:nil cancelButtonTitle:@"确定" otherButtonTitles:nil];
     }
 }
 

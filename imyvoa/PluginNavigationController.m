@@ -7,15 +7,15 @@
 //
 
 #import "PluginNavigationController.h"
-#import "SVOnlineAppBundle.h"
-#import "SVTimeCostTracer.h"
-#import "SVApp.h"
-#import "SVAppManager.h"
-#import "SVScriptBundleRepository.h"
+#import "YXOnlineAppBundle.h"
+#import "YXTimeCostTracer.h"
+#import "YXApp.h"
+#import "YXAppManager.h"
+#import "YXScriptBundleRepository.h"
 
 @interface PluginNavigationController ()
 
-@property(nonatomic, retain)SVApp *pluginApp;
+@property(nonatomic, retain)YXApp *pluginApp;
 
 @end
 
@@ -39,22 +39,22 @@
     }
     [self setLoading:YES];
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        [SVTimeCostTracer markWithIdentifier:@"load_plugin_app"];
-        id<SVScriptBundle> bundle = [[[SVOnlineAppBundle alloc]
+        [YXTimeCostTracer markWithIdentifier:@"load_plugin_app"];
+        id<YXScriptBundle> bundle = [[[YXOnlineAppBundle alloc]
                                       initWithURL:[NSURL URLWithString:@"http://imyvoaspecial.googlecode.com/files/com.yzx.imyvoa.plugins.pkg"]] autorelease];
         if(!bundle){
-            bundle = [[SVScriptBundleRepository defaultRespository] scriptBundleWithBundleId:@"com.yzx.imyvoa.plugins"];
+            bundle = [[YXScriptBundleRepository defaultRespository] scriptBundleWithBundleId:@"com.yzx.imyvoa.plugins"];
         }else{
-            [[SVScriptBundleRepository defaultRespository] repositScriptBundle:bundle newBundleId:@"com.yzx.imyvoa.plugins"];
+            [[YXScriptBundleRepository defaultRespository] repositScriptBundle:bundle newBundleId:@"com.yzx.imyvoa.plugins"];
         }
         if(bundle){
-            SVApp *app = [[[SVApp alloc] initWithScriptBundle:bundle relatedViewController:self] autorelease];
+            YXApp *app = [[[YXApp alloc] initWithScriptBundle:bundle relatedViewController:self] autorelease];
             dispatch_sync(dispatch_get_main_queue(), ^{
                 self.pluginApp = app;
-                [SVTimeCostTracer markWithIdentifier:@"run_app"];
-                [SVAppManager runApp:app];
-                [SVTimeCostTracer timeCostWithIdentifier:@"run_app" print:YES];
-                [SVTimeCostTracer timeCostWithIdentifier:@"load_plugin_app" print:YES];
+                [YXTimeCostTracer markWithIdentifier:@"run_app"];
+                [YXAppManager runApp:app];
+                [YXTimeCostTracer timeCostWithIdentifier:@"run_app" print:YES];
+                [YXTimeCostTracer timeCostWithIdentifier:@"load_plugin_app" print:YES];
                 [self setLoading:NO];
             });
         }else{

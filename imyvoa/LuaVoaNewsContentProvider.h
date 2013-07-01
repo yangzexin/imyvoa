@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "VoaNewsDetailProvider.h"
-#import "SVKeyValueManager.h"
+#import "YXKeyValueManager.h"
 
 @class HTTPRequester;
 
@@ -18,7 +18,7 @@
     NewsItem *_newsItem;
     HTTPRequester *_httpRequester;
     
-    id<SVKeyValueManager> _keyValueCache;
+    id<YXKeyValueManager> _keyValueCache;
 }
 
 @property(nonatomic, assign)id<VoaNewsDetailProviderDelegate> delegate;

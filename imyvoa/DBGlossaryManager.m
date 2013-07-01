@@ -7,14 +7,14 @@
 //
 
 #import "DBGlossaryManager.h"
-#import "SVKeyValueManager.h"
-#import "SVDataBaseKeyValueManager.h"
-#import "SVCommonUtils.h"
-#import "SVEncryptUtils.h"
+#import "YXKeyValueManager.h"
+#import "YXDatabaseKeyValueManager.h"
+#import "YXCommonUtils.h"
+#import "YXEncryptUtils.h"
 
 @interface DBGlossaryManager ()
 
-@property(nonatomic, retain)id<SVKeyValueManager> glossaryLibrary;
+@property(nonatomic, retain)id<YXKeyValueManager> glossaryLibrary;
 
 @end
 
@@ -33,7 +33,7 @@
     self = [super init];
     
     NSString *fileName = [NSString stringWithFormat:@"glossary+%@", identifier];
-    self.glossaryLibrary = [[[SVDataBaseKeyValueManager alloc] initWithDBName:fileName atFolder:[[SharedResource sharedInstance] cachePath]] autorelease];
+    self.glossaryLibrary = [[[YXDatabaseKeyValueManager alloc] initWithDBName:fileName atFolder:[[SharedResource sharedInstance] cachePath]] autorelease];
     
     return self;
 }

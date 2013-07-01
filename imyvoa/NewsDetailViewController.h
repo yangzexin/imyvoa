@@ -13,8 +13,8 @@
 #import "GlossaryManager.h"
 
 @class NewsItem;
-@class SVHTTPDownloader;
-@class SVTimer;
+@class YXHTTPDownloader;
+@class YXTimer;
 
 @interface NewsDetailViewController : BaseViewController <VoaNewsDetailProviderDelegate> {
     UIToolbar *_toolbar;
@@ -38,9 +38,9 @@
     
     NSString *_dictionaryName;
     
-    SVHTTPDownloader *_httpDownloader;
+    YXHTTPDownloader *_httpDownloader;
     
-    SVTimer *_timer;
+    YXTimer *_timer;
     
     BOOL _positionSilderTouching;
     
