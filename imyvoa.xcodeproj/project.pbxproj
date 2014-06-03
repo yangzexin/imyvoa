@@ -13,7 +13,6 @@
 		3E2D348B16F82F9400D03CB9 /* PluginNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E2D348A16F82F9400D03CB9 /* PluginNavigationController.m */; };
 		3E32D06116F8449C008AEC81 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E32D06016F8449C008AEC81 /* Default@2x.png */; };
 		3E3AB27316FFEA5700D8DB15 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E3AB27216FFEA5700D8DB15 /* libxml2.dylib */; };
-		3E3D0E541755FD3100351A95 /* libSavanna.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E3D0E531755FD3100351A95 /* libSavanna.a */; };
 		3E3FDFDA16F022B60098683D /* imyvoa57x57.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E3FDFD916F022B60098683D /* imyvoa57x57.png */; };
 		3E3FDFDD16F022BC0098683D /* imyvoa114x114.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E3FDFDC16F022BC0098683D /* imyvoa114x114.png */; };
 		3E3FDFDF16F022C70098683D /* imyvoa72x72.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E3FDFDE16F022C70098683D /* imyvoa72x72.png */; };
@@ -50,6 +49,7 @@
 		3EB87B5116C8F82B00C94FF9 /* ContentProviderFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EB87B5016C8F82B00C94FF9 /* ContentProviderFactory.m */; };
 		3EC2AE3716FABC3000290867 /* OpenUDID.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EC2AE3316FABC3000290867 /* OpenUDID.m */; };
 		3EC2AE3816FABC3000290867 /* libMobClickLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EC2AE3516FABC3000290867 /* libMobClickLibrary.a */; };
+		3EC711AB193E0F0800ABE4EB /* libSavanna.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EC711AA193E0F0000ABE4EB /* libSavanna.a */; };
 		3EC9117716EF14DF004C4E79 /* VOWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EC9117616EF14DF004C4E79 /* VOWebView.m */; };
 		3EDE559716F8AA3F0052A038 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E32D05D16F84492008AEC81 /* Default.png */; };
 		3EE1F312174A5EE9006649F4 /* AboutUsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EE1F311174A5EE9006649F4 /* AboutUsViewController.m */; };
@@ -122,6 +122,16 @@
 		CFEE74F4155BB59F00EDDACB /* SharedResource.m in Sources */ = {isa = PBXBuildFile; fileRef = CFEE74F3155BB59F00EDDACB /* SharedResource.m */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		3EC711A9193E0F0000ABE4EB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3EC711A5193E0F0000ABE4EB /* Savanna.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 3E653EDF16DCDB4C00368931;
+			remoteInfo = Savanna;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		3E08CB4E16DB40780099A91A /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
 		3E0ADFC216E8556700685764 /* main.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = main.lua; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.lua; };
@@ -132,7 +142,6 @@
 		3E32D05D16F84492008AEC81 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		3E32D06016F8449C008AEC81 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		3E3AB27216FFEA5700D8DB15 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
-		3E3D0E531755FD3100351A95 /* libSavanna.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libSavanna.a; path = "../Savanna/build/Release-iphoneos/libSavanna.a"; sourceTree = "<group>"; };
 		3E3FDFD916F022B60098683D /* imyvoa57x57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = imyvoa57x57.png; sourceTree = SOURCE_ROOT; };
 		3E3FDFDC16F022BC0098683D /* imyvoa114x114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = imyvoa114x114.png; sourceTree = SOURCE_ROOT; };
 		3E3FDFDE16F022C70098683D /* imyvoa72x72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = imyvoa72x72.png; sourceTree = SOURCE_ROOT; };
@@ -189,6 +198,7 @@
 		3EC2AE3316FABC3000290867 /* OpenUDID.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenUDID.m; sourceTree = "<group>"; };
 		3EC2AE3516FABC3000290867 /* libMobClickLibrary.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libMobClickLibrary.a; sourceTree = "<group>"; };
 		3EC2AE3616FABC3000290867 /* MobClick.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobClick.h; sourceTree = "<group>"; };
+		3EC711A5193E0F0000ABE4EB /* Savanna.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Savanna.xcodeproj; path = ../Savanna/Savanna.xcodeproj; sourceTree = "<group>"; };
 		3EC9117516EF14DF004C4E79 /* VOWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VOWebView.h; sourceTree = "<group>"; };
 		3EC9117616EF14DF004C4E79 /* VOWebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VOWebView.m; sourceTree = "<group>"; };
 		3EE1F310174A5EE9006649F4 /* AboutUsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutUsViewController.h; sourceTree = "<group>"; };
@@ -316,7 +326,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3E3D0E541755FD3100351A95 /* libSavanna.a in Frameworks */,
+				3EC711AB193E0F0800ABE4EB /* libSavanna.a in Frameworks */,
 				3E3AB27316FFEA5700D8DB15 /* libxml2.dylib in Frameworks */,
 				3E41C19916F584DA00F01993 /* MediaPlayer.framework in Frameworks */,
 				3E08CB4F16DB40780099A91A /* ImageIO.framework in Frameworks */,
@@ -375,7 +385,6 @@
 				3E88B28D16BE91910054B6AE /* CFNetwork.framework */,
 				3E88B28F16BE91A00054B6AE /* CoreLocation.framework */,
 				3E08CB4E16DB40780099A91A /* ImageIO.framework */,
-				3E3D0E531755FD3100351A95 /* libSavanna.a */,
 				67200D00156E52F30083032E /* libsqlite3.dylib */,
 				3E3AB27216FFEA5700D8DB15 /* libxml2.dylib */,
 				3E88B29316BE91BF0054B6AE /* libz.dylib */,
@@ -449,6 +458,22 @@
 			);
 			name = umeng;
 			path = 3rdLibraries/umeng;
+			sourceTree = "<group>";
+		};
+		3EC711A4193E0EEC00ABE4EB /* Dependencies */ = {
+			isa = PBXGroup;
+			children = (
+				3EC711A5193E0F0000ABE4EB /* Savanna.xcodeproj */,
+			);
+			name = Dependencies;
+			sourceTree = "<group>";
+		};
+		3EC711A6193E0F0000ABE4EB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3EC711AA193E0F0000ABE4EB /* libSavanna.a */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		3EEEC6F916FAB35600B2B8BE /* 3rdLibraries */ = {
@@ -659,6 +684,7 @@
 				3E88B0CB16BE8BDE0054B6AE /* Default-568h@2x.png */,
 				3E32D06016F8449C008AEC81 /* Default@2x.png */,
 				3E32D05D16F84492008AEC81 /* Default.png */,
+				3EC711A4193E0EEC00ABE4EB /* Dependencies */,
 				3EEEC6F916FAB35600B2B8BE /* 3rdLibraries */,
 				CF7C5A90155B6D7700429671 /* imyvoa */,
 				3E755F0416129D02007DCD7A /* AddInFrameworks */,
@@ -884,12 +910,28 @@
 			mainGroup = CF7C5A7B155B6D7700429671;
 			productRefGroup = CF7C5A87155B6D7700429671 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 3EC711A6193E0F0000ABE4EB /* Products */;
+					ProjectRef = 3EC711A5193E0F0000ABE4EB /* Savanna.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				CF7C5A85155B6D7700429671 /* imyvoa */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		3EC711AA193E0F0000ABE4EB /* libSavanna.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libSavanna.a;
+			remoteRef = 3EC711A9193E0F0000ABE4EB /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		CF7C5A84155B6D7700429671 /* Resources */ = {
@@ -1087,7 +1129,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "imyvoa/imyvoa-Prefix.pch";
-				HEADER_SEARCH_PATHS = "../Savanna/**";
+				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = "imyvoa/imyvoa-Info.plist";
 				LIBRARY_SEARCH_PATHS = "\"$(SRCROOT)/3rdLibraries/umeng\"";
 				OTHER_LDFLAGS = (
@@ -1097,7 +1139,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "83AC6701-353B-4A51-9B4C-DAD0925BC5DB";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "83AC6701-353B-4A51-9B4C-DAD0925BC5DB";
-				USER_HEADER_SEARCH_PATHS = "../Savanna/** ../YzxsWorkspace/libs/**";
+				USER_HEADER_SEARCH_PATHS = "../Savanna/**";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1107,7 +1149,7 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "imyvoa/imyvoa-Prefix.pch";
-				HEADER_SEARCH_PATHS = "../Savanna/**";
+				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = "imyvoa/imyvoa-Info.plist";
 				LIBRARY_SEARCH_PATHS = "\"$(SRCROOT)/3rdLibraries/umeng\"";
 				OTHER_LDFLAGS = (
@@ -1116,7 +1158,7 @@
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "83AC6701-353B-4A51-9B4C-DAD0925BC5DB";
-				USER_HEADER_SEARCH_PATHS = "../Savanna/** ../YzxsWorkspace/libs/**";
+				USER_HEADER_SEARCH_PATHS = "../Savanna/**";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
