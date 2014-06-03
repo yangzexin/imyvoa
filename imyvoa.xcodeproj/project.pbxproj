@@ -139,8 +139,8 @@
 		3E1CD65A16F07532001507E7 /* VOAUIPrefers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VOAUIPrefers.m; sourceTree = "<group>"; };
 		3E2D348916F82F9400D03CB9 /* PluginNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PluginNavigationController.h; sourceTree = "<group>"; };
 		3E2D348A16F82F9400D03CB9 /* PluginNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PluginNavigationController.m; sourceTree = "<group>"; };
-		3E32D05D16F84492008AEC81 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
-		3E32D06016F8449C008AEC81 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		3E32D05D16F84492008AEC81 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = ../Default.png; sourceTree = "<group>"; };
+		3E32D06016F8449C008AEC81 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "../Default@2x.png"; sourceTree = "<group>"; };
 		3E3AB27216FFEA5700D8DB15 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		3E3FDFD916F022B60098683D /* imyvoa57x57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = imyvoa57x57.png; sourceTree = SOURCE_ROOT; };
 		3E3FDFDC16F022BC0098683D /* imyvoa114x114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = imyvoa114x114.png; sourceTree = SOURCE_ROOT; };
@@ -169,7 +169,7 @@
 		3E8429D316F0613B00175B2B /* TutorialableNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TutorialableNavigationController.m; sourceTree = "<group>"; };
 		3E8429D516F062E200175B2B /* btn_back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_back.png; sourceTree = "<group>"; };
 		3E8429D616F062E200175B2B /* btn_forward.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_forward.png; sourceTree = "<group>"; };
-		3E88B0CB16BE8BDE0054B6AE /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		3E88B0CB16BE8BDE0054B6AE /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Default-568h@2x.png"; sourceTree = "<group>"; };
 		3E88B28D16BE91910054B6AE /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		3E88B28F16BE91A00054B6AE /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		3E88B29116BE91AF0054B6AE /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -589,6 +589,9 @@
 		67D5A6391586207D00EB5959 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				3E88B0CB16BE8BDE0054B6AE /* Default-568h@2x.png */,
+				3E32D06016F8449C008AEC81 /* Default@2x.png */,
+				3E32D05D16F84492008AEC81 /* Default.png */,
 				3E8429D516F062E200175B2B /* btn_back.png */,
 				3E8429D616F062E200175B2B /* btn_forward.png */,
 				3EF1294A16E9D76B00A7C271 /* icon_glossary_list.png */,
@@ -679,9 +682,6 @@
 		CF7C5A7B155B6D7700429671 = {
 			isa = PBXGroup;
 			children = (
-				3E88B0CB16BE8BDE0054B6AE /* Default-568h@2x.png */,
-				3E32D06016F8449C008AEC81 /* Default@2x.png */,
-				3E32D05D16F84492008AEC81 /* Default.png */,
 				CF7C5A90155B6D7700429671 /* imyvoa */,
 				3EC711A4193E0EEC00ABE4EB /* Dependencies */,
 				3EC711E5193E16CC00ABE4EB /* Vendor */,
