@@ -7,7 +7,6 @@
 //
 
 #import "GlossaryDetailViewController.h"
-#import "SharedResource.h"
 #import "UIWebViewAdditions.h"
 #import "PlaySoundView.h"
 #import <QuartzCore/QuartzCore.h>

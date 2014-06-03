@@ -8,6 +8,7 @@
 
 #import "WebViewStackImpl.h"
 #import "SVDatabaseKeyValueManager.h"
+#import "AppDelegate.h"
 
 @interface WebViewStackImpl ()
 
@@ -40,7 +41,7 @@
     self.keyList = [NSMutableArray array];
     self.pointerIndex = -1;
     
-    self.keyValueCache = [[[SVDatabaseKeyValueManager alloc] initWithDBName:@"web view stack" atFolder:[[SharedResource sharedInstance] cachePath]] autorelease];
+    self.keyValueCache = [[[SVDatabaseKeyValueManager alloc] initWithDBName:@"web view stack" atFolder:[[AppDelegate sharedAppDelegate] cachePath]] autorelease];
     [self.keyValueCache clear];
     
     return self;

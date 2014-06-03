@@ -15,6 +15,7 @@
 #import "SVAlertDialog.h"
 #import "SelectRestoreBackupController.h"
 #import "AboutUsViewController.h"
+#import "AppDelegate.h"
 
 #define kBackupCache            @"备份缓存"
 #define kRestoreFromBackup      @"从备份中恢复"
@@ -94,7 +95,7 @@
                     [dateFormatter setDateFormat:@"yyyy-MM-dd"];
                     NSString *backupFileName = [NSString stringWithFormat:@"backup_%@.zip", [dateFormatter stringFromDate:[[NSDate new] autorelease]]];
                     backupFileName = [SVCommonUtils countableTempFileName:backupFileName atDirectory:documentPath];
-                    [zip zipWithDirectoryPath:[[SharedResource sharedInstance] cachePath]
+                    [zip zipWithDirectoryPath:[[AppDelegate sharedAppDelegate] cachePath]
                                    toFilePath:[documentPath stringByAppendingPathComponent:backupFileName]];
                     dispatch_async(dispatch_get_main_queue(), ^{
                         [self setWaiting:NO];
@@ -108,10 +109,10 @@
         selectRestoreVC.title = @"恢复缓存";;
         [selectRestoreVC setRestoreHandler:^(NSString *zipFilePath) {
             [selectRestoreVC setWaiting:YES];
-            [[NSFileManager defaultManager] removeItemAtPath:[SharedResource sharedInstance].cachePath error:nil];
+            [[NSFileManager defaultManager] removeItemAtPath:[AppDelegate sharedAppDelegate].cachePath error:nil];
             dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
                 id<SVZipHandler> zip = [SVZipHandlerFactory defaultZipHandler];
-                [zip unzipWithFilePath:zipFilePath toDirectoryPath:[[SharedResource sharedInstance].cachePath stringByDeletingLastPathComponent]];
+                [zip unzipWithFilePath:zipFilePath toDirectoryPath:[[AppDelegate sharedAppDelegate].cachePath stringByDeletingLastPathComponent]];
                 dispatch_async(dispatch_get_main_queue(), ^{
                     [selectRestoreVC setWaiting:NO];
                     [SVAlertDialog showWithTitle:@"恢复" message:@"恢复成功" completion:^(NSInteger buttonIndex, NSString *buttonTitle) {

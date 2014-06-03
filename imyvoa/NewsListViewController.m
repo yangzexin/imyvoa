@@ -12,7 +12,6 @@
 #import "SVCommonUtils.h"
 #import "SVEncryptUtils.h"
 #import "SoundCache.h"
-#import "SharedResource.h"
 #import "Player.h"
 #import "PopOutTableView.h"
 #import "NewsDetailViewController.h"
@@ -30,6 +29,7 @@
 #import "SVApplicationScriptBundle.h"
 #import "SVApp.h"
 #import "SVAppManager.h"
+#import "AppDelegate.h"
 
 #define BTN_BG_COLOR [UIColor clearColor]
 
@@ -369,13 +369,13 @@ SVGridViewWrapperDelegate
 
 - (void)onGotoNowPlayingBtnTapped
 {
-    NewsItem *nowPlayingItem = [SharedResource sharedInstance].currentPlayingNewsItem;
+    NewsItem *nowPlayingItem = [AppDelegate sharedAppDelegate].currentPlayingNewsItem;
     [self viewNewsItem:nowPlayingItem];
 }
 
 - (void)onPlayerStopNotification:(NSNotification *)notification
 {
-    [SharedResource sharedInstance].currentPlayingNewsItem = nil;
+    [AppDelegate sharedAppDelegate].currentPlayingNewsItem = nil;
     if(self.httpDownloader.downloading){
         return;
     }
@@ -426,7 +426,7 @@ SVGridViewWrapperDelegate
     [self setDownloading:YES];
     
     self.httpDownloader = [[[SVHTTPDownloader alloc] initWithURLString:soundURL 
-                                                          saveToPath:[SharedResource sharedInstance].soundTempFilePath] autorelease];
+                                                          saveToPath:[AppDelegate sharedAppDelegate].soundTempFilePath] autorelease];
     self.httpDownloader.delegate = self;
     [self.httpDownloader startDownload];
 }
@@ -450,7 +450,7 @@ SVGridViewWrapperDelegate
     BOOL downloading = self.httpDownloader.downloading;
     if(!downloading){
         self.navigationItem.rightBarButtonItem
-            = [SharedResource sharedInstance].currentPlayingNewsItem == nil ? nil : self.gotoNowPlayingBtn;
+            = [AppDelegate sharedAppDelegate].currentPlayingNewsItem == nil ? nil : self.gotoNowPlayingBtn;
     }
     CGRect tmpRect = self.navigationController.navigationBar.bounds;
     if(self.navigationItem.rightBarButtonItem != nil){
@@ -653,7 +653,7 @@ SVGridViewWrapperDelegate
     NewsItem *selectedItem = [self.newsItemList objectAtIndex:self.popOutTableView.selectedCellIndex];
     NSString *newPath = [[SoundCache soundCachePath] stringByAppendingPathComponent:
                          [SVEncryptUtils hexStringByMD5EncryptingString:selectedItem.title]];
-    [[NSFileManager defaultManager] moveItemAtPath:[SharedResource sharedInstance].soundTempFilePath 
+    [[NSFileManager defaultManager] moveItemAtPath:[AppDelegate sharedAppDelegate].soundTempFilePath 
                                             toPath:newPath 
                                              error:nil];
     

@@ -11,7 +11,6 @@
 #import "UIWebViewAdditions.h"
 #import "SVCommonUtils.h"
 #import "SVHTTPDownloader.h"
-#import "SharedResource.h"
 #import "SVEncryptUtils.h"
 #import "SoundCache.h"
 #import "Player.h"
@@ -24,6 +23,7 @@
 #import "ContentProviderFactory.h"
 #import "DictionaryFactory.h"
 #import "VOWebView.h"
+#import "AppDelegate.h"
 
 typedef enum{
     ToolbarStatePlaying,
@@ -165,7 +165,7 @@ UIScrollViewDelegate
     self.voaNewsDetailProvider = [ContentProviderFactory newsDetailProvider];
     self.dictionaryName = [[DictionaryFactory defaultDictionary] name];
     self.glossaryManager = [[DBGlossaryManager alloc] initWithIdentifier:self.newsItem.title];
-    self.scrollPositionDict = [[[SVDatabaseKeyValueManager alloc] initWithDBName:@"position_dict" atFolder:[[SharedResource sharedInstance] cachePath]] autorelease];
+    self.scrollPositionDict = [[[SVDatabaseKeyValueManager alloc] initWithDBName:@"position_dict" atFolder:[[AppDelegate sharedAppDelegate] cachePath]] autorelease];
     
     self.scrollPercent = 0.0f;
     
@@ -547,7 +547,7 @@ UIScrollViewDelegate
 - (void)onPlayerStartPlayNotification:(NSNotification *)notification
 {
     [self togglePlayingToolbarItemsWithToolbarState:ToolbarStatePause];
-    [SharedResource sharedInstance].currentPlayingNewsItem = self.newsItem;
+    [AppDelegate sharedAppDelegate].currentPlayingNewsItem = self.newsItem;
     [self startTimer];
 }
 
@@ -563,7 +563,7 @@ UIScrollViewDelegate
     [self.timer stop];
     self.currentTimeLabel.text = @"00:00";
     self.positionSilder.value = self.positionSilder.minimumValue;
-    [SharedResource sharedInstance].currentPlayingNewsItem = nil;
+    [AppDelegate sharedAppDelegate].currentPlayingNewsItem = nil;
 }
 
 - (void)onPlayerChangeSoundNotification:(NSNotification *)notification
@@ -619,7 +619,7 @@ UIScrollViewDelegate
     [self setDownloading:YES];
     
     self.httpDownloader = [[[SVHTTPDownloader alloc] initWithURLString:soundURL 
-                                                          saveToPath:[SharedResource sharedInstance].soundTempFilePath] autorelease];
+                                                          saveToPath:[AppDelegate sharedAppDelegate].soundTempFilePath] autorelease];
     self.httpDownloader.delegate = self;
     [self.httpDownloader startDownload];
 }
@@ -895,7 +895,7 @@ UIScrollViewDelegate
     // rename sound file
     NSString *newPath = [[SoundCache soundCachePath] stringByAppendingPathComponent:
                          [SVEncryptUtils hexStringByMD5EncryptingString:self.newsItem.title]];
-    [[NSFileManager defaultManager] moveItemAtPath:[SharedResource sharedInstance].soundTempFilePath 
+    [[NSFileManager defaultManager] moveItemAtPath:[AppDelegate sharedAppDelegate].soundTempFilePath 
                                             toPath:newPath 
                                              error:nil];
     

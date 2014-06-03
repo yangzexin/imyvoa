@@ -41,7 +41,12 @@
 #import "SVScriptBundleRepository.h"
 #import "MobClick.h"
 
-@interface AppDelegate () <SplashViewControllerDelegate, UITabBarControllerDelegate>
+NSString *kNewsItemDidRemoveFromCacheNotification = @"kNewsItemDidRemoveFromCacheNotification";
+NSString *kNewsItemDidAddToCacheNotification = @"kNewsItemDidAddToCacheNotification";
+
+@interface AppDelegate () <SplashViewControllerDelegate, UITabBarControllerDelegate> {
+    NewsItem *_newsItem;
+}
 
 @property(nonatomic, retain)UINavigationController *newsListNC;
 @property(nonatomic, retain)UINavigationController *localNewsListNC;
@@ -69,6 +74,11 @@
     [super dealloc];
 }
 
++ (instancetype)sharedAppDelegate
+{
+    return [(id)[UIApplication sharedApplication] delegate];
+}
+
 - (void)loadScript
 {
     id<SVScriptBundle> scriptBundle = [[[SVOnlineAppBundle alloc] initWithURL:
@@ -89,7 +99,7 @@
         scriptBundle = [[[SVApplicationScriptBundle alloc] initWithMainScriptName:@"main"] autorelease];
     }
     SVApp *app = [[[SVApp alloc] initWithScriptBundle:scriptBundle] autorelease];
-    [SharedResource sharedInstance].scriptApp = app;
+    [AppDelegate sharedAppDelegate].scriptApp = app;
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -238,6 +248,21 @@
         tabBarController.tabBar.backgroundImage = [SVUITools createPureColorImageWithColor:[UIColor blackColor]
                                                                                       size:CGSizeMake(320, 44.0f)];
     }
+}
+
+- (NSString *)soundTempFilePath
+{
+    NSString *saveFilePath = [[SVCommonUtils tmpPath] stringByAppendingPathComponent:@"tmp.mp3"];
+    return saveFilePath;
+}
+
+- (NSString *)cachePath
+{
+    NSString *path = [[SVCommonUtils documentPath] stringByAppendingPathComponent:@"imyvoa_caches"];
+    if(![[NSFileManager defaultManager] fileExistsAtPath:path]){
+        [[NSFileManager defaultManager] createDirectoryAtPath:path withIntermediateDirectories:NO attributes:nil error:nil];
+    }
+    return path;
 }
 
 @end

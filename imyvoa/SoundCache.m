@@ -9,6 +9,7 @@
 #import "SoundCache.h"
 #import "SVDatabaseKeyValueManager.h"
 #import "SVEncryptUtils.h"
+#import "AppDelegate.h"
 
 @interface SoundCache ()
 
@@ -35,7 +36,7 @@
 + (NSString *)soundCachePath
 {
     NSFileManager *fileManager = [NSFileManager defaultManager];
-    NSString *path = [[[SharedResource sharedInstance] cachePath] stringByAppendingPathComponent:@"sounds"];
+    NSString *path = [[[AppDelegate sharedAppDelegate] cachePath] stringByAppendingPathComponent:@"sounds"];
     if(![fileManager fileExistsAtPath:path]){
         [fileManager createDirectoryAtPath:path withIntermediateDirectories:NO attributes:nil error:nil];
     }
@@ -52,7 +53,7 @@
 {
     self = [super init];
     
-    self.cache = [[[SVDatabaseKeyValueManager alloc] initWithDBName:@"soud_url_file_path_cache" atFolder:[[SharedResource sharedInstance] cachePath]] autorelease];
+    self.cache = [[[SVDatabaseKeyValueManager alloc] initWithDBName:@"soud_url_file_path_cache" atFolder:[[AppDelegate sharedAppDelegate] cachePath]] autorelease];
     
     return self;
 }

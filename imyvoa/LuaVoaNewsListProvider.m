@@ -12,6 +12,7 @@
 #import "SVDatabaseKeyValueManager.h"
 #import "LocalLuaScriptProvider.h"
 #import "SVAppManager.h"
+#import "AppDelegate.h"
 
 @interface LuaVoaNewsListProvider () <HTTPRequesterDelegate, HTTPRequesterDataSource, LuaScriptProviderDelegate>
 
@@ -49,7 +50,7 @@
 {
     self = [super init];
     
-    self.cache = [[[SVDatabaseKeyValueManager alloc] initWithDBName:@"news_list" atFolder:[[SharedResource sharedInstance] cachePath]] autorelease];
+    self.cache = [[[SVDatabaseKeyValueManager alloc] initWithDBName:@"news_list" atFolder:[[AppDelegate sharedAppDelegate] cachePath]] autorelease];
     self.luaScriptProvider = [[[LocalLuaScriptProvider alloc] init] autorelease];
     
     return self;
@@ -87,7 +88,7 @@
 #pragma mark - HTTPRequesterDataSource
 - (NSString *)urlStringForHTTPRequester:(HTTPRequester *)requester
 {
-    NSString *urlString = [SVAppManager runApp:[SharedResource sharedInstance].scriptApp
+    NSString *urlString = [SVAppManager runApp:[AppDelegate sharedAppDelegate].scriptApp
                                         params:[NSArray arrayWithObjects:@"news_list_url", nil]];
     
     return urlString;
@@ -100,15 +101,15 @@
         [self saveCache:result];
     }
     
-    NSString *formattedResult = [SVAppManager runApp:[SharedResource sharedInstance].scriptApp
+    NSString *formattedResult = [SVAppManager runApp:[AppDelegate sharedAppDelegate].scriptApp
                                               params:[NSArray arrayWithObjects:@"analyse_news_list", result, nil]];
     NSMutableArray *newsList = nil;
     if(formattedResult){
         newsList = [NSMutableArray array];
         NSArray *itemList = [formattedResult componentsSeparatedByString:
-                             [SVAppManager runApp:[SharedResource sharedInstance].scriptApp
+                             [SVAppManager runApp:[AppDelegate sharedAppDelegate].scriptApp
                                            params:[NSArray arrayWithObject:@"news_item_separator"]]];
-        NSString *linkSeparator = [SVAppManager runApp:[SharedResource sharedInstance].scriptApp
+        NSString *linkSeparator = [SVAppManager runApp:[AppDelegate sharedAppDelegate].scriptApp
                                                 params:[NSArray arrayWithObject:@"news_item_link_separator"]];
         for(NSString *item in itemList){
             NSArray *tmp = [item componentsSeparatedByString:linkSeparator];

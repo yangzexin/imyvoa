@@ -12,6 +12,7 @@
 #import "SVKeyValueManager.h"
 #import "SVDatabaseKeyValueManager.h"
 #import "SVEncryptUtils.h"
+#import "AppDelegate.h"
 
 @interface SoundDownloader () <SVHTTPDownloaderDelegate>
 
@@ -50,7 +51,7 @@
     self = [super init];
     
     self.soundURLMaker = [[[SoundURLMaker alloc] init] autorelease];
-    self.wordSoundCache = [[[SVDatabaseKeyValueManager alloc] initWithDBName:@"word_sound" atFolder:[[SharedResource sharedInstance] cachePath]] autorelease];
+    self.wordSoundCache = [[[SVDatabaseKeyValueManager alloc] initWithDBName:@"word_sound" atFolder:[[AppDelegate sharedAppDelegate] cachePath]] autorelease];
     
     return self;
 }

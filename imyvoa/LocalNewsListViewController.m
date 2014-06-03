@@ -7,7 +7,6 @@
 //
 
 #import "LocalNewsListViewController.h"
-#import "SharedResource.h"
 #import "NewsItem.h"
 #import "NewsDetailViewController.h"
 #import "Utils.h"
@@ -18,6 +17,7 @@
 #import "Player.h"
 #import "SVAlertDialog.h"
 #import "ContentProviderFactory.h"
+#import "AppDelegate.h"
 
 #define kSortByAddDate NSLocalizedString(@"sort_by_add_date", nil)
 #define kSortByDate NSLocalizedString(@"sort_by_date", nil)

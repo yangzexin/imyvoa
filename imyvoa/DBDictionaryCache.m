@@ -11,6 +11,7 @@
 #import "SVEncryptUtils.h"
 #import "DictonaryWord.h"
 #import "SVDatabaseKeyValueManager.h"
+#import "AppDelegate.h"
 
 @interface DBDictionaryCache ()
 
@@ -43,7 +44,7 @@
 {
     self = [super init];
     
-    self.keyValueCache = [[[SVDatabaseKeyValueManager alloc] initWithDBName:@"dictionary cache" atFolder:[[SharedResource sharedInstance] cachePath]] autorelease];
+    self.keyValueCache = [[[SVDatabaseKeyValueManager alloc] initWithDBName:@"dictionary cache" atFolder:[[AppDelegate sharedAppDelegate] cachePath]] autorelease];
     
     return self;
 }

@@ -10,7 +10,6 @@
 #import "UIWebViewAdditions.h"
 #import "SVCommonUtils.h"
 #import "WebViewStackImpl.h"
-#import "SharedResource.h"
 #import "PlaySoundView.h"
 #import "DictionaryFactory.h"
 #import "BaseViewController.h"

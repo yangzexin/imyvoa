@@ -13,6 +13,7 @@
 #import "SVApp.h"
 #import "SVAppManager.h"
 #import "SVApplicationScriptBundle.h"
+#import "AppDelegate.h"
 
 @interface OnlineDictionary () <HTTPRequesterDelegate>
 
@@ -55,7 +56,7 @@
 
 - (NSString *)name
 {
-    return [SVAppManager runApp:[SharedResource sharedInstance].scriptApp params:[NSArray arrayWithObject:@"dictionary_name"]];
+    return [SVAppManager runApp:[AppDelegate sharedAppDelegate].scriptApp params:[NSArray arrayWithObject:@"dictionary_name"]];
 }
 
 - (void)query:(NSString *)str delegate:(id<DictionaryDelegate>)delegate
@@ -70,7 +71,7 @@
 //        NSLog(@"from cache:%@", dictWord.word);
         [self notifySucceed:dictWord.definition];
     }else{
-        NSString *urlString = [SVAppManager runApp:[SharedResource sharedInstance].scriptApp
+        NSString *urlString = [SVAppManager runApp:[AppDelegate sharedAppDelegate].scriptApp
                                             params:[NSArray arrayWithObjects:@"dictionary_url", str, nil]];
         self.httpRequester = [HTTPRequester newHTTPRequester];
         self.httpRequester.urlString = urlString;
@@ -113,7 +114,7 @@
 
 - (NSString *)analyzeContent:(NSString *)content
 {
-    NSString *result = [SVAppManager runApp:[SharedResource sharedInstance].scriptApp
+    NSString *result = [SVAppManager runApp:[AppDelegate sharedAppDelegate].scriptApp
                                      params:[NSArray arrayWithObjects:@"analyse_dictionary_content", content, nil]];
     return result;
 }

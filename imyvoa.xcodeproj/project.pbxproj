@@ -119,7 +119,6 @@
 		CFE2F04C155B8AE300D66255 /* LuaVoaNewsListProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = CFE2F04B155B8AE300D66255 /* LuaVoaNewsListProvider.m */; };
 		CFE6E171157CCE67007970CC /* SoundCache.m in Sources */ = {isa = PBXBuildFile; fileRef = CFE6E170157CCE67007970CC /* SoundCache.m */; };
 		CFEE74F1155BAE8A00EDDACB /* LuaVoaNewsContentProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = CFEE74F0155BAE8A00EDDACB /* LuaVoaNewsContentProvider.m */; };
-		CFEE74F4155BB59F00EDDACB /* SharedResource.m in Sources */ = {isa = PBXBuildFile; fileRef = CFEE74F3155BB59F00EDDACB /* SharedResource.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -317,8 +316,6 @@
 		CFEE74ED155BADFA00EDDACB /* VoaNewsDetailProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VoaNewsDetailProvider.h; sourceTree = "<group>"; };
 		CFEE74EF155BAE8A00EDDACB /* LuaVoaNewsContentProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LuaVoaNewsContentProvider.h; sourceTree = "<group>"; };
 		CFEE74F0155BAE8A00EDDACB /* LuaVoaNewsContentProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LuaVoaNewsContentProvider.m; sourceTree = "<group>"; };
-		CFEE74F2155BB59F00EDDACB /* SharedResource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SharedResource.h; sourceTree = "<group>"; };
-		CFEE74F3155BB59F00EDDACB /* SharedResource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SharedResource.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -721,8 +718,6 @@
 				CFE2EFBE155B731300D66255 /* ViewController */,
 				CF7C5A99155B6D7700429671 /* AppDelegate.h */,
 				CF7C5A9A155B6D7700429671 /* AppDelegate.m */,
-				CFEE74F2155BB59F00EDDACB /* SharedResource.h */,
-				CFEE74F3155BB59F00EDDACB /* SharedResource.m */,
 				CFE2F038155B7A3100D66255 /* LuaScript */,
 				CF7C5A91155B6D7700429671 /* Supporting Files */,
 			);
@@ -994,7 +989,6 @@
 				CF05DD37155B92B800FE8F52 /* LocalLuaScriptProvider.m in Sources */,
 				3EC711EC193E16CC00ABE4EB /* OpenUDID.m in Sources */,
 				CFEE74F1155BAE8A00EDDACB /* LuaVoaNewsContentProvider.m in Sources */,
-				CFEE74F4155BB59F00EDDACB /* SharedResource.m in Sources */,
 				67F8820B155E6590006609F9 /* ForTestScriptCheckUpdateProvider.m in Sources */,
 				67F8820E155E663B006609F9 /* FromGoogleScriptUpdateProvider.m in Sources */,
 				67CF07A3155E99EA00F0519B /* NewsListViewController.m in Sources */,

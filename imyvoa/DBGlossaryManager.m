@@ -11,6 +11,7 @@
 #import "SVDatabaseKeyValueManager.h"
 #import "SVCommonUtils.h"
 #import "SVEncryptUtils.h"
+#import "AppDelegate.h"
 
 @interface DBGlossaryManager ()
 
@@ -33,7 +34,7 @@
     self = [super init];
     
     NSString *fileName = [NSString stringWithFormat:@"glossary+%@", identifier];
-    self.glossaryLibrary = [[[SVDatabaseKeyValueManager alloc] initWithDBName:fileName atFolder:[[SharedResource sharedInstance] cachePath]] autorelease];
+    self.glossaryLibrary = [[[SVDatabaseKeyValueManager alloc] initWithDBName:fileName atFolder:[[AppDelegate sharedAppDelegate] cachePath]] autorelease];
     
     return self;
 }

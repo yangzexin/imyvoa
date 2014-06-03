@@ -13,5 +13,4 @@
     #import <Foundation/Foundation.h>
     #import "UIViewController+Alert.h"
     #import "UIViewController+Loading.h"
-    #import "SharedResource.h"
 #endif
