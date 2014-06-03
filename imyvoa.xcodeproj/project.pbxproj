@@ -852,8 +852,8 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CF7C5A9E155B6D7700429671 /* Build configuration list for PBXNativeTarget "imyvoa" */;
 			buildPhases = (
-				CF7C5A82155B6D7700429671 /* Sources */,
 				CF7C5A83155B6D7700429671 /* Frameworks */,
+				CF7C5A82155B6D7700429671 /* Sources */,
 				CF7C5A84155B6D7700429671 /* Resources */,
 			);
 			buildRules = (
