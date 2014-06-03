@@ -7,11 +7,11 @@
 //
 
 #import "SplashViewController.h"
-#import "YXTaskQueue.h"
-#import "YXApplicationScriptBundle.h"
-#import "YXOnlineAppBundle.h"
-#import "YXScriptBundleRepository.h"
-#import "YXApp.h"
+#import "SVTaskQueue.h"
+#import "SVApplicationScriptBundle.h"
+#import "SVOnlineAppBundle.h"
+#import "SVScriptBundleRepository.h"
+#import "SVApp.h"
 
 @interface SplashViewController ()
 

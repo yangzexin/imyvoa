@@ -7,15 +7,15 @@
 //
 
 #import "PluginNavigationController.h"
-#import "YXOnlineAppBundle.h"
-#import "YXTimeCostTracer.h"
-#import "YXApp.h"
-#import "YXAppManager.h"
-#import "YXScriptBundleRepository.h"
+#import "SVOnlineAppBundle.h"
+#import "SVTimeCostTracer.h"
+#import "SVApp.h"
+#import "SVAppManager.h"
+#import "SVScriptBundleRepository.h"
 
 @interface PluginNavigationController ()
 
-@property(nonatomic, retain)YXApp *pluginApp;
+@property(nonatomic, retain)SVApp *pluginApp;
 
 @end
 
@@ -39,22 +39,22 @@
     }
     [self setLoading:YES];
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        [YXTimeCostTracer markWithIdentifier:@"load_plugin_app"];
-        id<YXScriptBundle> bundle = [[[YXOnlineAppBundle alloc]
-                                      initWithURL:[NSURL URLWithString:@"http://imyvoaspecial.googlecode.com/files/com.yzx.imyvoa.plugins.pkg"]] autorelease];
+        [SVTimeCostTracer markWithIdentifier:@"load_plugin_app"];
+        id<SVScriptBundle> bundle = [[[SVOnlineAppBundle alloc]
+                                      initWithURL:[NSURL URLWithString:@"https://dl.dropboxusercontent.com/s/sdrvts9idmgg17t/com.yzx.imyvoa.plugins.pkg"]] autorelease];
         if(!bundle){
-            bundle = [[YXScriptBundleRepository defaultRespository] scriptBundleWithBundleId:@"com.yzx.imyvoa.plugins"];
+            bundle = [[SVScriptBundleRepository defaultRespository] scriptBundleWithBundleId:@"com.yzx.imyvoa.plugins"];
         }else{
-            [[YXScriptBundleRepository defaultRespository] repositScriptBundle:bundle newBundleId:@"com.yzx.imyvoa.plugins"];
+            [[SVScriptBundleRepository defaultRespository] repositScriptBundle:bundle newBundleId:@"com.yzx.imyvoa.plugins"];
         }
         if(bundle){
-            YXApp *app = [[[YXApp alloc] initWithScriptBundle:bundle relatedViewController:self] autorelease];
+            SVApp *app = [[[SVApp alloc] initWithScriptBundle:bundle relatedViewController:self] autorelease];
             dispatch_sync(dispatch_get_main_queue(), ^{
                 self.pluginApp = app;
-                [YXTimeCostTracer markWithIdentifier:@"run_app"];
-                [YXAppManager runApp:app];
-                [YXTimeCostTracer timeCostWithIdentifier:@"run_app" print:YES];
-                [YXTimeCostTracer timeCostWithIdentifier:@"load_plugin_app" print:YES];
+                [SVTimeCostTracer markWithIdentifier:@"run_app"];
+                [SVAppManager runApp:app];
+                [SVTimeCostTracer timeCostWithIdentifier:@"run_app" print:YES];
+                [SVTimeCostTracer timeCostWithIdentifier:@"load_plugin_app" print:YES];
                 [self setLoading:NO];
             });
         }else{

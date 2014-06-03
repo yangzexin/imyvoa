@@ -8,10 +8,10 @@
 
 #import <Foundation/Foundation.h>
 #import "DictionaryCache.h"
-#import "YXKeyValueManager.h"
+#import "SVKeyValueManager.h"
 
 @interface DBDictionaryCache : NSObject <DictionaryCache> {
-    id<YXKeyValueManager> _keyValueCache;
+    id<SVKeyValueManager> _keyValueCache;
 }
 
 + (DBDictionaryCache *)sharedInstance;

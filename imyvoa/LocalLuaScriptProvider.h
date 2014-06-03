@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "LuaScriptProvider.h"
-#import "YXTaskQueue.h"
+#import "SVTaskQueue.h"
 
 @interface LocalLuaScriptProvider : NSObject <LuaScriptProvider> {
     id<LuaScriptProviderDelegate> _delegate;

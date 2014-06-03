@@ -7,8 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "YXProviderPool.h"
+#import "SVProviderPool.h"
 
-@protocol ContentProvider <YXProviderPoolable>
+@protocol ContentProvider <SVProviderPoolable>
 
 @end

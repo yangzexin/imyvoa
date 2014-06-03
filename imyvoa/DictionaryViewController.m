@@ -8,7 +8,7 @@
 
 #import "DictionaryViewController.h"
 #import "UIWebViewAdditions.h"
-#import "YXCommonUtils.h"
+#import "SVCommonUtils.h"
 #import "WebViewStackImpl.h"
 #import "SharedResource.h"
 #import "PlaySoundView.h"
@@ -284,7 +284,7 @@
     if(self.dictionary && action == @selector(onDictMenuItemTapped)){
         NSString *selectedText = [self.webView getSelectedText];
         if([selectedText length] != 0){
-            return ![YXCommonUtils stringContainsChinese:selectedText];
+            return ![SVCommonUtils stringContainsChinese:selectedText];
         }
     }
     return [super canPerformAction:action withSender:sender];

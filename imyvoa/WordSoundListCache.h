@@ -7,12 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "YXProviderPool.h"
+#import "SVProviderPool.h"
 
 typedef void(^SoundListCacheCompletion) (NSArray *wordList, NSArray *failureList);
 typedef void(^SoundListCacheStep) (NSString *word);
 
-@protocol WordSoundListCache <YXProviderPoolable>
+@protocol WordSoundListCache <SVProviderPoolable>
 
 - (void)cacheWordList:(NSArray *)wordList step:(SoundListCacheStep)step completion:(SoundListCacheCompletion)completion;
 

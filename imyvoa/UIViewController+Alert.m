@@ -7,7 +7,7 @@
 //
 
 #import "UIViewController+Alert.h"
-#import "YXToast.h"
+#import "SVToast.h"
 
 @implementation UIViewController (Alert)
 
@@ -24,7 +24,7 @@
 
 - (void)showToastWithString:(NSString *)string hideAfterInterval:(NSTimeInterval)interval
 {
-    [[YXToast defaultToast] showToastInView:self.view 
+    [[SVToast defaultToast] showToastInView:self.view 
                                withString:string 
                         hideAfterInterval:interval];
 }

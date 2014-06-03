@@ -7,12 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "YXProviderPool.h"
+#import "SVProviderPool.h"
 #import "WordReaderControl.h"
 
 typedef void(^WordReaderCompletion) (void);
 
-@protocol WordReader <YXProviderPoolable>
+@protocol WordReader <SVProviderPoolable>
 
 - (void)readWord:(NSString *)word wordReaderControl:(id<WordReaderControl>)wordReaderControl completion:(WordReaderCompletion)completion;
 - (void)stop;

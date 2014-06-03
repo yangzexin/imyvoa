@@ -7,8 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "YXUIPrefers.h"
+#import "SVUIPrefers.h"
 
-@interface VOAUIPrefers : NSObject <YXUIPrefers>
+@interface VOAUIPrefers : NSObject <SVUIPrefers>
 
 @end

@@ -7,13 +7,13 @@
 //
 
 #import "NewsDetailTutorial.h"
-#import "YXAlertDialog.h"
+#import "SVAlertDialog.h"
 
 @implementation NewsDetailTutorial
 
 - (void)show
 {
-    [YXAlertDialog showWithTitle:@"教程"
+    [SVAlertDialog showWithTitle:@"教程"
                          message:@"长按文本选中单词之后，可以使用在线字典查询单词"
                       completion:nil
                cancelButtonTitle:@"我知道了"

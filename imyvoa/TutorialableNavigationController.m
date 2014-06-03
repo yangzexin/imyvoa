@@ -8,13 +8,13 @@
 
 #import "TutorialableNavigationController.h"
 #import "TutorialManager.h"
-#import "YXDelayControl.h"
+#import "SVDelayControl.h"
 
 @implementation TutorialableNavigationController
 
 - (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated
 {
-    [[[[YXDelayControl alloc] initWithInterval:0.30f completion:^{
+    [[[[SVDelayControl alloc] initWithInterval:0.30f completion:^{
         [[TutorialManager defaultManager] showTutorialWithPageName:NSStringFromClass(viewController.class)];
     }] autorelease] start];
     [super pushViewController:viewController animated:animated];

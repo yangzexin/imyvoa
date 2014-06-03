@@ -9,15 +9,15 @@
 #import "LuaVoaNewsListProvider.h"
 #import "HTTPRequester.h"
 #import "NewsItem.h"
-#import "YXDatabaseKeyValueManager.h"
+#import "SVDatabaseKeyValueManager.h"
 #import "LocalLuaScriptProvider.h"
-#import "YXAppManager.h"
+#import "SVAppManager.h"
 
 @interface LuaVoaNewsListProvider () <HTTPRequesterDelegate, HTTPRequesterDataSource, LuaScriptProviderDelegate>
 
 @property(nonatomic, retain)HTTPRequester *httpRequester;
 
-@property(nonatomic, retain)id<YXKeyValueManager> cache;
+@property(nonatomic, retain)id<SVKeyValueManager> cache;
 
 @property(nonatomic, retain)id<LuaScriptProvider> luaScriptProvider;
 
@@ -49,7 +49,7 @@
 {
     self = [super init];
     
-    self.cache = [[[YXDatabaseKeyValueManager alloc] initWithDBName:@"news_list" atFolder:[[SharedResource sharedInstance] cachePath]] autorelease];
+    self.cache = [[[SVDatabaseKeyValueManager alloc] initWithDBName:@"news_list" atFolder:[[SharedResource sharedInstance] cachePath]] autorelease];
     self.luaScriptProvider = [[[LocalLuaScriptProvider alloc] init] autorelease];
     
     return self;
@@ -87,7 +87,7 @@
 #pragma mark - HTTPRequesterDataSource
 - (NSString *)urlStringForHTTPRequester:(HTTPRequester *)requester
 {
-    NSString *urlString = [YXAppManager runApp:[SharedResource sharedInstance].scriptApp
+    NSString *urlString = [SVAppManager runApp:[SharedResource sharedInstance].scriptApp
                                         params:[NSArray arrayWithObjects:@"news_list_url", nil]];
     
     return urlString;
@@ -100,15 +100,15 @@
         [self saveCache:result];
     }
     
-    NSString *formattedResult = [YXAppManager runApp:[SharedResource sharedInstance].scriptApp
+    NSString *formattedResult = [SVAppManager runApp:[SharedResource sharedInstance].scriptApp
                                               params:[NSArray arrayWithObjects:@"analyse_news_list", result, nil]];
     NSMutableArray *newsList = nil;
     if(formattedResult){
         newsList = [NSMutableArray array];
         NSArray *itemList = [formattedResult componentsSeparatedByString:
-                             [YXAppManager runApp:[SharedResource sharedInstance].scriptApp
+                             [SVAppManager runApp:[SharedResource sharedInstance].scriptApp
                                            params:[NSArray arrayWithObject:@"news_item_separator"]]];
-        NSString *linkSeparator = [YXAppManager runApp:[SharedResource sharedInstance].scriptApp
+        NSString *linkSeparator = [SVAppManager runApp:[SharedResource sharedInstance].scriptApp
                                                 params:[NSArray arrayWithObject:@"news_item_link_separator"]];
         for(NSString *item in itemList){
             NSArray *tmp = [item componentsSeparatedByString:linkSeparator];

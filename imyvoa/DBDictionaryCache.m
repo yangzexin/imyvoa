@@ -7,14 +7,14 @@
 //
 
 #import "DBDictionaryCache.h"
-#import "YXCommonUtils.h"
-#import "YXEncryptUtils.h"
+#import "SVCommonUtils.h"
+#import "SVEncryptUtils.h"
 #import "DictonaryWord.h"
-#import "YXDatabaseKeyValueManager.h"
+#import "SVDatabaseKeyValueManager.h"
 
 @interface DBDictionaryCache ()
 
-@property(nonatomic, retain)id<YXKeyValueManager> keyValueCache;
+@property(nonatomic, retain)id<SVKeyValueManager> keyValueCache;
 
 @end
 
@@ -43,7 +43,7 @@
 {
     self = [super init];
     
-    self.keyValueCache = [[[YXDatabaseKeyValueManager alloc] initWithDBName:@"dictionary cache" atFolder:[[SharedResource sharedInstance] cachePath]] autorelease];
+    self.keyValueCache = [[[SVDatabaseKeyValueManager alloc] initWithDBName:@"dictionary cache" atFolder:[[SharedResource sharedInstance] cachePath]] autorelease];
     
     return self;
 }

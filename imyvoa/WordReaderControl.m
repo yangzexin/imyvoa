@@ -7,13 +7,13 @@
 //
 
 #import "WordReaderControl.h"
-#import "YXDelayController.h"
+#import "SVDelayController.h"
 
-@interface RepeatTwiceWordReaderControl () <YXDelayControllerDelegate>
+@interface RepeatTwiceWordReaderControl () <SVDelayControllerDelegate>
 
 @property(nonatomic, assign)NSInteger readCount;
 @property(nonatomic, assign)NSInteger repeatCount;
-@property(nonatomic, retain)YXDelayController *delayController;
+@property(nonatomic, retain)SVDelayController *delayController;
 
 @end
 
@@ -49,12 +49,12 @@
 {
     [self.delayController cancel];
     if(readCount == _repeatCount){
-        self.delayController = [[[YXDelayController alloc] initWithInterval:1.0f] autorelease];
+        self.delayController = [[[SVDelayController alloc] initWithInterval:1.0f] autorelease];
         self.delayController.delegate = self;
         self.delayController.tag = 1;
         [self.delayController start];
     }else{
-        self.delayController = [[[YXDelayController alloc] initWithInterval:0.50f] autorelease];
+        self.delayController = [[[SVDelayController alloc] initWithInterval:0.50f] autorelease];
         self.delayController.delegate = self;
         self.delayController.tag = 2;
         [self.delayController start];
@@ -76,8 +76,8 @@
     }
 }
 
-#pragma mark - YXDelayControllerDelegate
-- (void)delayControllerDidFinishDelay:(YXDelayController *)controller
+#pragma mark - SVDelayControllerDelegate
+- (void)delayControllerDidFinishDelay:(SVDelayController *)controller
 {
     if(controller.tag == 1){
         [self notifyDidFinishPlay];

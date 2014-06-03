@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "YXProviderPool.h"
+#import "SVProviderPool.h"
 
 @interface BaseViewController : UIViewController {
 @private
@@ -18,7 +18,7 @@
 
 - (void)addViewToNonPrefersList:(UIView *)view;
 - (void)removeViewFromNonPrefersList:(UIView *)view;
-- (void)addProviderToPool:(id<YXProviderPoolable>)provider;
+- (void)addProviderToPool:(id<SVProviderPoolable>)provider;
 - (UIView *)customTitleView;
 
 @end

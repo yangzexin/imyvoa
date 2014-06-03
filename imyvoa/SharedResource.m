@@ -7,7 +7,7 @@
 //
 
 #import "SharedResource.h"
-#import "YXCommonUtils.h"
+#import "SVCommonUtils.h"
 #import "OnlineDictionary.h"
 
 NSString *kNewsItemDidRemoveFromCacheNotification = @"kNewsItemDidRemoveFromCacheNotification";
@@ -44,13 +44,13 @@ NSString *kNewsItemDidAddToCacheNotification = @"kNewsItemDidAddToCacheNotificat
 
 - (NSString *)soundTempFilePath
 {
-    NSString *saveFilePath = [[YXCommonUtils tmpPath] stringByAppendingPathComponent:@"tmp.mp3"];
+    NSString *saveFilePath = [[SVCommonUtils tmpPath] stringByAppendingPathComponent:@"tmp.mp3"];
     return saveFilePath;
 }
 
 - (NSString *)cachePath
 {
-    NSString *path = [[YXCommonUtils documentPath] stringByAppendingPathComponent:@"imyvoa_caches"];
+    NSString *path = [[SVCommonUtils documentPath] stringByAppendingPathComponent:@"imyvoa_caches"];
     if(![[NSFileManager defaultManager] fileExistsAtPath:path]){
         [[NSFileManager defaultManager] createDirectoryAtPath:path withIntermediateDirectories:NO attributes:nil error:nil];
     }

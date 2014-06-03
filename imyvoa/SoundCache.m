@@ -7,12 +7,12 @@
 //
 
 #import "SoundCache.h"
-#import "YXDatabaseKeyValueManager.h"
-#import "YXEncryptUtils.h"
+#import "SVDatabaseKeyValueManager.h"
+#import "SVEncryptUtils.h"
 
 @interface SoundCache ()
 
-@property(nonatomic, retain)id<YXKeyValueManager> cache;
+@property(nonatomic, retain)id<SVKeyValueManager> cache;
 
 @end
 
@@ -52,19 +52,19 @@
 {
     self = [super init];
     
-    self.cache = [[[YXDatabaseKeyValueManager alloc] initWithDBName:@"soud_url_file_path_cache" atFolder:[[SharedResource sharedInstance] cachePath]] autorelease];
+    self.cache = [[[SVDatabaseKeyValueManager alloc] initWithDBName:@"soud_url_file_path_cache" atFolder:[[SharedResource sharedInstance] cachePath]] autorelease];
     
     return self;
 }
 
 - (void)addSoundURLString:(NSString *)sounURLString atFilePath:(NSString *)filePath
 {
-    [self.cache setValue:filePath forKey:[YXEncryptUtils hexStringByMD5EncryptingString:sounURLString]];
+    [self.cache setValue:filePath forKey:[SVEncryptUtils hexStringByMD5EncryptingString:sounURLString]];
 }
 
 - (NSString *)filePathForSoundURLString:(NSString *)soundURLString
 {
-    NSString *soundPath = [self.cache valueForKey:[YXEncryptUtils hexStringByMD5EncryptingString:soundURLString]];
+    NSString *soundPath = [self.cache valueForKey:[SVEncryptUtils hexStringByMD5EncryptingString:soundURLString]];
     
     if([soundPath length] != 0 && [[NSFileManager defaultManager] fileExistsAtPath:soundPath]){
         return soundPath;

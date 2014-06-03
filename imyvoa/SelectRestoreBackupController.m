@@ -7,8 +7,8 @@
 //
 
 #import "SelectRestoreBackupController.h"
-#import "YXCommonUtils.h"
-#import "YXAlertDialog.h"
+#import "SVCommonUtils.h"
+#import "SVAlertDialog.h"
 
 @interface SelectRestoreBackupController ()
 
@@ -42,7 +42,7 @@
 {
     [super viewWillAppear:animated];    
     if(self.backupFileNameList.count == 0){
-        NSArray *allFileNameList = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:[YXCommonUtils documentPath] error:nil];
+        NSArray *allFileNameList = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:[SVCommonUtils documentPath] error:nil];
         NSMutableArray *zipFileNameList = [NSMutableArray array];
         for(NSString *fileName in allFileNameList){
             NSString *lowerFileName = [fileName lowercaseString];
@@ -67,11 +67,11 @@
         return;
     }
     if(self.restoreHandler){
-        [YXAlertDialog showWithTitle:@"警告" message:@"恢复到此缓存会清空当前的所有缓存，是否继续？" completion:^(NSInteger buttonIndex, NSString *buttonTitle) {
+        [SVAlertDialog showWithTitle:@"警告" message:@"恢复到此缓存会清空当前的所有缓存，是否继续？" completion:^(NSInteger buttonIndex, NSString *buttonTitle) {
             if(buttonIndex == 1){
                 NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
                 if(indexPath){
-                    self.restoreHandler([[YXCommonUtils documentPath] stringByAppendingPathComponent:[self.backupFileNameList objectAtIndex:indexPath.row]]);
+                    self.restoreHandler([[SVCommonUtils documentPath] stringByAppendingPathComponent:[self.backupFileNameList objectAtIndex:indexPath.row]]);
                 }
             }
         } cancelButtonTitle:@"取消" otherButtonTitles:@"继续", nil];

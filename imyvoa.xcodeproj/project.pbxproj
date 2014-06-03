@@ -1095,8 +1095,8 @@
 					"-all_load",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				PROVISIONING_PROFILE = "83AC6701-353B-4A51-9B4C-DAD0925BC5DB";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "83AC6701-353B-4A51-9B4C-DAD0925BC5DB";
 				USER_HEADER_SEARCH_PATHS = "../Savanna/** ../YzxsWorkspace/libs/**";
 				WRAPPER_EXTENSION = app;
 			};
@@ -1115,6 +1115,7 @@
 					"-all_load",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "83AC6701-353B-4A51-9B4C-DAD0925BC5DB";
 				USER_HEADER_SEARCH_PATHS = "../Savanna/** ../YzxsWorkspace/libs/**";
 				WRAPPER_EXTENSION = app;
 			};

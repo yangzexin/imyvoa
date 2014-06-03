@@ -7,7 +7,7 @@
 //
 
 #import "LocalLuaScriptProvider.h"
-#import "YXCommonUtils.h"
+#import "SVCommonUtils.h"
 
 @implementation LocalLuaScriptProvider
 

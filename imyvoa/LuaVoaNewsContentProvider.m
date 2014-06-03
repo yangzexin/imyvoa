@@ -8,16 +8,16 @@
 
 #import "LuaVoaNewsContentProvider.h"
 #import "HTTPRequester.h"
-#import "YXDatabaseKeyValueManager.h"
-#import "YXEncryptUtils.h"
-#import "YXAppManager.h"
+#import "SVDatabaseKeyValueManager.h"
+#import "SVEncryptUtils.h"
+#import "SVAppManager.h"
 
 @interface LuaVoaNewsContentProvider () <HTTPRequesterDelegate>
 
 @property(nonatomic, retain)NewsItem *newsItem;
 @property(nonatomic, retain)HTTPRequester *httpRequester;
 
-@property(nonatomic, retain)id<YXKeyValueManager> keyValueCache;
+@property(nonatomic, retain)id<SVKeyValueManager> keyValueCache;
 
 @end
 
@@ -43,7 +43,7 @@
 {
     self = [super init];
     
-    self.keyValueCache = [[[YXDatabaseKeyValueManager alloc] initWithDBName:@"voa_news_content_cache" atFolder:[[SharedResource sharedInstance] cachePath]] autorelease];
+    self.keyValueCache = [[[SVDatabaseKeyValueManager alloc] initWithDBName:@"voa_news_content_cache" atFolder:[[SharedResource sharedInstance] cachePath]] autorelease];
     
     return self;
 }
@@ -54,10 +54,10 @@
     
     self.newsItem = item;
     
-    NSString *cacheDataHexString = [self.keyValueCache valueForKey:[YXEncryptUtils hexStringByEncodingString:item.title]];
+    NSString *cacheDataHexString = [self.keyValueCache valueForKey:[SVEncryptUtils hexStringByEncodingString:item.title]];
     if(!ignoreCache && cacheDataHexString){
         // from cache
-        NSData *cacheData = [YXEncryptUtils dataByDecodingHexString:cacheDataHexString];
+        NSData *cacheData = [SVEncryptUtils dataByDecodingHexString:cacheDataHexString];
         NewsItem *item = [NSKeyedUnarchiver unarchiveObjectWithData:cacheData];
         NSLog(@"from cache:%@", item.title);
         if([self.delegate respondsToSelector:@selector(voaNewsContentProvider:didRecieveResult:)]){
@@ -73,9 +73,9 @@
 
 - (NewsItem *)newsItemFromLocalCache:(NewsItem *)item
 {
-    NSString *cacheDataHexString = [self.keyValueCache valueForKey:[YXEncryptUtils hexStringByEncodingString:item.title]];
+    NSString *cacheDataHexString = [self.keyValueCache valueForKey:[SVEncryptUtils hexStringByEncodingString:item.title]];
     if(cacheDataHexString){
-        NSData *cacheData = [YXEncryptUtils dataByDecodingHexString:cacheDataHexString];
+        NSData *cacheData = [SVEncryptUtils dataByDecodingHexString:cacheDataHexString];
         NewsItem *targetItem = [NSKeyedUnarchiver unarchiveObjectWithData:cacheData];
         return targetItem;
     }
@@ -89,7 +89,7 @@
     if(keyList.count != 0){
         newsItemList = [NSMutableArray array];
         for(NSString *key in keyList){
-            NSData *cacheData = [YXEncryptUtils dataByDecodingHexString:[self.keyValueCache valueForKey:key]];
+            NSData *cacheData = [SVEncryptUtils dataByDecodingHexString:[self.keyValueCache valueForKey:key]];
             NewsItem *newsItem = [NSKeyedUnarchiver unarchiveObjectWithData:cacheData];
             [newsItemList addObject:newsItem];
         }
@@ -100,7 +100,7 @@
 
 - (void)removeCacheWithNewsItem:(NewsItem *)item
 {
-    [self.keyValueCache removeValueForKey:[YXEncryptUtils hexStringByEncodingString:item.title]];
+    [self.keyValueCache removeValueForKey:[SVEncryptUtils hexStringByEncodingString:item.title]];
 }
 
 - (void)clearCaches
@@ -118,20 +118,20 @@
 {
     NewsItem *item = [self.newsItem copy];
     
-    item.content = [YXAppManager runApp:[SharedResource sharedInstance].scriptApp
+    item.content = [SVAppManager runApp:[SharedResource sharedInstance].scriptApp
                                  params:[NSArray arrayWithObjects:@"analyse_news_content", result, nil]];
     const char *css = {"font-size:18px;font-weight:bold;padding-bottom:20px;"};
     NSString *title = [NSString stringWithFormat:@"<div style=\"%@\">%@</div>", 
                        [NSString stringWithUTF8String:css], item.title];
     item.content = [item.content stringByReplacingOccurrencesOfString:@"$title" 
                                                            withString:title];
-    item.soundLink = [YXAppManager runApp:[SharedResource sharedInstance].scriptApp
+    item.soundLink = [SVAppManager runApp:[SharedResource sharedInstance].scriptApp
                                    params:[NSArray arrayWithObjects:@"analyse_news_sound_url", result, nil]];
     
     // add to cache
     NSData *archivedData = [NSKeyedArchiver archivedDataWithRootObject:item];
-    NSString *encodedString = [YXEncryptUtils hexStringByEncodingData:archivedData];
-    NSString *itemName = [YXEncryptUtils hexStringByEncodingString:item.title];
+    NSString *encodedString = [SVEncryptUtils hexStringByEncodingData:archivedData];
+    NSString *itemName = [SVEncryptUtils hexStringByEncodingString:item.title];
     [self.keyValueCache setValue:encodedString forKey:itemName];
     
     if([self.delegate respondsToSelector:@selector(voaNewsContentProvider:didRecieveResult:)]){
