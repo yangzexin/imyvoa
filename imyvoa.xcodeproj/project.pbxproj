@@ -47,9 +47,9 @@
 		3EA95AF41625AFC000E0CB15 /* AllGlossaryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EA95AF31625AFC000E0CB15 /* AllGlossaryViewController.m */; };
 		3EA95AF81625B03100E0CB15 /* AllGlossaryManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EA95AF71625B03100E0CB15 /* AllGlossaryManager.m */; };
 		3EB87B5116C8F82B00C94FF9 /* ContentProviderFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EB87B5016C8F82B00C94FF9 /* ContentProviderFactory.m */; };
-		3EC2AE3716FABC3000290867 /* OpenUDID.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EC2AE3316FABC3000290867 /* OpenUDID.m */; };
-		3EC2AE3816FABC3000290867 /* libMobClickLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EC2AE3516FABC3000290867 /* libMobClickLibrary.a */; };
 		3EC711AB193E0F0800ABE4EB /* libSavanna.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EC711AA193E0F0000ABE4EB /* libSavanna.a */; };
+		3EC711EC193E16CC00ABE4EB /* OpenUDID.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EC711E8193E16CC00ABE4EB /* OpenUDID.m */; };
+		3EC711ED193E16CC00ABE4EB /* libMobClickLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EC711EA193E16CC00ABE4EB /* libMobClickLibrary.a */; };
 		3EC9117716EF14DF004C4E79 /* VOWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EC9117616EF14DF004C4E79 /* VOWebView.m */; };
 		3EDE559716F8AA3F0052A038 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E32D05D16F84492008AEC81 /* Default.png */; };
 		3EE1F312174A5EE9006649F4 /* AboutUsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EE1F311174A5EE9006649F4 /* AboutUsViewController.m */; };
@@ -194,11 +194,11 @@
 		3EA95AF71625B03100E0CB15 /* AllGlossaryManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AllGlossaryManager.m; sourceTree = "<group>"; };
 		3EB87B4F16C8F82B00C94FF9 /* ContentProviderFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContentProviderFactory.h; sourceTree = "<group>"; };
 		3EB87B5016C8F82B00C94FF9 /* ContentProviderFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContentProviderFactory.m; sourceTree = "<group>"; };
-		3EC2AE3216FABC3000290867 /* OpenUDID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenUDID.h; sourceTree = "<group>"; };
-		3EC2AE3316FABC3000290867 /* OpenUDID.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenUDID.m; sourceTree = "<group>"; };
-		3EC2AE3516FABC3000290867 /* libMobClickLibrary.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libMobClickLibrary.a; sourceTree = "<group>"; };
-		3EC2AE3616FABC3000290867 /* MobClick.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobClick.h; sourceTree = "<group>"; };
 		3EC711A5193E0F0000ABE4EB /* Savanna.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Savanna.xcodeproj; path = ../Savanna/Savanna.xcodeproj; sourceTree = "<group>"; };
+		3EC711E7193E16CC00ABE4EB /* OpenUDID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenUDID.h; sourceTree = "<group>"; };
+		3EC711E8193E16CC00ABE4EB /* OpenUDID.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenUDID.m; sourceTree = "<group>"; };
+		3EC711EA193E16CC00ABE4EB /* libMobClickLibrary.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libMobClickLibrary.a; sourceTree = "<group>"; };
+		3EC711EB193E16CC00ABE4EB /* MobClick.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobClick.h; sourceTree = "<group>"; };
 		3EC9117516EF14DF004C4E79 /* VOWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VOWebView.h; sourceTree = "<group>"; };
 		3EC9117616EF14DF004C4E79 /* VOWebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VOWebView.m; sourceTree = "<group>"; };
 		3EE1F310174A5EE9006649F4 /* AboutUsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutUsViewController.h; sourceTree = "<group>"; };
@@ -335,6 +335,7 @@
 				3E88B29216BE91AF0054B6AE /* MapKit.framework in Frameworks */,
 				3E88B29016BE91A00054B6AE /* CoreLocation.framework in Frameworks */,
 				3E88B28E16BE91920054B6AE /* CFNetwork.framework in Frameworks */,
+				3EC711ED193E16CC00ABE4EB /* libMobClickLibrary.a in Frameworks */,
 				CF32395315B5402E0009D646 /* AudioToolbox.framework in Frameworks */,
 				CF6243FA157DD4CC0005D794 /* AVFoundation.framework in Frameworks */,
 				67200D01156E52F30083032E /* libsqlite3.dylib in Frameworks */,
@@ -343,7 +344,6 @@
 				CF7C5A8B155B6D7700429671 /* UIKit.framework in Frameworks */,
 				CF7C5A8D155B6D7700429671 /* Foundation.framework in Frameworks */,
 				CF7C5A8F155B6D7700429671 /* CoreGraphics.framework in Frameworks */,
-				3EC2AE3816FABC3000290867 /* libMobClickLibrary.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -440,26 +440,6 @@
 			name = WordSoundListCache;
 			sourceTree = "<group>";
 		};
-		3EC2AE3116FABC3000290867 /* OpenUDID */ = {
-			isa = PBXGroup;
-			children = (
-				3EC2AE3216FABC3000290867 /* OpenUDID.h */,
-				3EC2AE3316FABC3000290867 /* OpenUDID.m */,
-			);
-			name = OpenUDID;
-			path = 3rdLibraries/OpenUDID;
-			sourceTree = "<group>";
-		};
-		3EC2AE3416FABC3000290867 /* umeng */ = {
-			isa = PBXGroup;
-			children = (
-				3EC2AE3516FABC3000290867 /* libMobClickLibrary.a */,
-				3EC2AE3616FABC3000290867 /* MobClick.h */,
-			);
-			name = umeng;
-			path = 3rdLibraries/umeng;
-			sourceTree = "<group>";
-		};
 		3EC711A4193E0EEC00ABE4EB /* Dependencies */ = {
 			isa = PBXGroup;
 			children = (
@@ -476,13 +456,31 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		3EEEC6F916FAB35600B2B8BE /* 3rdLibraries */ = {
+		3EC711E5193E16CC00ABE4EB /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
-				3EC2AE3116FABC3000290867 /* OpenUDID */,
-				3EC2AE3416FABC3000290867 /* umeng */,
+				3EC711E6193E16CC00ABE4EB /* OpenUDID */,
+				3EC711E9193E16CC00ABE4EB /* umeng */,
 			);
-			name = 3rdLibraries;
+			path = Vendor;
+			sourceTree = "<group>";
+		};
+		3EC711E6193E16CC00ABE4EB /* OpenUDID */ = {
+			isa = PBXGroup;
+			children = (
+				3EC711E7193E16CC00ABE4EB /* OpenUDID.h */,
+				3EC711E8193E16CC00ABE4EB /* OpenUDID.m */,
+			);
+			path = OpenUDID;
+			sourceTree = "<group>";
+		};
+		3EC711E9193E16CC00ABE4EB /* umeng */ = {
+			isa = PBXGroup;
+			children = (
+				3EC711EA193E16CC00ABE4EB /* libMobClickLibrary.a */,
+				3EC711EB193E16CC00ABE4EB /* MobClick.h */,
+			);
+			path = umeng;
 			sourceTree = "<group>";
 		};
 		67200CF5156E4EA00083032E /* DictionaryCache */ = {
@@ -684,9 +682,9 @@
 				3E88B0CB16BE8BDE0054B6AE /* Default-568h@2x.png */,
 				3E32D06016F8449C008AEC81 /* Default@2x.png */,
 				3E32D05D16F84492008AEC81 /* Default.png */,
-				3EC711A4193E0EEC00ABE4EB /* Dependencies */,
-				3EEEC6F916FAB35600B2B8BE /* 3rdLibraries */,
 				CF7C5A90155B6D7700429671 /* imyvoa */,
+				3EC711A4193E0EEC00ABE4EB /* Dependencies */,
+				3EC711E5193E16CC00ABE4EB /* Vendor */,
 				3E755F0416129D02007DCD7A /* AddInFrameworks */,
 				CF7C5A89155B6D7700429671 /* Frameworks */,
 				CF7C5A87155B6D7700429671 /* Products */,
@@ -994,6 +992,7 @@
 				CFE2F049155B89FC00D66255 /* NewsItem.m in Sources */,
 				CFE2F04C155B8AE300D66255 /* LuaVoaNewsListProvider.m in Sources */,
 				CF05DD37155B92B800FE8F52 /* LocalLuaScriptProvider.m in Sources */,
+				3EC711EC193E16CC00ABE4EB /* OpenUDID.m in Sources */,
 				CFEE74F1155BAE8A00EDDACB /* LuaVoaNewsContentProvider.m in Sources */,
 				CFEE74F4155BB59F00EDDACB /* SharedResource.m in Sources */,
 				67F8820B155E6590006609F9 /* ForTestScriptCheckUpdateProvider.m in Sources */,
@@ -1041,7 +1040,6 @@
 				3E8429D416F0613B00175B2B /* TutorialableNavigationController.m in Sources */,
 				3E1CD65B16F07532001507E7 /* VOAUIPrefers.m in Sources */,
 				3E2D348B16F82F9400D03CB9 /* PluginNavigationController.m in Sources */,
-				3EC2AE3716FABC3000290867 /* OpenUDID.m in Sources */,
 				3EE1F312174A5EE9006649F4 /* AboutUsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1131,7 +1129,7 @@
 				GCC_PREFIX_HEADER = "imyvoa/imyvoa-Prefix.pch";
 				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = "imyvoa/imyvoa-Info.plist";
-				LIBRARY_SEARCH_PATHS = "\"$(SRCROOT)/3rdLibraries/umeng\"";
+				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/Vendor/umeng";
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-all_load",
@@ -1151,7 +1149,7 @@
 				GCC_PREFIX_HEADER = "imyvoa/imyvoa-Prefix.pch";
 				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = "imyvoa/imyvoa-Info.plist";
-				LIBRARY_SEARCH_PATHS = "\"$(SRCROOT)/3rdLibraries/umeng\"";
+				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/Vendor/umeng";
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-all_load",
