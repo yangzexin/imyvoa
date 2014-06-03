@@ -37,7 +37,6 @@
 		3E88B29216BE91AF0054B6AE /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E88B29116BE91AF0054B6AE /* MapKit.framework */; };
 		3E88B29416BE91BF0054B6AE /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E88B29316BE91BF0054B6AE /* libz.dylib */; };
 		3E88B29616BE91D00054B6AE /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E88B29516BE91D00054B6AE /* MobileCoreServices.framework */; };
-		3E8FB79516DCEAB500313566 /* BaseScripts.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3E8FB79416DCEAB500313566 /* BaseScripts.bundle */; };
 		3E926525161596E900CF7ACE /* WordSoundListReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E926524161596E900CF7ACE /* WordSoundListReader.m */; };
 		3E926529161597E100CF7ACE /* WordSoundListCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E926528161597E100CF7ACE /* WordSoundListCache.m */; };
 		3E9265331615A5F200CF7ACE /* WordReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E9265321615A5F200CF7ACE /* WordReader.m */; };
@@ -50,6 +49,7 @@
 		3EC711AB193E0F0800ABE4EB /* libSavanna.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EC711AA193E0F0000ABE4EB /* libSavanna.a */; };
 		3EC711EC193E16CC00ABE4EB /* OpenUDID.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EC711E8193E16CC00ABE4EB /* OpenUDID.m */; };
 		3EC711ED193E16CC00ABE4EB /* libMobClickLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EC711EA193E16CC00ABE4EB /* libMobClickLibrary.a */; };
+		3EC711F5193E185D00ABE4EB /* Savanna.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3EC711F4193E185D00ABE4EB /* Savanna.bundle */; };
 		3EC9117716EF14DF004C4E79 /* VOWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EC9117616EF14DF004C4E79 /* VOWebView.m */; };
 		3EDE559716F8AA3F0052A038 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E32D05D16F84492008AEC81 /* Default.png */; };
 		3EE1F312174A5EE9006649F4 /* AboutUsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EE1F311174A5EE9006649F4 /* AboutUsViewController.m */; };
@@ -175,7 +175,6 @@
 		3E88B29116BE91AF0054B6AE /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		3E88B29316BE91BF0054B6AE /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		3E88B29516BE91D00054B6AE /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
-		3E8FB79416DCEAB500313566 /* BaseScripts.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = BaseScripts.bundle; path = ../../Savanna/Resources/BaseScripts.bundle; sourceTree = "<group>"; };
 		3E926523161596E900CF7ACE /* WordSoundListReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WordSoundListReader.h; sourceTree = "<group>"; };
 		3E926524161596E900CF7ACE /* WordSoundListReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WordSoundListReader.m; sourceTree = "<group>"; };
 		3E926527161597E100CF7ACE /* WordSoundListCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WordSoundListCache.h; sourceTree = "<group>"; };
@@ -199,6 +198,7 @@
 		3EC711E8193E16CC00ABE4EB /* OpenUDID.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenUDID.m; sourceTree = "<group>"; };
 		3EC711EA193E16CC00ABE4EB /* libMobClickLibrary.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libMobClickLibrary.a; sourceTree = "<group>"; };
 		3EC711EB193E16CC00ABE4EB /* MobClick.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobClick.h; sourceTree = "<group>"; };
+		3EC711F4193E185D00ABE4EB /* Savanna.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Savanna.bundle; path = ../Savanna/Savanna.bundle; sourceTree = "<group>"; };
 		3EC9117516EF14DF004C4E79 /* VOWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VOWebView.h; sourceTree = "<group>"; };
 		3EC9117616EF14DF004C4E79 /* VOWebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VOWebView.m; sourceTree = "<group>"; };
 		3EE1F310174A5EE9006649F4 /* AboutUsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutUsViewController.h; sourceTree = "<group>"; };
@@ -682,6 +682,7 @@
 		CF7C5A7B155B6D7700429671 = {
 			isa = PBXGroup;
 			children = (
+				3EC711F4193E185D00ABE4EB /* Savanna.bundle */,
 				CF7C5A90155B6D7700429671 /* imyvoa */,
 				3EC711A4193E0EEC00ABE4EB /* Dependencies */,
 				3EC711E5193E16CC00ABE4EB /* Vendor */,
@@ -733,7 +734,6 @@
 			isa = PBXGroup;
 			children = (
 				3E3FDFE216F0230A0098683D /* icons */,
-				3E8FB79416DCEAB500313566 /* BaseScripts.bundle */,
 				3E542AAD1615DE610072BBF0 /* blank.mp3 */,
 				67D5A6391586207D00EB5959 /* images */,
 				CF7C5A92155B6D7700429671 /* imyvoa-Info.plist */,
@@ -936,6 +936,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3EC711F5193E185D00ABE4EB /* Savanna.bundle in Resources */,
 				CF8F1133156CAF6C000EA556 /* common.lua in Resources */,
 				CF7C5A95155B6D7700429671 /* InfoPlist.strings in Resources */,
 				679DC499155E78420008D8B5 /* Localizable.strings in Resources */,
@@ -956,7 +957,6 @@
 				3E542AAE1615DE610072BBF0 /* blank.mp3 in Resources */,
 				3E88B0CC16BE8BDE0054B6AE /* Default-568h@2x.png in Resources */,
 				3E69E30C16C53A3E00DC3BFD /* DictDotCNDictionary.lua in Resources */,
-				3E8FB79516DCEAB500313566 /* BaseScripts.bundle in Resources */,
 				3E0ADFC316E8556700685764 /* main.lua in Resources */,
 				3EF1294316E9D57600A7C271 /* icon_plugin.png in Resources */,
 				3EF1294416E9D57600A7C271 /* icon_plugin@2x.png in Resources */,
