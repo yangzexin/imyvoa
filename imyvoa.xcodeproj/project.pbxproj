@@ -198,7 +198,7 @@
 		3EC711E8193E16CC00ABE4EB /* OpenUDID.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenUDID.m; sourceTree = "<group>"; };
 		3EC711EA193E16CC00ABE4EB /* libMobClickLibrary.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libMobClickLibrary.a; sourceTree = "<group>"; };
 		3EC711EB193E16CC00ABE4EB /* MobClick.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobClick.h; sourceTree = "<group>"; };
-		3EC711F4193E185D00ABE4EB /* Savanna.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Savanna.bundle; path = ../Savanna/Savanna.bundle; sourceTree = "<group>"; };
+		3EC711F4193E185D00ABE4EB /* Savanna.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Savanna.bundle; path = ../../Savanna/Savanna.bundle; sourceTree = "<group>"; };
 		3EC9117516EF14DF004C4E79 /* VOWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VOWebView.h; sourceTree = "<group>"; };
 		3EC9117616EF14DF004C4E79 /* VOWebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VOWebView.m; sourceTree = "<group>"; };
 		3EE1F310174A5EE9006649F4 /* AboutUsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutUsViewController.h; sourceTree = "<group>"; };
@@ -682,7 +682,6 @@
 		CF7C5A7B155B6D7700429671 = {
 			isa = PBXGroup;
 			children = (
-				3EC711F4193E185D00ABE4EB /* Savanna.bundle */,
 				CF7C5A90155B6D7700429671 /* imyvoa */,
 				3EC711A4193E0EEC00ABE4EB /* Dependencies */,
 				3EC711E5193E16CC00ABE4EB /* Vendor */,
@@ -733,6 +732,7 @@
 		CF7C5A91155B6D7700429671 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				3EC711F4193E185D00ABE4EB /* Savanna.bundle */,
 				3E3FDFE216F0230A0098683D /* icons */,
 				3E542AAD1615DE610072BBF0 /* blank.mp3 */,
 				67D5A6391586207D00EB5959 /* images */,
