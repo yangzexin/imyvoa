@@ -6,11 +6,6 @@
 //  Copyright (c) 2012年 __MyCompanyName__. All rights reserved.
 //
 
-/**
-    http://imyvoaspecial.googlecode.com/files/version.txt
-    http://imyvoaspecial.googlecode.com/files/script.txt
- */
-
 #import "AppDelegate.h"
 #import "SplashViewController.h"
 #import "NewsListViewController.h"
@@ -40,6 +35,7 @@
 #import "PluginNavigationController.h"
 #import "SVScriptBundleRepository.h"
 #import "MobClick.h"
+#import "SFiOSKit.h"
 
 NSString *kNewsItemDidRemoveFromCacheNotification = @"kNewsItemDidRemoveFromCacheNotification";
 NSString *kNewsItemDidAddToCacheNotification = @"kNewsItemDidAddToCacheNotification";
@@ -208,22 +204,22 @@ NSString *kNewsItemDidAddToCacheNotification = @"kNewsItemDidAddToCacheNotificat
     self.tabBarController.delegate = self;
     
     NewsListViewController *newsListVC = [[[NewsListViewController alloc] init] autorelease];
-    self.newsListNC = [[[TutorialableNavigationController alloc] initWithRootViewController:newsListVC] autorelease];
-    //    self.newsListNC.navigationBar.barStyle = UIBarStyleBlack;
+    self.newsListNC = [[[SFGestureBackNavigationController alloc] initWithRootViewController:newsListVC] autorelease];
+//    self.newsListNC.navigationBar.barStyle = UIBarStyleBlack;
     self.newsListNC.title = NSLocalizedString(@"title_news_list", nil);
     self.newsListNC.tabBarItem.image = [UIImage imageNamed:@"icon_news_list"];
     [self configureNavigationBar:self.newsListNC.navigationBar];
     
     LocalNewsListViewController *localNewsListVC
     = [[[LocalNewsListViewController alloc] init] autorelease];
-    self.localNewsListNC = [[[UINavigationController alloc] initWithRootViewController:localNewsListVC] autorelease];
-    //    self.localNewsListNC.navigationBar.barStyle = UIBarStyleBlack;
+    self.localNewsListNC = [[[SFGestureBackNavigationController alloc] initWithRootViewController:localNewsListVC] autorelease];
+//    self.localNewsListNC.navigationBar.barStyle = UIBarStyleBlack;
     self.localNewsListNC.title = NSLocalizedString(@"title_local_news_list", nil);
     self.localNewsListNC.tabBarItem.image = [UIImage imageNamed:@"icon_local_list"];
     [self configureNavigationBar:self.localNewsListNC.navigationBar];
     
     AllGlossaryViewController *glossaryVC = [[[AllGlossaryViewController alloc] init] autorelease];
-    UINavigationController *glossaryNC = [[[UINavigationController alloc] initWithRootViewController:glossaryVC] autorelease];
+    UINavigationController *glossaryNC = [[[SFGestureBackNavigationController alloc] initWithRootViewController:glossaryVC] autorelease];
     glossaryNC.title = NSLocalizedString(@"Glossary", nil);
     glossaryNC.tabBarItem.image = [UIImage imageNamed:@"icon_glossary_list.png"];
     [self configureNavigationBar:glossaryNC.navigationBar];
@@ -234,14 +230,14 @@ NSString *kNewsItemDidAddToCacheNotification = @"kNewsItemDidAddToCacheNotificat
     [self configureNavigationBar:pluginNC.navigationBar];
     
     SettingViewController *settingVC = [[SettingViewController new] autorelease];
-    UINavigationController *settingNC = [[[UINavigationController alloc] initWithRootViewController:settingVC] autorelease];
+    UINavigationController *settingNC = [[[SFGestureBackNavigationController alloc] initWithRootViewController:settingVC] autorelease];
     settingNC.title = NSLocalizedString(@"Settings", nil);
     settingNC.tabBarItem.image = [UIImage imageNamed:@"icon_settings.png"];
     [self configureNavigationBar:settingNC.navigationBar];
     
     tabBarController.viewControllers = [NSArray arrayWithObjects:self.newsListNC, self.localNewsListNC, glossaryNC, pluginNC, settingNC, nil];
     
-    //    [self configureTabBarController:tabBarController];
+//    [self configureTabBarController:tabBarController];
     self.window.rootViewController = tabBarController;
     
     if([tabBarController.tabBar respondsToSelector:@selector(setBackgroundImage:)]){
