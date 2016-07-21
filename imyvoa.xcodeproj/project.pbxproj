@@ -48,7 +48,6 @@
 		3EB87B5116C8F82B00C94FF9 /* ContentProviderFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EB87B5016C8F82B00C94FF9 /* ContentProviderFactory.m */; };
 		3EC711EC193E16CC00ABE4EB /* OpenUDID.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EC711E8193E16CC00ABE4EB /* OpenUDID.m */; };
 		3EC711ED193E16CC00ABE4EB /* libMobClickLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EC711EA193E16CC00ABE4EB /* libMobClickLibrary.a */; };
-		3EC711F5193E185D00ABE4EB /* Savanna.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3EC711F4193E185D00ABE4EB /* Savanna.bundle */; };
 		3EC7121B193F626300ABE4EB /* libSFFoundation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EC7121A193F626300ABE4EB /* libSFFoundation.a */; };
 		3EC7121E193F628000ABE4EB /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EC7121D193F628000ABE4EB /* CoreText.framework */; };
 		3EC9117716EF14DF004C4E79 /* VOWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EC9117616EF14DF004C4E79 /* VOWebView.m */; };
@@ -912,7 +911,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3EC711F5193E185D00ABE4EB /* Savanna.bundle in Resources */,
 				CF8F1133156CAF6C000EA556 /* common.lua in Resources */,
 				CF7C5A95155B6D7700429671 /* InfoPlist.strings in Resources */,
 				679DC499155E78420008D8B5 /* Localizable.strings in Resources */,
