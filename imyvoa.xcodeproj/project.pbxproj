@@ -47,7 +47,6 @@
 		3EA95AF81625B03100E0CB15 /* AllGlossaryManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EA95AF71625B03100E0CB15 /* AllGlossaryManager.m */; };
 		3EB87B5116C8F82B00C94FF9 /* ContentProviderFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EB87B5016C8F82B00C94FF9 /* ContentProviderFactory.m */; };
 		3EC711EC193E16CC00ABE4EB /* OpenUDID.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EC711E8193E16CC00ABE4EB /* OpenUDID.m */; };
-		3EC711ED193E16CC00ABE4EB /* libMobClickLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EC711EA193E16CC00ABE4EB /* libMobClickLibrary.a */; };
 		3EC7121B193F626300ABE4EB /* libSFFoundation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EC7121A193F626300ABE4EB /* libSFFoundation.a */; };
 		3EC7121E193F628000ABE4EB /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EC7121D193F628000ABE4EB /* CoreText.framework */; };
 		3EC9117716EF14DF004C4E79 /* VOWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EC9117616EF14DF004C4E79 /* VOWebView.m */; };
@@ -185,8 +184,6 @@
 		3EB87B5016C8F82B00C94FF9 /* ContentProviderFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContentProviderFactory.m; sourceTree = "<group>"; };
 		3EC711E7193E16CC00ABE4EB /* OpenUDID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenUDID.h; sourceTree = "<group>"; };
 		3EC711E8193E16CC00ABE4EB /* OpenUDID.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenUDID.m; sourceTree = "<group>"; };
-		3EC711EA193E16CC00ABE4EB /* libMobClickLibrary.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libMobClickLibrary.a; sourceTree = "<group>"; };
-		3EC711EB193E16CC00ABE4EB /* MobClick.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobClick.h; sourceTree = "<group>"; };
 		3EC711F4193E185D00ABE4EB /* Savanna.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Savanna.bundle; path = ../../Savanna/Savanna.bundle; sourceTree = "<group>"; };
 		3EC7121A193F626300ABE4EB /* libSFFoundation.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libSFFoundation.a; path = "../SFLibraries/SFFoundation/build/Debug-iphoneos/libSFFoundation.a"; sourceTree = "<group>"; };
 		3EC7121D193F628000ABE4EB /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
@@ -328,7 +325,6 @@
 				3E88B29216BE91AF0054B6AE /* MapKit.framework in Frameworks */,
 				3E88B29016BE91A00054B6AE /* CoreLocation.framework in Frameworks */,
 				3E88B28E16BE91920054B6AE /* CFNetwork.framework in Frameworks */,
-				3EC711ED193E16CC00ABE4EB /* libMobClickLibrary.a in Frameworks */,
 				CF32395315B5402E0009D646 /* AudioToolbox.framework in Frameworks */,
 				CF6243FA157DD4CC0005D794 /* AVFoundation.framework in Frameworks */,
 				67200D01156E52F30083032E /* libsqlite3.dylib in Frameworks */,
@@ -438,7 +434,6 @@
 			isa = PBXGroup;
 			children = (
 				3EC711E6193E16CC00ABE4EB /* OpenUDID */,
-				3EC711E9193E16CC00ABE4EB /* umeng */,
 			);
 			path = Vendor;
 			sourceTree = "<group>";
@@ -450,15 +445,6 @@
 				3EC711E8193E16CC00ABE4EB /* OpenUDID.m */,
 			);
 			path = OpenUDID;
-			sourceTree = "<group>";
-		};
-		3EC711E9193E16CC00ABE4EB /* umeng */ = {
-			isa = PBXGroup;
-			children = (
-				3EC711EA193E16CC00ABE4EB /* libMobClickLibrary.a */,
-				3EC711EB193E16CC00ABE4EB /* MobClick.h */,
-			);
-			path = umeng;
 			sourceTree = "<group>";
 		};
 		67200CF5156E4EA00083032E /* DictionaryCache */ = {
@@ -887,6 +873,11 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0460;
+				TargetAttributes = {
+					CF7C5A85155B6D7700429671 = {
+						DevelopmentTeam = 5HNESHK23T;
+					};
+				};
 			};
 			buildConfigurationList = CF7C5A80155B6D7700429671 /* Build configuration list for PBXProject "imyvoa" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -1163,8 +1154,8 @@
 					"-all_load",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "B769B701-62B8-4611-985A-E94F7E2B76A8";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "B769B701-62B8-4611-985A-E94F7E2B76A8";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				USER_HEADER_SEARCH_PATHS = "$(inherited)";
 				VALID_ARCHS = "armv7 armv7s";
 				WRAPPER_EXTENSION = app;
@@ -1175,6 +1166,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = FE32BE7BDED6AD5C4A56FD63 /* Pods-imyvoa.release.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "imyvoa/imyvoa-Prefix.pch";
@@ -1191,7 +1184,7 @@
 					"-all_load",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "B769B701-62B8-4611-985A-E94F7E2B76A8";
+				PROVISIONING_PROFILE = "";
 				USER_HEADER_SEARCH_PATHS = "$(inherited)";
 				VALID_ARCHS = "armv7 armv7s";
 				WRAPPER_EXTENSION = app;

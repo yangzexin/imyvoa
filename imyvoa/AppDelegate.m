@@ -34,7 +34,6 @@
 #import "VOAUIPrefers.h"
 #import "PluginNavigationController.h"
 #import "SVScriptBundleRepository.h"
-#import "MobClick.h"
 #import "SFiOSKit.h"
 
 NSString *kNewsItemDidRemoveFromCacheNotification = @"kNewsItemDidRemoveFromCacheNotification";
@@ -111,7 +110,6 @@ NSString *kNewsItemDidAddToCacheNotification = @"kNewsItemDidAddToCacheNotificat
                                                      tutorial:[[NewsDetailTutorial new] autorelease]];
     [self loadTabBarController];
     
-    [MobClick startWithAppkey:@"514a7b3856240b944a0024cb" reportPolicy:REALTIME channelId:nil];
     return YES;
 }
 
