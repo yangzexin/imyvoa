@@ -77,8 +77,8 @@ NSString *kNewsItemDidAddToCacheNotification = @"kNewsItemDidAddToCacheNotificat
 
 - (void)loadScript
 {
-    id<SVScriptBundle> scriptBundle = [[[SVOnlineAppBundle alloc] initWithURL:
-                                        [NSURL URLWithString:@"https://dl.dropboxusercontent.com/s/4rrb07pbe5hh5gb/com.yzx.imyvoa.pkg"] timeoutInterval:10.0f] autorelease];
+    NSURL *pkgURL = [NSURL URLWithString:@"http://1.myvoa.applinzi.com/com.yzx.imyvoa.pkg"];
+    id<SVScriptBundle> scriptBundle = [[[SVOnlineAppBundle alloc] initWithURL:pkgURL timeoutInterval:10.0f] autorelease];
     scriptBundle = [[SVApplicationScriptBundle new] autorelease];
     if(scriptBundle){
         NSLog(@"download script success");

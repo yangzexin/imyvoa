@@ -49,9 +49,7 @@
 		3EC711EC193E16CC00ABE4EB /* OpenUDID.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EC711E8193E16CC00ABE4EB /* OpenUDID.m */; };
 		3EC711ED193E16CC00ABE4EB /* libMobClickLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EC711EA193E16CC00ABE4EB /* libMobClickLibrary.a */; };
 		3EC711F5193E185D00ABE4EB /* Savanna.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3EC711F4193E185D00ABE4EB /* Savanna.bundle */; };
-		3EC71208193F5A1800ABE4EB /* libSavanna.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EC711AA193E0F0000ABE4EB /* libSavanna.a */; };
 		3EC7121B193F626300ABE4EB /* libSFFoundation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EC7121A193F626300ABE4EB /* libSFFoundation.a */; };
-		3EC7121C193F626600ABE4EB /* libSFiOSKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EC71219193F625300ABE4EB /* libSFiOSKit.a */; };
 		3EC7121E193F628000ABE4EB /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EC7121D193F628000ABE4EB /* CoreText.framework */; };
 		3EC9117716EF14DF004C4E79 /* VOWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EC9117616EF14DF004C4E79 /* VOWebView.m */; };
 		3EDE559716F8AA3F0052A038 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E32D05D16F84492008AEC81 /* Default.png */; };
@@ -97,6 +95,7 @@
 		67D5A6511586320900EB5959 /* PopOutTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 67D5A6501586320900EB5959 /* PopOutTableView.m */; };
 		67F8820B155E6590006609F9 /* ForTestScriptCheckUpdateProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 67F8820A155E6590006609F9 /* ForTestScriptCheckUpdateProvider.m */; };
 		67F8820E155E663B006609F9 /* FromGoogleScriptUpdateProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 67F8820D155E663B006609F9 /* FromGoogleScriptUpdateProvider.m */; };
+		7CEA9901FA87DFE427532346 /* libPods-imyvoa.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C672159057C440C6819A3483 /* libPods-imyvoa.a */; };
 		CF05DD37155B92B800FE8F52 /* LocalLuaScriptProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = CF05DD36155B92B800FE8F52 /* LocalLuaScriptProvider.m */; };
 		CF1B0C6E1589D7EA00553254 /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = CF1B0C6D1589D7EA00553254 /* Utils.m */; };
 		CF1B0C711589DE4D00553254 /* CustomPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = CF1B0C701589DE4D00553254 /* CustomPickerView.m */; };
@@ -124,26 +123,9 @@
 		CFEE74F1155BAE8A00EDDACB /* LuaVoaNewsContentProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = CFEE74F0155BAE8A00EDDACB /* LuaVoaNewsContentProvider.m */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		3EC711A9193E0F0000ABE4EB /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 3EC711A5193E0F0000ABE4EB /* Savanna.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 3E653EDF16DCDB4C00368931;
-			remoteInfo = Savanna;
-		};
-		3EC71218193F625300ABE4EB /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 3EC71212193F625300ABE4EB /* SFiOSKit.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 3ED59DB91828D33A002531DD;
-			remoteInfo = SFiOSKit;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
 		3E08CB4E16DB40780099A91A /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
-		3E0ADFC216E8556700685764 /* main.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = main.lua; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.lua; };
+		3E0ADFC216E8556700685764 /* main.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = main.lua; sourceTree = "<group>"; };
 		3E1CD65916F07532001507E7 /* VOAUIPrefers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VOAUIPrefers.h; sourceTree = "<group>"; };
 		3E1CD65A16F07532001507E7 /* VOAUIPrefers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VOAUIPrefers.m; sourceTree = "<group>"; };
 		3E2D348916F82F9400D03CB9 /* PluginNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PluginNavigationController.h; sourceTree = "<group>"; };
@@ -167,7 +149,7 @@
 		3E542AB11615E1ED0072BBF0 /* ApplicationKeeper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApplicationKeeper.m; sourceTree = "<group>"; };
 		3E59B65716D74EC000DF05A7 /* DictionaryFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DictionaryFactory.h; sourceTree = "<group>"; };
 		3E59B65816D74EC000DF05A7 /* DictionaryFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DictionaryFactory.m; sourceTree = "<group>"; };
-		3E69E30B16C53A3E00DC3BFD /* DictDotCNDictionary.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = DictDotCNDictionary.lua; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.lua; };
+		3E69E30B16C53A3E00DC3BFD /* DictDotCNDictionary.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = DictDotCNDictionary.lua; sourceTree = "<group>"; };
 		3E8429C816F05D4800175B2B /* TutorialManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TutorialManager.h; sourceTree = "<group>"; };
 		3E8429C916F05D4800175B2B /* TutorialManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TutorialManager.m; sourceTree = "<group>"; };
 		3E8429CB16F05DAA00175B2B /* Tutorial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tutorial.h; sourceTree = "<group>"; };
@@ -202,13 +184,11 @@
 		3EA95AF71625B03100E0CB15 /* AllGlossaryManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AllGlossaryManager.m; sourceTree = "<group>"; };
 		3EB87B4F16C8F82B00C94FF9 /* ContentProviderFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContentProviderFactory.h; sourceTree = "<group>"; };
 		3EB87B5016C8F82B00C94FF9 /* ContentProviderFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContentProviderFactory.m; sourceTree = "<group>"; };
-		3EC711A5193E0F0000ABE4EB /* Savanna.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Savanna.xcodeproj; path = ../Savanna/Savanna.xcodeproj; sourceTree = "<group>"; };
 		3EC711E7193E16CC00ABE4EB /* OpenUDID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenUDID.h; sourceTree = "<group>"; };
 		3EC711E8193E16CC00ABE4EB /* OpenUDID.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenUDID.m; sourceTree = "<group>"; };
 		3EC711EA193E16CC00ABE4EB /* libMobClickLibrary.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libMobClickLibrary.a; sourceTree = "<group>"; };
 		3EC711EB193E16CC00ABE4EB /* MobClick.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobClick.h; sourceTree = "<group>"; };
 		3EC711F4193E185D00ABE4EB /* Savanna.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Savanna.bundle; path = ../../Savanna/Savanna.bundle; sourceTree = "<group>"; };
-		3EC71212193F625300ABE4EB /* SFiOSKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SFiOSKit.xcodeproj; path = ../SFLibraries/SFiOSKit/SFiOSKit.xcodeproj; sourceTree = "<group>"; };
 		3EC7121A193F626300ABE4EB /* libSFFoundation.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libSFFoundation.a; path = "../SFLibraries/SFFoundation/build/Debug-iphoneos/libSFFoundation.a"; sourceTree = "<group>"; };
 		3EC7121D193F628000ABE4EB /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
 		3EC9117516EF14DF004C4E79 /* VOWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VOWebView.h; sourceTree = "<group>"; };
@@ -281,6 +261,7 @@
 		67F8820A155E6590006609F9 /* ForTestScriptCheckUpdateProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForTestScriptCheckUpdateProvider.m; sourceTree = "<group>"; };
 		67F8820C155E663B006609F9 /* FromGoogleScriptUpdateProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FromGoogleScriptUpdateProvider.h; sourceTree = "<group>"; };
 		67F8820D155E663B006609F9 /* FromGoogleScriptUpdateProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FromGoogleScriptUpdateProvider.m; sourceTree = "<group>"; };
+		C672159057C440C6819A3483 /* libPods-imyvoa.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-imyvoa.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF05DD35155B92B800FE8F52 /* LocalLuaScriptProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocalLuaScriptProvider.h; sourceTree = "<group>"; };
 		CF05DD36155B92B800FE8F52 /* LocalLuaScriptProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocalLuaScriptProvider.m; sourceTree = "<group>"; };
 		CF1B0C6C1589D7EA00553254 /* Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
@@ -313,7 +294,7 @@
 		CFE2F01F155B78F700D66255 /* UIViewController+Loading.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Loading.m"; sourceTree = "<group>"; };
 		CFE2F020155B78F700D66255 /* UIViewController+TabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+TabBar.h"; sourceTree = "<group>"; };
 		CFE2F021155B78F700D66255 /* UIViewController+TabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+TabBar.m"; sourceTree = "<group>"; };
-		CFE2F039155B7A5F00D66255 /* common.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = common.lua; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.lua; };
+		CFE2F039155B7A5F00D66255 /* common.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = common.lua; sourceTree = "<group>"; };
 		CFE2F03B155B7A9C00D66255 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		CFE2F03D155B7ADB00D66255 /* HTTPRequester.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPRequester.h; sourceTree = "<group>"; };
 		CFE2F03E155B7ADB00D66255 /* HTTPRequester.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTPRequester.m; sourceTree = "<group>"; };
@@ -329,6 +310,8 @@
 		CFEE74ED155BADFA00EDDACB /* VoaNewsDetailProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VoaNewsDetailProvider.h; sourceTree = "<group>"; };
 		CFEE74EF155BAE8A00EDDACB /* LuaVoaNewsContentProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LuaVoaNewsContentProvider.h; sourceTree = "<group>"; };
 		CFEE74F0155BAE8A00EDDACB /* LuaVoaNewsContentProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LuaVoaNewsContentProvider.m; sourceTree = "<group>"; };
+		D04112F6D1BF84447BD1E79F /* Pods-imyvoa.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-imyvoa.debug.xcconfig"; path = "Pods/Target Support Files/Pods-imyvoa/Pods-imyvoa.debug.xcconfig"; sourceTree = "<group>"; };
+		FE32BE7BDED6AD5C4A56FD63 /* Pods-imyvoa.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-imyvoa.release.xcconfig"; path = "Pods/Target Support Files/Pods-imyvoa/Pods-imyvoa.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -337,9 +320,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3EC7121E193F628000ABE4EB /* CoreText.framework in Frameworks */,
-				3EC7121C193F626600ABE4EB /* libSFiOSKit.a in Frameworks */,
 				3EC7121B193F626300ABE4EB /* libSFFoundation.a in Frameworks */,
-				3EC71208193F5A1800ABE4EB /* libSavanna.a in Frameworks */,
 				3E3AB27316FFEA5700D8DB15 /* libxml2.dylib in Frameworks */,
 				3E41C19916F584DA00F01993 /* MediaPlayer.framework in Frameworks */,
 				3E08CB4F16DB40780099A91A /* ImageIO.framework in Frameworks */,
@@ -357,6 +338,7 @@
 				CF7C5A8B155B6D7700429671 /* UIKit.framework in Frameworks */,
 				CF7C5A8D155B6D7700429671 /* Foundation.framework in Frameworks */,
 				CF7C5A8F155B6D7700429671 /* CoreGraphics.framework in Frameworks */,
+				7CEA9901FA87DFE427532346 /* libPods-imyvoa.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -453,23 +435,6 @@
 			name = WordSoundListCache;
 			sourceTree = "<group>";
 		};
-		3EC711A4193E0EEC00ABE4EB /* Dependencies */ = {
-			isa = PBXGroup;
-			children = (
-				3EC71212193F625300ABE4EB /* SFiOSKit.xcodeproj */,
-				3EC711A5193E0F0000ABE4EB /* Savanna.xcodeproj */,
-			);
-			name = Dependencies;
-			sourceTree = "<group>";
-		};
-		3EC711A6193E0F0000ABE4EB /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				3EC711AA193E0F0000ABE4EB /* libSavanna.a */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		3EC711E5193E16CC00ABE4EB /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
@@ -495,14 +460,6 @@
 				3EC711EB193E16CC00ABE4EB /* MobClick.h */,
 			);
 			path = umeng;
-			sourceTree = "<group>";
-		};
-		3EC71213193F625300ABE4EB /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				3EC71219193F625300ABE4EB /* libSFiOSKit.a */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		67200CF5156E4EA00083032E /* DictionaryCache */ = {
@@ -661,6 +618,15 @@
 			name = impl;
 			sourceTree = "<group>";
 		};
+		6CE921940E391D8EFE3870A9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D04112F6D1BF84447BD1E79F /* Pods-imyvoa.debug.xcconfig */,
+				FE32BE7BDED6AD5C4A56FD63 /* Pods-imyvoa.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		CF05DD33155B928D00FE8F52 /* impl */ = {
 			isa = PBXGroup;
 			children = (
@@ -705,11 +671,11 @@
 			isa = PBXGroup;
 			children = (
 				CF7C5A90155B6D7700429671 /* imyvoa */,
-				3EC711A4193E0EEC00ABE4EB /* Dependencies */,
 				3EC711E5193E16CC00ABE4EB /* Vendor */,
 				3E755F0416129D02007DCD7A /* AddInFrameworks */,
 				CF7C5A89155B6D7700429671 /* Frameworks */,
 				CF7C5A87155B6D7700429671 /* Products */,
+				6CE921940E391D8EFE3870A9 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -729,6 +695,7 @@
 				CF7C5A8A155B6D7700429671 /* UIKit.framework */,
 				CF7C5A8C155B6D7700429671 /* Foundation.framework */,
 				CF7C5A8E155B6D7700429671 /* CoreGraphics.framework */,
+				C672159057C440C6819A3483 /* libPods-imyvoa.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -898,9 +865,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CF7C5A9E155B6D7700429671 /* Build configuration list for PBXNativeTarget "imyvoa" */;
 			buildPhases = (
+				095381981DDBB60ACEB6BC53 /* Check Pods Manifest.lock */,
 				CF7C5A83155B6D7700429671 /* Frameworks */,
 				CF7C5A82155B6D7700429671 /* Sources */,
 				CF7C5A84155B6D7700429671 /* Resources */,
+				0F2DCBA8E9886AA458EF0F56 /* Embed Pods Frameworks */,
+				23CB49B133FC6FB176FBDF14 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -930,39 +900,12 @@
 			mainGroup = CF7C5A7B155B6D7700429671;
 			productRefGroup = CF7C5A87155B6D7700429671 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = 3EC711A6193E0F0000ABE4EB /* Products */;
-					ProjectRef = 3EC711A5193E0F0000ABE4EB /* Savanna.xcodeproj */;
-				},
-				{
-					ProductGroup = 3EC71213193F625300ABE4EB /* Products */;
-					ProjectRef = 3EC71212193F625300ABE4EB /* SFiOSKit.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				CF7C5A85155B6D7700429671 /* imyvoa */,
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		3EC711AA193E0F0000ABE4EB /* libSavanna.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libSavanna.a;
-			remoteRef = 3EC711A9193E0F0000ABE4EB /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		3EC71219193F625300ABE4EB /* libSFiOSKit.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libSFiOSKit.a;
-			remoteRef = 3EC71218193F625300ABE4EB /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		CF7C5A84155B6D7700429671 /* Resources */ = {
@@ -1009,6 +952,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		095381981DDBB60ACEB6BC53 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		0F2DCBA8E9886AA458EF0F56 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-imyvoa/Pods-imyvoa-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		23CB49B133FC6FB176FBDF14 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-imyvoa/Pods-imyvoa-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		CF7C5A82155B6D7700429671 /* Sources */ = {
@@ -1154,25 +1145,29 @@
 		};
 		CF7C5A9F155B6D7700429671 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D04112F6D1BF84447BD1E79F /* Pods-imyvoa.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "imyvoa/imyvoa-Prefix.pch";
-				HEADER_SEARCH_PATHS = "";
+				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = "imyvoa/imyvoa-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
 					"$(PROJECT_DIR)/Vendor/umeng",
-					"/Users/yangzexin/Documents/projects/SFLibraries/SFFoundation/build/Debug-iphoneos",
 				);
 				OTHER_LDFLAGS = (
+					"$(inherited)",
 					"-ObjC",
 					"-all_load",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "B769B701-62B8-4611-985A-E94F7E2B76A8";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "B769B701-62B8-4611-985A-E94F7E2B76A8";
-				USER_HEADER_SEARCH_PATHS = "../Savanna/** ../SFLibraries/**";
+				USER_HEADER_SEARCH_PATHS = "$(inherited)";
 				VALID_ARCHS = "armv7 armv7s";
 				WRAPPER_EXTENSION = app;
 			};
@@ -1180,22 +1175,26 @@
 		};
 		CF7C5AA0155B6D7700429671 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FE32BE7BDED6AD5C4A56FD63 /* Pods-imyvoa.release.xcconfig */;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "imyvoa/imyvoa-Prefix.pch";
-				HEADER_SEARCH_PATHS = "";
+				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = "imyvoa/imyvoa-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
 					"$(PROJECT_DIR)/Vendor/umeng",
-					"/Users/yangzexin/Documents/projects/SFLibraries/SFFoundation/build/Debug-iphoneos",
 				);
 				OTHER_LDFLAGS = (
+					"$(inherited)",
 					"-ObjC",
 					"-all_load",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "B769B701-62B8-4611-985A-E94F7E2B76A8";
-				USER_HEADER_SEARCH_PATHS = "../Savanna/** ../SFLibraries/**";
+				USER_HEADER_SEARCH_PATHS = "$(inherited)";
 				VALID_ARCHS = "armv7 armv7s";
 				WRAPPER_EXTENSION = app;
 			};

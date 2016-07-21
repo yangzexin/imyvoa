@@ -41,7 +41,7 @@
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         [SVTimeCostTracer markWithIdentifier:@"load_plugin_app"];
         id<SVScriptBundle> bundle = [[[SVOnlineAppBundle alloc]
-                                      initWithURL:[NSURL URLWithString:@"https://dl.dropboxusercontent.com/s/sdrvts9idmgg17t/com.yzx.imyvoa.plugins.pkg"]] autorelease];
+                                      initWithURL:[NSURL URLWithString:@"http://1.myvoa.applinzi.com/com.yzx.imyvoa.plugins.pkg"]] autorelease];
         if(!bundle){
             bundle = [[SVScriptBundleRepository defaultRespository] scriptBundleWithBundleId:@"com.yzx.imyvoa.plugins"];
         }else{
