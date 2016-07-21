@@ -11,6 +11,7 @@
 		3E0ADFC316E8556700685764 /* main.lua in Resources */ = {isa = PBXBuildFile; fileRef = 3E0ADFC216E8556700685764 /* main.lua */; };
 		3E1CD65B16F07532001507E7 /* VOAUIPrefers.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E1CD65A16F07532001507E7 /* VOAUIPrefers.m */; };
 		3E2D348B16F82F9400D03CB9 /* PluginNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E2D348A16F82F9400D03CB9 /* PluginNavigationController.m */; };
+		3E30B8851D418BE300F384EC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3E30B8841D418BE300F384EC /* Images.xcassets */; };
 		3E32D06116F8449C008AEC81 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E32D06016F8449C008AEC81 /* Default@2x.png */; };
 		3E3AB27316FFEA5700D8DB15 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E3AB27216FFEA5700D8DB15 /* libxml2.dylib */; };
 		3E3FDFDA16F022B60098683D /* imyvoa57x57.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E3FDFD916F022B60098683D /* imyvoa57x57.png */; };
@@ -128,6 +129,7 @@
 		3E1CD65A16F07532001507E7 /* VOAUIPrefers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VOAUIPrefers.m; sourceTree = "<group>"; };
 		3E2D348916F82F9400D03CB9 /* PluginNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PluginNavigationController.h; sourceTree = "<group>"; };
 		3E2D348A16F82F9400D03CB9 /* PluginNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PluginNavigationController.m; sourceTree = "<group>"; };
+		3E30B8841D418BE300F384EC /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		3E32D05D16F84492008AEC81 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = ../Default.png; sourceTree = "<group>"; };
 		3E32D06016F8449C008AEC81 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "../Default@2x.png"; sourceTree = "<group>"; };
 		3E3AB27216FFEA5700D8DB15 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
@@ -184,7 +186,6 @@
 		3EB87B5016C8F82B00C94FF9 /* ContentProviderFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContentProviderFactory.m; sourceTree = "<group>"; };
 		3EC711E7193E16CC00ABE4EB /* OpenUDID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenUDID.h; sourceTree = "<group>"; };
 		3EC711E8193E16CC00ABE4EB /* OpenUDID.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenUDID.m; sourceTree = "<group>"; };
-		3EC711F4193E185D00ABE4EB /* Savanna.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Savanna.bundle; path = ../../Savanna/Savanna.bundle; sourceTree = "<group>"; };
 		3EC7121A193F626300ABE4EB /* libSFFoundation.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libSFFoundation.a; path = "../SFLibraries/SFFoundation/build/Debug-iphoneos/libSFFoundation.a"; sourceTree = "<group>"; };
 		3EC7121D193F628000ABE4EB /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
 		3EC9117516EF14DF004C4E79 /* VOWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VOWebView.h; sourceTree = "<group>"; };
@@ -706,7 +707,7 @@
 		CF7C5A91155B6D7700429671 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				3EC711F4193E185D00ABE4EB /* Savanna.bundle */,
+				3E30B8841D418BE300F384EC /* Images.xcassets */,
 				3E3FDFE216F0230A0098683D /* icons */,
 				3E542AAD1615DE610072BBF0 /* blank.mp3 */,
 				67D5A6391586207D00EB5959 /* images */,
@@ -911,6 +912,7 @@
 				67D5A6421586209100EB5959 /* play_control_previous@2x.png in Resources */,
 				67D5A645158620F300EB5959 /* btn_download@2x.png in Resources */,
 				67D5A646158620F300EB5959 /* btn_download.png in Resources */,
+				3E30B8851D418BE300F384EC /* Images.xcassets in Resources */,
 				67D5A64B15862EED00EB5959 /* icon_news_list@2x.png in Resources */,
 				67D5A64C15862EED00EB5959 /* icon_news_list.png in Resources */,
 				67D5A64D15862EED00EB5959 /* icon_local_list@2x.png in Resources */,
@@ -1136,6 +1138,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D04112F6D1BF84447BD1E79F /* Pods-imyvoa.debug.xcconfig */;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
@@ -1166,6 +1170,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = FE32BE7BDED6AD5C4A56FD63 /* Pods-imyvoa.release.xcconfig */;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
