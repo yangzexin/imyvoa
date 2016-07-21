@@ -4,8 +4,8 @@
 # use_frameworks!
 
 target 'imyvoa' do
-    pod 'SFFoundation', :path => '../SFLibraries'
-    pod 'SFiOSKit', :path => '../SFLibraries'
-    pod 'Savanna', :path => '../Savanna'
+    pod 'SFFoundation', :git => 'https://github.com/yangzexin/SFLibraries.git'
+    pod 'SFiOSKit', :git => 'https://github.com/yangzexin/SFLibraries.git'
+    pod 'Savanna', :git => 'https://github.com/yang2507366/Savanna.git'
 end
 

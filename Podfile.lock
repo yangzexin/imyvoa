@@ -29,17 +29,28 @@ PODS:
   - ZipKit (1.0.3)
 
 DEPENDENCIES:
-  - Savanna (from `../Savanna`)
-  - SFFoundation (from `../SFLibraries`)
-  - SFiOSKit (from `../SFLibraries`)
+  - Savanna (from `https://github.com/yang2507366/Savanna.git`)
+  - SFFoundation (from `https://github.com/yangzexin/SFLibraries.git`)
+  - SFiOSKit (from `https://github.com/yangzexin/SFLibraries.git`)
 
 EXTERNAL SOURCES:
   Savanna:
-    :path: ../Savanna
+    :git: https://github.com/yang2507366/Savanna.git
   SFFoundation:
-    :path: ../SFLibraries
+    :git: https://github.com/yangzexin/SFLibraries.git
   SFiOSKit:
-    :path: ../SFLibraries
+    :git: https://github.com/yangzexin/SFLibraries.git
+
+CHECKOUT OPTIONS:
+  Savanna:
+    :commit: 343ee6b5a17cc2ed69353b51e0cda0d7f8d5b9fe
+    :git: https://github.com/yang2507366/Savanna.git
+  SFFoundation:
+    :commit: 051c65c3cd2d46024f51d6cc2e9daecb38c717a9
+    :git: https://github.com/yangzexin/SFLibraries.git
+  SFiOSKit:
+    :commit: 051c65c3cd2d46024f51d6cc2e9daecb38c717a9
+    :git: https://github.com/yangzexin/SFLibraries.git
 
 SPEC CHECKSUMS:
   ASIHTTPRequest: ec013992946676b7978dcbde6396d57312d21db4
